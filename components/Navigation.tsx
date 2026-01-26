@@ -26,12 +26,7 @@ export default function Navigation() {
   <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <Image src="/logo.svg" alt="BYC" width={44} height={44} className="rounded-lg" />
-            <span className={`font-bold text-xl transition-colors ${
-              isScrolled ? 'text-gray-900' : 'text-white'
-            }`}>
-              BYC
-            </span>
+            <Image src="/logo.svg" alt="BYC" width={200} height={64} className="rounded-lg" />
           </Link>
 
           {/* Desktop Menu */}
