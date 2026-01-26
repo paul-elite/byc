@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
     return (
         <footer className="bg-gray-900 text-white">
-                <div className="container py-10">
+            <div className="container py-12">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
@@ -91,7 +91,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
                     <p className="text-gray-400 text-sm">
                         © {new Date().getFullYear()} BYC (By & Co). All rights reserved.
                     </p>
