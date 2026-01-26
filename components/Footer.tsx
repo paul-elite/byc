@@ -17,6 +17,24 @@ export default function Footer() {
                             Nigeria's premier strategic consulting firm, transforming businesses
                             through innovative solutions and local expertise.
                         </p>
+                        <div className="text-gray-400 mb-4 max-w-md">
+                            <div className="mb-3">
+                                <a href="mailto:info@byandco.com" className="block text-gray-300 hover:text-primary-400">info@byandco.com</a>
+                                <a href="tel:+2349018811877" className="block text-gray-300 hover:text-primary-400">+234 901 881 1877</a>
+                                <a href="https://www.byandco.com" className="block text-gray-300 hover:text-primary-400">www.byandco.com</a>
+                            </div>
+                            <div className="space-y-2">
+                                <div>
+                                    <strong>Abuja Office</strong><br />
+                                    Suite B5, Melita Plaza,<br />
+                                    Gimbiya Street, Area 11, Garki, Abuja
+                                </div>
+                                <div>
+                                    <strong>Ilorin Office</strong><br />
+                                    No 2., Babatunde Yunus Street, Irewolede, Ilorin, Kwara State
+                                </div>
+                            </div>
+                        </div>
                         <div className="flex space-x-4">
                             <a
                                 href="https://linkedin.com"

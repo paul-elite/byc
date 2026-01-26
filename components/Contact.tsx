@@ -137,19 +137,29 @@ export default function Contact() {
                             </h3>
                             <div className="space-y-4">
                                 <div className="flex items-start space-x-4">
-                                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                                        <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4 className="font-semibold text-gray-900 mb-1">Office Location</h4>
-                                        <p className="text-gray-600">
-                                            Victoria Island, Lagos<br />
-                                            Nigeria
-                                        </p>
-                                    </div>
+                                            <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-semibold text-gray-900 mb-1">Office Locations</h4>
+                                                <div className="text-gray-600">
+                                                    <div className="mb-2">
+                                                        <strong>Abuja Office</strong><br />
+                                                        Suite B5, Melita Plaza,<br />
+                                                        Gimbiya Street,<br />
+                                                        Area 11, Garki, Abuja
+                                                    </div>
+                                                    <div>
+                                                        <strong>Ilorin Office</strong><br />
+                                                        No 2., Babatunde Yunus Street,<br />
+                                                        Irewolede, Ilorin,<br />
+                                                        Kwara State
+                                                    </div>
+                                                </div>
+                                            </div>
                                 </div>
 
                                 <div className="flex items-start space-x-4">
@@ -160,7 +170,9 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                                        <p className="text-gray-600">info@byandco.ng</p>
+                                        <p className="text-gray-600">
+                                            <a href="mailto:info@byandco.com" className="text-primary-600 hover:underline">info@byandco.com</a>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -172,7 +184,33 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                                        <p className="text-gray-600">+234 (0) 1 234 5678</p>
+                                        <p className="text-gray-600">
+                                            <a href="tel:+2349018811877" className="text-primary-600 hover:underline">+234 901 881 1877</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div className="flex items-start space-x-4">
+                                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.172 16.172A4 4 0 015 15h14a4 4 0 011.828.172M8 7a4 4 0 118 0 4 4 0 01-8 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900 mb-1">Website</h4>
+                                        <p className="text-gray-600"><a href="https://www.byandco.com" className="text-primary-600 hover:underline">www.byandco.com</a></p>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-start space-x-4">
+                                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg className="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 5.5 4.46 9.96 9.96 9.96s9.96-4.46 9.96-9.96c0-5.5-4.46-9.96-9.96-9.96zm4.84 8.54c.03.67.03 1.35 0 2.02-.15 3.95-3.27 6.13-6.9 6.13-2.03 0-3.87-.77-5.14-2.05.43.05.87.08 1.32.08 1.58 0 3.04-.53 4.2-1.43-1.48-.03-2.73-1.01-3.16-2.36.5.09 1 .14 1.52.14.74 0 1.46-.1 2.14-.3-1.56-.31-2.73-1.68-2.73-3.31v-.04c.45.25.97.41 1.52.43-1-.67-1.66-1.8-1.66-3.09 0-.67.18-1.29.5-1.83 2.34 2.86 6.01 4.74 10.06 4.95z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900 mb-1">Instagram</h4>
+                                        <p className="text-gray-600"><a href="https://instagram.com/babatunde_yunus_and_co" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">@babatunde_yunus_and_co</a></p>
                                     </div>
                                 </div>
                             </div>
