@@ -258,15 +258,16 @@ export default function ServicesPage() {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
                             href="/contact"
-                            className="group inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-emerald-500/50 transition-all hover:scale-105">
+                            className="btn btn-primary btn-lg inline-flex items-center"
+                        >
                             Schedule a Consultation
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="w-5 h-5 ml-2" />
                         </a>
 
                         <a
                             href="tel:+234"
-                            className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-xl text-lg font-semibold border-2 border-slate-200 hover:border-emerald-500 transition-all hover:scale-105">
-
+                            className="btn btn-white btn-lg inline-flex items-center"
+                        >
                             Call Us Today
                         </a>
                     </div>

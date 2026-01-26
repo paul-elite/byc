@@ -35,9 +35,11 @@ export default function ArticleCard({ title, excerpt, category, date, image, slu
                     <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-3 mb-6 flex-grow">
                         {excerpt}
                     </p>
-                    <div className="flex items-center text-primary-600 font-bold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform">
-                        Read More
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex items-center">
+                        <span className="btn btn-ghost btn-sm text-primary-600 font-bold uppercase tracking-wider">
+                            Read More
+                        </span>
+                        <svg className="w-4 h-4 ml-2 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </div>

@@ -115,7 +115,8 @@ export default function Contact() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                                className={`btn btn-primary btn-lg w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                aria-disabled={isSubmitting}
                             >
                                 {isSubmitting ? 'Sending...' : 'Send Message'}
                             </button>

@@ -72,7 +72,7 @@ export default function CaseStudies() {
                 <div className="text-center mt-12">
                     <a
                         href="/contact"
-                        className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                        className="btn btn-primary btn-lg"
                     >
                         Start Your Success Story
                     </a>
