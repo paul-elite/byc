@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "BYC | Strategic Consulting for Nigerian Businesses",
   description: "Nigeria's premier strategic consulting firm. We transform businesses through innovative solutions, deep local expertise, and proven methodologies.",
   keywords: "consulting, Nigeria, strategy, business transformation, Lagos, operations, digital innovation",
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
