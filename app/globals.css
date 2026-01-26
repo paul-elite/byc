@@ -24,6 +24,11 @@
       transparent 360deg);
   --secondary-glow: radial-gradient(rgba(34, 197, 94, 0.1),
       rgba(34, 197, 94, 0));
+  /* Tracking (letter-spacing) tokens - negative for tighter tracking */
+  --tracking-tight-xl: -0.04em;
+  --tracking-tight-lg: -0.025em;
+  --tracking-tight-md: -0.015em;
+  --tracking-tight-sm: -0.008em;
 }
 
 @theme inline {
@@ -80,13 +85,38 @@ body {
   overflow-x: hidden;
 }
 
+/* Typography hierarchy: use Inter for headings by default; reserve .font-serif for editorial styles */
 h1,
 h2,
 h3,
-h4,
+h4 {
+  font-family: var(--font-sans);
+}
+
 .font-serif {
   font-family: var(--font-serif);
-  letter-spacing: -0.02em;
+}
+
+/* Tighten tracking by hierarchy */
+h1 {
+  letter-spacing: var(--tracking-tight-xl);
+}
+
+h2 {
+  letter-spacing: var(--tracking-tight-lg);
+}
+
+h3 {
+  letter-spacing: var(--tracking-tight-md);
+}
+
+h4 {
+  letter-spacing: var(--tracking-tight-md);
+}
+
+/* Slightly tighter body text and form elements */
+p, li, a, span, input, button, label {
+  letter-spacing: var(--tracking-tight-sm);
 }
 
 /* Heading rhythm & default spacing */
