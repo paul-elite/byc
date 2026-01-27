@@ -119,19 +119,19 @@ p, li, a, span, input, button, label {
   letter-spacing: var(--tracking-tight-sm);
 }
 
-/* Heading rhythm & default spacing */
-h1 {
+/* Heading rhythm & default spacing - ONLY for standalone headings, not in components */
+h1:not([style*="margin"]):not([class*="mb-"]):not([class*="my-"]) {
   font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   line-height: 1.05;
   margin-bottom: var(--space-8);
 }
 
-h2 {
+h2:not([style*="margin"]):not([class*="mb-"]):not([class*="my-"]) {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   margin-bottom: var(--space-4);
 }
 
-h3 {
+h3:not([style*="margin"]):not([class*="mb-"]):not([class*="my-"]) {
   font-size: clamp(1.1rem, 2vw, 1.25rem);
   margin-bottom: var(--space-3);
 }
@@ -176,11 +176,11 @@ h3 {
   color: var(--foreground);
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
   transform: translateY(-3px);
 }
 
-.btn:active {
+.btn:active:not(:disabled) {
   transform: translateY(0);
 }
 
@@ -219,6 +219,7 @@ h3 {
   background: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-600));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Section Spacing */
@@ -249,6 +250,19 @@ h3 {
 
 .animate-reveal {
   animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes float {
