@@ -13,12 +13,33 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "BYC | Strategic Consulting for Nigerian Businesses",
-  description: "Nigeria's premier strategic consulting firm. We transform businesses through innovative solutions, deep local expertise, and proven methodologies.",
-  keywords: "consulting, Nigeria, strategy, business transformation, Lagos, operations, digital innovation",
+  title: {
+    default: "BYC | Strategic Consulting for Nigerian Businesses",
+    template: "%s | BYC Consulting",
+  },
+  description: "Nigeria's trusted strategic consulting partner. We help ambitious organizations solve complex challenges, drive sustainable growth, and unlock their full potential.",
+  keywords: ["consulting", "Nigeria", "strategy", "business transformation", "Abuja", "operations excellence", "digital innovation", "financial advisory"],
+  authors: [{ name: "BYC - Babatunde Yunus & Co" }],
+  creator: "BYC Consulting",
+  openGraph: {
+    type: "website",
+    locale: "en_NG",
+    siteName: "BYC Consulting",
+    title: "BYC | Strategic Consulting for Nigerian Businesses",
+    description: "Nigeria's trusted strategic consulting partner since 2009. Strategy, operations, digital innovation, and financial advisory services.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BYC | Strategic Consulting for Nigerian Businesses",
+    description: "Nigeria's trusted strategic consulting partner since 2009.",
+  },
   icons: {
     icon: '/favicon.svg',
     apple: '/favicon.svg',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

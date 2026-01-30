@@ -28,12 +28,13 @@ export default function CaseStudies() {
     return (
         <section className="py-24 bg-gradient-to-br from-primary-50 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16 animate-fadeInUp">
+                <div className="text-center mb-16">
+                    <p className="text-primary-600 font-medium mb-2">Success Stories</p>
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Proven Impact
+                        Proven Results
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Real results for Nigerian businesses across diverse sectors
+                        Real impact for Nigerian businesses across diverse sectors
                     </p>
                 </div>
 
@@ -41,16 +42,16 @@ export default function CaseStudies() {
                     {cases.map((caseStudy, index) => (
                         <div
                             key={index}
-                            className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                         >
-                            <div className="relative h-48">
+                            <div className="relative h-48 overflow-hidden">
                                 <Image
                                     src={caseStudy.image}
                                     alt={caseStudy.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                                 />
-                                <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                                     {caseStudy.industry}
                                 </div>
                             </div>
@@ -58,9 +59,9 @@ export default function CaseStudies() {
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                                     {caseStudy.title}
                                 </h3>
-                                <p className="text-gray-600 mb-4 text-sm">{caseStudy.client}</p>
-                                <div className="border-t border-gray-200 pt-4">
-                                    <p className="text-primary-700 font-semibold">
+                                <p className="text-gray-500 mb-4 text-sm">{caseStudy.client}</p>
+                                <div className="border-t border-gray-100 pt-4">
+                                    <p className="text-primary-700 font-semibold text-sm">
                                         {caseStudy.result}
                                     </p>
                                 </div>
