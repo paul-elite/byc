@@ -50,13 +50,13 @@ export default function AboutPage() {
             {/* Hero Section */}
             <section className="pt-32 pb-20 bg-gradient-to-br from-primary-600 to-primary-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-primary-200 font-medium mb-4 tracking-wide uppercase text-sm">
+                    <p className="text-primary-200 font-medium mb-4 tracking-wider uppercase text-sm">
                         About Us
                     </p>
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
                         Babatunde Yunus & Co.
                     </h1>
-                    <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+                    <p className="text-xl text-primary-100 max-w-3xl mx-auto tracking-tight">
                         Chartered Accountants and Tax Practitioners committed to excellence
                     </p>
                 </div>
@@ -91,16 +91,16 @@ export default function AboutPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <p className="text-primary-600 font-medium mb-2">The Firm</p>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                            <p className="text-primary-600 font-medium mb-2 tracking-tight text-sm uppercase">The Firm</p>
+                            <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tighter">
                                 World-Class Audit and Tax Consulting
                             </h2>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-gray-600 mb-6 leading-relaxed tracking-tight">
                                 We are poised to be a reputable world-class Audit and Tax consulting Firm of
                                 choice in Nigeria, Africa, and worldwide by committing ourselves to delivering
                                 innovative and excellent services to our valued customers.
                             </p>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-gray-600 mb-6 leading-relaxed tracking-tight">
                                 We maintain the best professional practice and standards at all times through
                                 our team of seasoned professionals. The Firm's business is to provide innovative
                                 solutions and excellent services to corporate and public sector organizations.
@@ -113,10 +113,11 @@ export default function AboutPage() {
                         </div>
                         <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/team-collaboration.png"
-                                alt="BYC Office"
+                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                                alt="Professional team collaboration"
                                 fill
                                 className="object-cover"
+                                quality={90}
                             />
                         </div>
                     </div>
@@ -129,25 +130,25 @@ export default function AboutPage() {
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-white p-10 rounded-2xl shadow-lg">
                             <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                            <p className="text-gray-600 leading-relaxed text-lg">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">Our Vision</h3>
+                            <p className="text-gray-600 leading-relaxed text-lg tracking-tight">
                                 To provide excellent services in Accountancy & Auditing, Taxation,
                                 Human Capacity Training & Financial Management Consultancy in Nigeria.
                             </p>
                         </div>
                         <div className="bg-white p-10 rounded-2xl shadow-lg">
                             <div className="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
-                                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                            <p className="text-gray-600 leading-relaxed text-lg">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">Our Mission</h3>
+                            <p className="text-gray-600 leading-relaxed text-lg tracking-tight">
                                 To be a reputable world-class Consulting Company of choice in Nigeria, with
                                 the belief that our clients are the sole reason for our existence by committing
                                 ourselves to render innovative and excellent services.
@@ -161,14 +162,14 @@ export default function AboutPage() {
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <p className="text-primary-600 font-medium mb-2">Our Philosophy</p>
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Believe</h2>
+                        <p className="text-primary-600 font-medium mb-2 tracking-tight text-sm uppercase">Our Philosophy</p>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tighter">What We Believe</h2>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {beliefs.map((belief, index) => (
                             <div key={index} className="bg-gray-50 p-6 rounded-2xl">
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{belief.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{belief.description}</p>
+                                <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">{belief.title}</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed tracking-tight">{belief.description}</p>
                             </div>
                         ))}
                     </div>
@@ -179,8 +180,8 @@ export default function AboutPage() {
             <section className="py-24 bg-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <p className="text-primary-400 font-medium mb-2">What Guides Us</p>
-                        <h2 className="text-4xl font-bold text-white mb-4">Our Core Values</h2>
+                        <p className="text-primary-400 font-medium mb-2 tracking-tight text-sm uppercase">What Guides Us</p>
+                        <h2 className="text-4xl font-bold text-white mb-4 tracking-tighter">Our Core Values</h2>
                     </div>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {values.map((value, index) => (
@@ -188,8 +189,8 @@ export default function AboutPage() {
                                 key={index}
                                 className="bg-gray-800/50 backdrop-blur border border-gray-700 p-6 rounded-2xl hover:border-primary-500/50 transition-all"
                             >
-                                <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
-                                <p className="text-gray-400 text-sm">{value.description}</p>
+                                <h4 className="text-lg font-bold text-white mb-2 tracking-tight">{value.title}</h4>
+                                <p className="text-gray-400 text-sm tracking-tight">{value.description}</p>
                             </div>
                         ))}
                     </div>
@@ -200,9 +201,9 @@ export default function AboutPage() {
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <p className="text-primary-600 font-medium mb-2">Professional Memberships</p>
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Accreditations</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        <p className="text-primary-600 font-medium mb-2 tracking-tight text-sm uppercase">Professional Memberships</p>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4 tracking-tighter">Our Accreditations</h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto tracking-tight">
                             We are proud members of leading professional bodies in Nigeria
                         </p>
                     </div>
@@ -235,19 +236,19 @@ export default function AboutPage() {
                             <span className="text-white text-8xl font-bold">BIY</span>
                         </div>
                         <div>
-                            <p className="text-primary-600 font-medium mb-2">Leadership</p>
-                            <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                            <p className="text-primary-600 font-medium mb-2 tracking-tight text-sm uppercase">Leadership</p>
+                            <h2 className="text-4xl font-bold text-gray-900 mb-2 tracking-tighter">
                                 Babatunde Ismail Yunus
                             </h2>
-                            <p className="text-primary-600 font-medium mb-6">
+                            <p className="text-primary-600 font-medium mb-6 tracking-tight">
                                 ACA, FCTI, ACE, CTP - Managing Partner
                             </p>
-                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                            <p className="text-lg text-gray-600 mb-6 leading-relaxed tracking-tight">
                                 Among the few professionals in Africa whose accounting skill and professional
                                 prowess have created solutions for countless persisting problems and have been
                                 a trail for later practitioners to blaze.
                             </p>
-                            <p className="text-lg text-gray-600 leading-relaxed">
+                            <p className="text-lg text-gray-600 leading-relaxed tracking-tight">
                                 His excellent and forward-thinking mindset has set BYC Chartered Accountants
                                 and Tax Practitioners on an ever excelling pace, establishing the firm as a
                                 trusted name in Nigeria's professional services landscape.
@@ -260,10 +261,10 @@ export default function AboutPage() {
             {/* CTA */}
             <section className="py-24 bg-primary-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl font-bold text-white mb-6">
+                    <h2 className="text-4xl font-bold text-white mb-6 tracking-tighter">
                         Ready to Work With Us?
                     </h2>
-                    <p className="text-xl text-primary-100 mb-10">
+                    <p className="text-xl text-primary-100 mb-10 tracking-tight">
                         Let's discuss how we can support your organization's financial success.
                     </p>
                     <a href="/contact" className="btn btn-white btn-lg">

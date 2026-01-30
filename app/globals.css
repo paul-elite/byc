@@ -2,20 +2,28 @@
 
 /* ===== BYC Design System ===== */
 
-/* Custom Theme Variables */
+/* Custom Theme - Analogous Green Palette */
 @theme {
-  /* Primary Brand Colors - Professional Green */
-  --color-primary-50: #f0fdf4;
-  --color-primary-100: #dcfce7;
-  --color-primary-200: #bbf7d0;
-  --color-primary-300: #86efac;
-  --color-primary-400: #4ade80;
-  --color-primary-500: #22c55e;
-  --color-primary-600: #16a34a;
-  --color-primary-700: #15803d;
-  --color-primary-800: #166534;
-  --color-primary-900: #14532d;
-  --color-primary-950: #052e16;
+  /* Primary - Forest Green */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+  --color-primary-950: #022c22;
+
+  /* Accent - Teal (Analogous) */
+  --color-accent-500: #14b8a6;
+  --color-accent-600: #0d9488;
+
+  /* Secondary - Emerald (Analogous) */
+  --color-secondary-500: #22c55e;
+  --color-secondary-600: #16a34a;
 
   /* Fonts */
   --font-inter: 'Inter', system-ui, sans-serif;
@@ -31,73 +39,98 @@ body {
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
-/* Typography */
+/* Typography - Tighter Tracking */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-/* Button Components */
+h1 {
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  letter-spacing: -0.03em;
+}
+
+p {
+  letter-spacing: -0.01em;
+}
+
+/* Button Components - Fixed Spacing */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  border-radius: 0.75rem;
+  border-radius: 0.625rem;
   transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
+  letter-spacing: -0.01em;
+  gap: 0.5rem;
 }
 
 .btn:focus {
   outline: none;
-  ring: 2px;
-  ring-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
 
 .btn-sm {
-  padding: 0.5rem 1.25rem;
+  padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
+  height: 2.5rem;
+}
+
+.btn-md {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  height: 2.75rem;
 }
 
 .btn-lg {
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  height: 3rem;
 }
 
 .btn-primary {
   background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
   color: white;
-  box-shadow: 0 4px 14px 0 rgba(22, 163, 74, 0.25);
+  box-shadow: 0 2px 8px 0 rgba(5, 150, 105, 0.25);
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px 0 rgba(5, 150, 105, 0.35);
 }
 
 .btn-white {
   background: white;
   color: var(--color-primary-700);
-  border: 2px solid white;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
 }
 
 .btn-white:hover {
   background: var(--color-primary-50);
-  border-color: var(--color-primary-50);
+  transform: translateY(-1px);
 }
 
 .btn-ghost {
   background: transparent;
   color: var(--color-primary-600);
-  border: 2px solid var(--color-primary-600);
+  border: 1.5px solid var(--color-primary-600);
 }
 
 .btn-ghost:hover {
   background: var(--color-primary-50);
+  border-color: var(--color-primary-700);
+  color: var(--color-primary-700);
 }
 
 /* Layout Utilities */
@@ -124,39 +157,17 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.hero-large {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 640px) {
-  .hero-large {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-large {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
 /* Glass Effect */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Gradient Text */
-.text-gradient-green {
-  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-accent-500) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -166,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -175,18 +186,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
   }
   to {
     opacity: 1;
@@ -197,7 +204,7 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
@@ -205,8 +212,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
 .animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s ease-out forwards;
 }
 
 .animate-fadeIn {
@@ -214,11 +226,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .animate-slideInLeft {
-  animation: slideInLeft 0.6s ease-out forwards;
+  animation: slideInLeft 0.5s ease-out forwards;
 }
 
 .animate-slideInRight {
-  animation: slideInRight 0.6s ease-out forwards;
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Selection */
@@ -227,15 +243,15 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-primary-900);
 }
 
-/* Focus States for Accessibility */
+/* Focus States */
 :focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
 }
 
-/* Scrollbar Styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -244,9 +260,14 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary-300);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-400);
+}
+
+/* Icon Styles */
+.icon-illustrative {
+  stroke-width: 1.5;
 }

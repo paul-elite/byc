@@ -145,13 +145,13 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary-900 to-gray-900"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <p className="text-primary-400 font-medium mb-4 tracking-wide uppercase text-sm">
+                        <p className="text-primary-400 font-medium mb-4 tracking-wider uppercase text-sm">
                             What We Do
                         </p>
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter">
                             Our Services
                         </h1>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-tight">
                             Innovative solutions and excellent services for corporate and public sector
                             organizations in accountancy, auditing, taxation, and financial management.
                         </p>
@@ -173,10 +173,10 @@ export default function ServicesPage() {
                                     <div className={`inline-flex w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} items-center justify-center mb-6`}>
                                         <Icon className="w-7 h-7 text-white" />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                                    <h2 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
                                         {service.title}
                                     </h2>
-                                    <p className="text-gray-600 mb-6 leading-relaxed">
+                                    <p className="text-gray-600 mb-6 leading-relaxed tracking-tight">
                                         {service.description}
                                     </p>
                                     <div className="space-y-2">
@@ -185,7 +185,7 @@ export default function ServicesPage() {
                                                 <svg className="w-4 h-4 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                                 </svg>
-                                                <span className="text-gray-700 text-sm">{feature}</span>
+                                                <span className="text-gray-700 text-sm tracking-tight">{feature}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -200,10 +200,10 @@ export default function ServicesPage() {
             <section className="py-24 bg-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tighter">
                             Why Choose BYC?
                         </h2>
-                        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-xl text-gray-400 max-w-2xl mx-auto tracking-tight">
                             Fast. Accurate. Affordable.
                         </p>
                     </div>
@@ -214,28 +214,28 @@ export default function ServicesPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">Fast</h3>
-                            <p className="text-gray-400">We always make efforts to complete assignments on time, delivering results when you need them.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Fast</h3>
+                            <p className="text-gray-400 tracking-tight">We always make efforts to complete assignments on time, delivering results when you need them.</p>
                         </div>
 
                         <div className="text-center p-8 rounded-2xl bg-gray-800/50 border border-gray-700">
                             <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">Accurate</h3>
-                            <p className="text-gray-400">Precision in every engagement. Our team of professionals ensures accuracy in all deliverables.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Accurate</h3>
+                            <p className="text-gray-400 tracking-tight">Precision in every engagement. Our team of professionals ensures accuracy in all deliverables.</p>
                         </div>
 
                         <div className="text-center p-8 rounded-2xl bg-gray-800/50 border border-gray-700">
                             <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-3">Affordable</h3>
-                            <p className="text-gray-400">Quality services at competitive rates. We deliver value without compromising on excellence.</p>
+                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Affordable</h3>
+                            <p className="text-gray-400 tracking-tight">Quality services at competitive rates. We deliver value without compromising on excellence.</p>
                         </div>
                     </div>
                 </div>
@@ -244,10 +244,10 @@ export default function ServicesPage() {
             {/* CTA Section */}
             <section className="py-24 bg-gradient-to-br from-primary-50 to-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tighter">
                         Ready to Get Started?
                     </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto tracking-tight">
                         Let's discuss how our services can support your organization's financial success.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

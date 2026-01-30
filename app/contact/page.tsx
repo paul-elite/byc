@@ -42,13 +42,13 @@ export default function ContactPage() {
             {/* Hero Section */}
             <section className="pt-32 pb-16 bg-gradient-to-br from-primary-600 to-primary-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-primary-200 font-medium mb-4 tracking-wide uppercase text-sm">
+                    <p className="text-primary-200 font-medium mb-4 tracking-wider uppercase text-sm">
                         Get In Touch
                     </p>
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tighter">
                         Contact Us
                     </h1>
-                    <p className="text-xl text-primary-100 max-w-3xl mx-auto">
+                    <p className="text-xl text-primary-100 max-w-3xl mx-auto tracking-tight">
                         Ready to work with a trusted accounting partner? Reach out to us today.
                     </p>
                 </div>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         {/* Contact Form */}
                         <div className="bg-gray-50 rounded-2xl p-8 md:p-10">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">
                                 Send Us a Message
                             </h2>
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -204,20 +204,20 @@ export default function ContactPage() {
                         {/* Contact Info */}
                         <div className="space-y-8">
                             <div>
-                                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6 tracking-tight">
                                     Contact Information
                                 </h2>
                                 <div className="space-y-6">
                                     {/* Office Locations */}
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-3">Office Locations</h3>
+                                            <h3 className="font-semibold text-gray-900 mb-3 tracking-tight">Office Locations</h3>
                                             <div className="space-y-4 text-gray-600">
                                                 <div>
                                                     <p className="font-medium text-gray-900">Abuja Office</p>
@@ -238,12 +238,12 @@ export default function ContactPage() {
                                     {/* Email */}
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+                                            <h3 className="font-semibold text-gray-900 mb-2 tracking-tight">Email</h3>
                                             <a href="mailto:info@byc.com.ng" className="text-primary-600 hover:text-primary-700 hover:underline">
                                                 info@byc.com.ng
                                             </a>
@@ -253,12 +253,12 @@ export default function ContactPage() {
                                     {/* Phone */}
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-2">Phone</h3>
+                                            <h3 className="font-semibold text-gray-900 mb-2 tracking-tight">Phone</h3>
                                             <a href="tel:+2349018811877" className="text-primary-600 hover:text-primary-700 hover:underline">
                                                 +234 901 881 1877
                                             </a>
@@ -268,12 +268,12 @@ export default function ContactPage() {
                                     {/* Website */}
                                     <div className="flex items-start gap-4">
                                         <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                            <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900 mb-2">Website</h3>
+                                            <h3 className="font-semibold text-gray-900 mb-2 tracking-tight">Website</h3>
                                             <a href="https://byc.com.ng" className="text-primary-600 hover:text-primary-700 hover:underline">
                                                 byc.com.ng
                                             </a>
@@ -284,7 +284,7 @@ export default function ContactPage() {
 
                             {/* Credentials Card */}
                             <div className="bg-gray-900 p-6 rounded-2xl text-white">
-                                <h3 className="font-bold text-lg mb-4">Our Credentials</h3>
+                                <h3 className="font-bold text-lg mb-4 tracking-tight">Our Credentials</h3>
                                 <div className="space-y-3 text-sm">
                                     <div className="flex justify-between">
                                         <span className="text-gray-400">CAC Registration</span>
@@ -308,8 +308,8 @@ export default function ContactPage() {
 
                             {/* Quick Contact CTA */}
                             <div className="bg-primary-50 p-6 rounded-2xl border border-primary-100">
-                                <h3 className="font-bold text-gray-900 mb-2">Need Immediate Assistance?</h3>
-                                <p className="text-gray-600 text-sm mb-4">
+                                <h3 className="font-bold text-gray-900 mb-2 tracking-tight">Need Immediate Assistance?</h3>
+                                <p className="text-gray-600 text-sm mb-4 tracking-tight">
                                     Call us directly for urgent inquiries.
                                 </p>
                                 <a
