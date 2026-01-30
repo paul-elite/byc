@@ -87,8 +87,8 @@ export default function About() {
                     <div className="relative">
                         <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                                alt="Professional team meeting"
+                                src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2070&auto=format&fit=crop"
+                                alt="African business team collaboration"
                                 fill
                                 className="object-cover"
                                 quality={90}

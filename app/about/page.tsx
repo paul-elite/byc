@@ -113,8 +113,8 @@ export default function AboutPage() {
                         </div>
                         <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
-                                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-                                alt="Professional team collaboration"
+                                src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop"
+                                alt="African professional woman working"
                                 fill
                                 className="object-cover"
                                 quality={90}

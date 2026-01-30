@@ -57,9 +57,23 @@ export default function Contact() {
                 </div>
 
                 <div className="grid lg:grid-cols-5 gap-10 items-start">
-                    {/* Contact Form */}
-                    <div className="lg:col-span-3">
-                        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-8 space-y-5 border border-gray-100">
+                    {/* Contact Form with Clipboard Visual */}
+                    <div className="lg:col-span-3 relative">
+                        {/* Binder Clip */}
+                        <div className="absolute -top-6 left-1/2 -translate-x-1/2 z-10">
+                            <svg width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                {/* Clip handles */}
+                                <path d="M14 8C14 8 10 4 10 0" stroke="#374151" strokeWidth="2.5" strokeLinecap="round"/>
+                                <path d="M34 8C34 8 38 4 38 0" stroke="#374151" strokeWidth="2.5" strokeLinecap="round"/>
+                                {/* Main clip body */}
+                                <rect x="8" y="8" width="32" height="24" rx="2" fill="#1f2937"/>
+                                {/* Inner clip detail */}
+                                <rect x="12" y="12" width="24" height="16" rx="1" fill="#374151"/>
+                                {/* Shine */}
+                                <rect x="14" y="14" width="8" height="2" rx="1" fill="#6b7280"/>
+                            </svg>
+                        </div>
+                        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg p-8 pt-10 space-y-5 border border-gray-100 relative">
                             <div className="grid md:grid-cols-2 gap-5">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2 tracking-tight">

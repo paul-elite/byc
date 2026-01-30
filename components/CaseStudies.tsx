@@ -55,8 +55,8 @@ export default function CaseStudies() {
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-1/2 h-full">
                 <Image
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
-                    alt="Business analytics"
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2070&auto=format&fit=crop"
+                    alt="African business professional"
                     fill
                     className="object-cover opacity-10"
                     quality={80}
