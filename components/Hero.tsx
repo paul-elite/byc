@@ -7,7 +7,7 @@ export default function Hero() {
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/hero-lagos.png"
-                    alt="Lagos Business District"
+                    alt="BYC Office"
                     fill
                     className="object-cover"
                     priority
@@ -19,52 +19,52 @@ export default function Hero() {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
                 <div className="animate-fadeInUp">
                     <p className="text-primary-400 font-medium mb-4 tracking-wide uppercase text-sm">
-                        Nigeria's Trusted Consulting Partner
+                        Chartered Accountants & Tax Practitioners
                     </p>
                     <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight">
-                        Strategic Solutions for
+                        Fast. Accurate.
                         <br />
-                        <span className="text-primary-400">Nigerian Businesses</span>
+                        <span className="text-primary-400">Affordable.</span>
                     </h1>
                     <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        We partner with ambitious organizations to solve complex challenges,
-                        drive sustainable growth, and unlock their full potential in Nigeria's
-                        dynamic market.
+                        Your success is our business. We deliver world-class audit, tax, and
+                        financial management services to organizations across Nigeria with
+                        excellence and integrity.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
                             href="/contact"
                             className="btn btn-primary btn-lg"
                         >
-                            Start a Conversation
+                            Get Started
                         </a>
                         <a
                             href="#services"
                             className="btn btn-white btn-lg"
                         >
-                            Explore Services
+                            Our Services
                         </a>
                     </div>
 
                     {/* Trust Indicators */}
                     <div className="mt-16 pt-8 border-t border-white/10">
-                        <p className="text-gray-400 text-sm mb-6">Trusted by leading organizations across Nigeria</p>
+                        <p className="text-gray-400 text-sm mb-6">Trusted by organizations across Nigeria</p>
                         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
                             <div className="text-center">
-                                <p className="text-3xl md:text-4xl font-bold text-white">15+</p>
-                                <p className="text-gray-400 text-sm">Years Experience</p>
+                                <p className="text-3xl md:text-4xl font-bold text-white">3</p>
+                                <p className="text-gray-400 text-sm">Partners</p>
                             </div>
                             <div className="text-center">
-                                <p className="text-3xl md:text-4xl font-bold text-white">200+</p>
-                                <p className="text-gray-400 text-sm">Clients Served</p>
+                                <p className="text-3xl md:text-4xl font-bold text-white">12+</p>
+                                <p className="text-gray-400 text-sm">Professional Accountants</p>
                             </div>
                             <div className="text-center">
-                                <p className="text-3xl md:text-4xl font-bold text-white">50+</p>
-                                <p className="text-gray-400 text-sm">Industries</p>
+                                <p className="text-3xl md:text-4xl font-bold text-white">ICAN</p>
+                                <p className="text-gray-400 text-sm">Certified</p>
                             </div>
                             <div className="text-center">
-                                <p className="text-3xl md:text-4xl font-bold text-white">98%</p>
-                                <p className="text-gray-400 text-sm">Client Retention</p>
+                                <p className="text-3xl md:text-4xl font-bold text-white">FRCN</p>
+                                <p className="text-gray-400 text-sm">Registered</p>
                             </div>
                         </div>
                     </div>

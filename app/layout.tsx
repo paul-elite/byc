@@ -14,24 +14,24 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "BYC | Strategic Consulting for Nigerian Businesses",
-    template: "%s | BYC Consulting",
+    default: "BYC | Chartered Accountants & Tax Practitioners",
+    template: "%s | BYC",
   },
-  description: "Nigeria's trusted strategic consulting partner. We help ambitious organizations solve complex challenges, drive sustainable growth, and unlock their full potential.",
-  keywords: ["consulting", "Nigeria", "strategy", "business transformation", "Abuja", "operations excellence", "digital innovation", "financial advisory"],
-  authors: [{ name: "BYC - Babatunde Yunus & Co" }],
-  creator: "BYC Consulting",
+  description: "Babatunde Yunus & Co. - Chartered Accountants and Tax Practitioners in Nigeria. Fast. Accurate. Affordable. Expert audit, tax, and financial management services.",
+  keywords: ["chartered accountants", "tax practitioners", "Nigeria", "audit", "tax advisory", "accounting", "Abuja", "ICAN", "FRCN", "financial services"],
+  authors: [{ name: "Babatunde Yunus & Co." }],
+  creator: "Babatunde Yunus & Co.",
   openGraph: {
     type: "website",
     locale: "en_NG",
-    siteName: "BYC Consulting",
-    title: "BYC | Strategic Consulting for Nigerian Businesses",
-    description: "Nigeria's trusted strategic consulting partner since 2009. Strategy, operations, digital innovation, and financial advisory services.",
+    siteName: "BYC - Babatunde Yunus & Co.",
+    title: "BYC | Chartered Accountants & Tax Practitioners",
+    description: "World-class audit, tax, and financial management services in Nigeria. Fast. Accurate. Affordable.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BYC | Strategic Consulting for Nigerian Businesses",
-    description: "Nigeria's trusted strategic consulting partner since 2009.",
+    title: "BYC | Chartered Accountants & Tax Practitioners",
+    description: "World-class audit, tax, and financial management services in Nigeria.",
   },
   icons: {
     icon: '/favicon.svg',

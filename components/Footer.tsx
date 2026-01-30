@@ -19,9 +19,12 @@ export default function Footer() {
                                 className="brightness-0 invert"
                             />
                         </Link>
-                        <p className="text-gray-400 mb-6 leading-relaxed">
-                            Nigeria's trusted strategic consulting partner, transforming businesses
-                            through innovative solutions and local expertise since 2009.
+                        <p className="text-sm text-primary-400 font-medium mb-2">
+                            Chartered Accountants & Tax Practitioners
+                        </p>
+                        <p className="text-gray-400 mb-6 leading-relaxed text-sm">
+                            Fast. Accurate. Affordable. Delivering world-class audit, tax, and financial
+                            management services across Nigeria.
                         </p>
                         <div className="flex space-x-3">
                             <a
@@ -87,33 +90,34 @@ export default function Footer() {
                     {/* Services */}
                     <div>
                         <h3 className="font-bold text-lg mb-6">Services</h3>
-                        <ul className="space-y-3">
-                            <li className="text-gray-400">Strategy & Transformation</li>
-                            <li className="text-gray-400">Operations Excellence</li>
-                            <li className="text-gray-400">Digital Innovation</li>
-                            <li className="text-gray-400">Financial Advisory</li>
-                            <li className="text-gray-400">Organizational Development</li>
+                        <ul className="space-y-3 text-gray-400 text-sm">
+                            <li>Accountancy</li>
+                            <li>Auditing</li>
+                            <li>Tax Advisory & Planning</li>
+                            <li>Corporate Secretarial</li>
+                            <li>Internal Control & Investigation</li>
+                            <li>Human Capital Training</li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
                         <h3 className="font-bold text-lg mb-6">Contact</h3>
-                        <div className="space-y-4 text-gray-400">
+                        <div className="space-y-4 text-gray-400 text-sm">
                             <div>
                                 <p className="font-medium text-white mb-1">Abuja Office</p>
-                                <p className="text-sm">Suite B5, Melita Plaza,<br />Gimbiya Street, Area 11, Garki</p>
+                                <p>Suite B5, Melita Plaza,<br />Gimbiya Street, Area 11, Garki</p>
                             </div>
                             <div>
                                 <p className="font-medium text-white mb-1">Ilorin Office</p>
-                                <p className="text-sm">No 2., Babatunde Yunus Street,<br />Irewolede, Kwara State</p>
+                                <p>No 2, Babatunde Yunus Street,<br />Irewolede, Kwara State</p>
                             </div>
                             <div className="pt-2">
                                 <a href="tel:+2349018811877" className="block text-gray-300 hover:text-primary-400 transition-colors">
                                     +234 901 881 1877
                                 </a>
-                                <a href="mailto:info@byandco.com" className="block text-gray-300 hover:text-primary-400 transition-colors">
-                                    info@byandco.com
+                                <a href="mailto:info@byc.com.ng" className="block text-gray-300 hover:text-primary-400 transition-colors">
+                                    info@byc.com.ng
                                 </a>
                             </div>
                         </div>
@@ -123,15 +127,11 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-400 text-sm">
-                        &copy; {currentYear} BYC (Babatunde Yunus & Co). All rights reserved.
+                        &copy; {currentYear} Babatunde Yunus & Co. Chartered Accountants. All rights reserved.
                     </p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
-                            Privacy Policy
-                        </Link>
-                        <Link href="/terms" className="text-gray-400 hover:text-primary-400 text-sm transition-colors">
-                            Terms of Service
-                        </Link>
+                    <div className="flex gap-6 text-sm text-gray-400">
+                        <span>CAC: BN 2861419</span>
+                        <span>License: 050839</span>
                     </div>
                 </div>
             </div>

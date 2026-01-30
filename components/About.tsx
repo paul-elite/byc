@@ -3,41 +3,25 @@ import Image from 'next/image';
 export default function About() {
     const values = [
         {
-            title: 'Excellence',
-            description: 'We deliver exceptional results through rigorous analysis and innovative solutions.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-            ),
+            title: 'Service Excellence',
+            description: 'We are committed to delivering excellent services at all times to our valued clients.',
         },
         {
             title: 'Integrity',
             description: 'We operate with transparency, honesty, and unwavering ethical standards.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-            ),
         },
         {
-            title: 'Local Expertise',
-            description: 'Deep understanding of Nigerian business culture, regulations, and market dynamics.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            ),
+            title: 'Professionalism',
+            description: 'Maintaining the best professional practice and standards through our team of seasoned professionals.',
         },
         {
-            title: 'Partnership',
-            description: 'We work alongside our clients as trusted partners committed to their success.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            ),
+            title: 'Customer Care',
+            description: 'Our clients are the sole reason for our existence. We put them first in everything we do.',
         },
+    ];
+
+    const accreditations = [
+        'ICAN', 'CITN', 'ICEN', 'CICMA', 'NIM', 'IMC', 'FRCN', 'IFRS'
     ];
 
     return (
@@ -48,18 +32,33 @@ export default function About() {
                     <div>
                         <p className="text-primary-600 font-medium mb-2">About BYC</p>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                            Empowering Nigerian Businesses Since 2009
+                            World-Class Audit & Tax Consulting
                         </h2>
                         <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                            BYC (By & Co) is Nigeria's trusted strategic consulting partner. Founded by
-                            Dr. Babatunde Yunus, we combine global best practices with deep local market
-                            knowledge to deliver transformative results.
+                            <strong>Babatunde Yunus & Co.</strong> is a reputable Chartered Accountants and Tax
+                            Practitioners firm committed to delivering innovative and excellent services
+                            to corporate and public sector organizations in Nigeria.
                         </p>
                         <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                            We believe in the potential of Nigerian businesses to lead on the global stage.
-                            Our mission is to be the catalyst for this transformation, working alongside
-                            ambitious organizations to solve complex challenges and unlock growth.
+                            We maintain the best professional standards at all times through our team
+                            of seasoned professionals. Our belief is simple: <em>Your Success is Our Business.</em>
                         </p>
+
+                        {/* Accreditations */}
+                        <div className="mb-8">
+                            <p className="text-sm font-medium text-gray-500 mb-3">Professional Memberships</p>
+                            <div className="flex flex-wrap gap-2">
+                                {accreditations.map((acc, index) => (
+                                    <span
+                                        key={index}
+                                        className="px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm font-medium"
+                                    >
+                                        {acc}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
                         <a href="/about" className="btn btn-primary">
                             Learn More About Us
                         </a>
@@ -67,7 +66,7 @@ export default function About() {
                     <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src="/team-collaboration.png"
-                            alt="BYC Team Collaboration"
+                            alt="BYC Team"
                             fill
                             className="object-cover"
                         />
@@ -90,13 +89,13 @@ export default function About() {
                                 key={index}
                                 className="text-center p-6 rounded-2xl bg-gray-50 hover:bg-primary-50 transition-colors group"
                             >
-                                <div className="w-14 h-14 bg-primary-100 group-hover:bg-primary-200 rounded-xl flex items-center justify-center mx-auto mb-4 text-primary-600 transition-colors">
-                                    {value.icon}
+                                <div className="w-12 h-12 bg-primary-100 group-hover:bg-primary-200 rounded-xl flex items-center justify-center mx-auto mb-4 transition-colors">
+                                    <span className="text-primary-600 font-bold text-lg">{index + 1}</span>
                                 </div>
                                 <h4 className="text-xl font-bold text-gray-900 mb-3">
                                     {value.title}
                                 </h4>
-                                <p className="text-gray-600">{value.description}</p>
+                                <p className="text-gray-600 text-sm">{value.description}</p>
                             </div>
                         ))}
                     </div>

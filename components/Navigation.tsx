@@ -37,7 +37,7 @@ export default function Navigation() {
                             alt="BYC"
                             width={140}
                             height={45}
-                            className={`transition-all ${isScrolled ? '' : 'brightness-0 invert'}`}
+                            className={`transition-all duration-300 ${isScrolled ? '' : 'brightness-0 invert'}`}
                         />
                     </Link>
 

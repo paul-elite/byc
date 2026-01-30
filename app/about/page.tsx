@@ -3,67 +3,43 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 export default function AboutPage() {
-    const team = [
-        {
-            name: 'Dr. Babatunde Yunus',
-            role: 'Founder & Managing Partner',
-            bio: 'Over 20 years of experience in strategic consulting across Africa. Dr. Yunus founded BYC with a vision to bring world-class consulting to Nigerian businesses.',
-        },
-        {
-            name: 'Amina Okonkwo',
-            role: 'Partner, Operations',
-            bio: 'Expert in operational excellence and process optimization. Amina has led transformation projects across manufacturing, logistics, and financial services.',
-        },
-        {
-            name: 'Chidi Adebayo',
-            role: 'Partner, Digital Strategy',
-            bio: 'Leading digital innovation initiatives for Nigerian enterprises. Chidi brings experience from both consulting and technology leadership roles.',
-        },
-    ];
-
-    const stats = [
-        { value: '2009', label: 'Founded' },
-        { value: '200+', label: 'Clients Served' },
-        { value: '50+', label: 'Industries' },
-        { value: '98%', label: 'Client Retention' },
-    ];
-
     const values = [
+        { title: 'Service Excellence', description: 'Committed to delivering excellent services at all times.' },
+        { title: 'Customer Care', description: 'Our clients are the sole reason for our existence.' },
+        { title: 'Integrity', description: 'Operating with transparency and ethical standards.' },
+        { title: 'Professionalism', description: 'Maintaining best professional practices always.' },
+        { title: 'Hard Work', description: 'Perseverance and dedication in every engagement.' },
+        { title: 'Trustworthiness', description: 'Building lasting relationships through trust.' },
+    ];
+
+    const accreditations = [
+        { name: 'ICAN', full: 'Institute of Chartered Accountants of Nigeria' },
+        { name: 'CITN', full: 'Chartered Institute of Taxation of Nigeria' },
+        { name: 'ICEN', full: 'Institute of Chartered Economics of Nigeria' },
+        { name: 'CICMA', full: 'Chartered Institute of Cost and Management Accountants' },
+        { name: 'NIM', full: 'Nigeria Institute of Management (Chartered)' },
+        { name: 'IMC', full: 'Institute of Management Consultants' },
+        { name: 'CIMAN', full: 'Chartered Institute of Management Accountants of Nigeria' },
+        { name: 'CFAN', full: 'Chartered Forensic Accountants of Nigeria' },
+        { name: 'FRCN', full: 'Financial Reporting Council of Nigeria' },
+    ];
+
+    const beliefs = [
         {
-            title: 'Excellence',
-            description: 'We deliver exceptional results through rigorous analysis, innovative solutions, and attention to detail in everything we do.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
-            ),
+            title: 'Success',
+            description: 'Your Success is our Business. We measure our achievements through your growth and prosperity.',
         },
         {
-            title: 'Integrity',
-            description: 'We operate with transparency, honesty, and unwavering ethical standards. Our reputation is built on trust.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-            ),
+            title: 'Efficiency',
+            description: 'We always make efforts to complete assignments on time, delivering results when you need them.',
         },
         {
-            title: 'Local Expertise',
-            description: 'Deep understanding of Nigerian business culture, regulations, and market dynamics sets us apart.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            ),
+            title: 'Knowledge',
+            description: 'Knowledge is never complete. We are always striving to assimilate and share the wealth of knowledge in taxation, accounting, and fiscal laws.',
         },
         {
-            title: 'Partnership',
-            description: 'We work alongside our clients as trusted partners, committed to their long-term success and growth.',
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-            ),
+            title: 'Change',
+            description: 'Change is the only constant. We remain abreast of changes in business environment and law affecting accounting and taxation.',
         },
     ];
 
@@ -72,70 +48,73 @@ export default function AboutPage() {
             <Navigation />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-20 bg-gradient-to-br from-primary-600 to-primary-800 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-10">
-                    <div className="absolute inset-0" style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                    }}></div>
-                </div>
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="pt-32 pb-20 bg-gradient-to-br from-primary-600 to-primary-800">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <p className="text-primary-200 font-medium mb-4 tracking-wide uppercase text-sm">
                         About Us
                     </p>
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                        Nigeria's Trusted
-                        <span className="block">Consulting Partner</span>
+                        Babatunde Yunus & Co.
                     </h1>
                     <p className="text-xl text-primary-100 max-w-3xl mx-auto">
-                        Transforming Nigerian businesses through strategic excellence and deep local expertise since 2009
+                        Chartered Accountants and Tax Practitioners committed to excellence
                     </p>
                 </div>
             </section>
 
-            {/* Stats */}
+            {/* Company Stats */}
             <section className="py-12 bg-white border-b">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {stats.map((stat, index) => (
-                            <div key={index} className="text-center">
-                                <div className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                                    {stat.value}
-                                </div>
-                                <div className="text-gray-600 font-medium">{stat.label}</div>
-                            </div>
-                        ))}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <p className="text-4xl font-bold text-primary-600">3</p>
+                            <p className="text-gray-600">Partners</p>
+                        </div>
+                        <div>
+                            <p className="text-4xl font-bold text-primary-600">12+</p>
+                            <p className="text-gray-600">Professional Accountants</p>
+                        </div>
+                        <div>
+                            <p className="text-4xl font-bold text-primary-600">9+</p>
+                            <p className="text-gray-600">Professional Bodies</p>
+                        </div>
+                        <div>
+                            <p className="text-4xl font-bold text-primary-600">IFRS</p>
+                            <p className="text-gray-600">Certified</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Story Section */}
+            {/* The Firm */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
-                            <p className="text-primary-600 font-medium mb-2">Our Story</p>
+                            <p className="text-primary-600 font-medium mb-2">The Firm</p>
                             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                                Building Nigeria's Future, One Business at a Time
+                                World-Class Audit and Tax Consulting
                             </h2>
                             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Founded in 2009 by Dr. Babatunde Yunus, BYC emerged from a vision to bridge the gap
-                                between global consulting practices and the unique needs of Nigerian businesses.
+                                We are poised to be a reputable world-class Audit and Tax consulting Firm of
+                                choice in Nigeria, Africa, and worldwide by committing ourselves to delivering
+                                innovative and excellent services to our valued customers.
                             </p>
                             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                                Over the past 15 years, we've grown from a small team of consultants to Nigeria's
-                                most trusted strategic advisory firm. We've helped over 200 organizations across
-                                50+ industries achieve transformative results.
+                                We maintain the best professional practice and standards at all times through
+                                our team of seasoned professionals. The Firm's business is to provide innovative
+                                solutions and excellent services to corporate and public sector organizations.
                             </p>
-                            <p className="text-lg text-gray-600 leading-relaxed">
-                                Our success is built on a simple principle: combine global best practices with
-                                deep understanding of local context. This approach has enabled us to deliver
-                                sustainable, impactful solutions that drive real business value.
-                            </p>
+                            <div className="bg-primary-50 p-6 rounded-xl border-l-4 border-primary-600">
+                                <p className="text-primary-800 font-medium italic">
+                                    "Your Success is Our Business"
+                                </p>
+                            </div>
                         </div>
                         <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                             <Image
                                 src="/team-collaboration.png"
-                                alt="BYC Team"
+                                alt="BYC Office"
                                 fill
                                 className="object-cover"
                             />
@@ -144,7 +123,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Mission & Vision */}
+            {/* Vision & Mission */}
             <section className="py-24 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 gap-8">
@@ -157,8 +136,8 @@ export default function AboutPage() {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                             <p className="text-gray-600 leading-relaxed text-lg">
-                                To be Africa's leading strategic consulting firm, recognized for transforming
-                                businesses and creating sustainable value across the continent.
+                                To provide excellent services in Accountancy & Auditing, Taxation,
+                                Human Capacity Training & Financial Management Consultancy in Nigeria.
                             </p>
                         </div>
                         <div className="bg-white p-10 rounded-2xl shadow-lg">
@@ -169,83 +148,125 @@ export default function AboutPage() {
                             </div>
                             <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                             <p className="text-gray-600 leading-relaxed text-lg">
-                                To empower Nigerian businesses with strategic insights, innovative solutions,
-                                and actionable roadmaps that drive sustainable growth and competitive advantage.
+                                To be a reputable world-class Consulting Company of choice in Nigeria, with
+                                the belief that our clients are the sole reason for our existence by committing
+                                ourselves to render innovative and excellent services.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Values */}
+            {/* What We Believe */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <p className="text-primary-600 font-medium mb-2">What Guides Us</p>
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                            The principles that drive everything we do
-                        </p>
+                        <p className="text-primary-600 font-medium mb-2">Our Philosophy</p>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Believe</h2>
                     </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {values.map((value, index) => (
-                            <div
-                                key={index}
-                                className="text-center p-8 rounded-2xl bg-gray-50 hover:bg-primary-50 transition-colors group"
-                            >
-                                <div className="w-14 h-14 bg-primary-100 group-hover:bg-primary-200 rounded-xl flex items-center justify-center mx-auto mb-6 text-primary-600 transition-colors">
-                                    {value.icon}
-                                </div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-3">
-                                    {value.title}
-                                </h4>
-                                <p className="text-gray-600">{value.description}</p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {beliefs.map((belief, index) => (
+                            <div key={index} className="bg-gray-50 p-6 rounded-2xl">
+                                <h3 className="text-xl font-bold text-gray-900 mb-3">{belief.title}</h3>
+                                <p className="text-gray-600 text-sm leading-relaxed">{belief.description}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Leadership Team */}
-            <section className="py-24 bg-gray-50">
+            {/* Values */}
+            <section className="py-24 bg-gray-900">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <p className="text-primary-600 font-medium mb-2">Our Team</p>
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership</h2>
-                        <p className="text-xl text-gray-600">
-                            Meet the experts driving transformation across Nigeria
-                        </p>
+                        <p className="text-primary-400 font-medium mb-2">What Guides Us</p>
+                        <h2 className="text-4xl font-bold text-white mb-4">Our Core Values</h2>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {team.map((member, index) => (
-                            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg text-center">
-                                <div className="w-32 h-32 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                                    <span className="text-white text-4xl font-bold">
-                                        {member.name.split(' ').map(n => n[0]).join('')}
-                                    </span>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                                <p className="text-primary-600 font-semibold mb-4">{member.role}</p>
-                                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {values.map((value, index) => (
+                            <div
+                                key={index}
+                                className="bg-gray-800/50 backdrop-blur border border-gray-700 p-6 rounded-2xl hover:border-primary-500/50 transition-all"
+                            >
+                                <h4 className="text-lg font-bold text-white mb-2">{value.title}</h4>
+                                <p className="text-gray-400 text-sm">{value.description}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Accreditations */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <p className="text-primary-600 font-medium mb-2">Professional Memberships</p>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Accreditations</h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            We are proud members of leading professional bodies in Nigeria
+                        </p>
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-4">
+                        {accreditations.map((acc, index) => (
+                            <div key={index} className="bg-gray-50 p-4 rounded-xl flex items-center gap-4">
+                                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <span className="text-primary-600 font-bold text-xs">{acc.name}</span>
+                                </div>
+                                <p className="text-gray-700 text-sm">{acc.full}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-8 text-center">
+                        <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Certificate of Proficiency in International Financial Reporting Standard (IFRS)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Managing Partner */}
+            <section className="py-24 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid md:grid-cols-2 gap-16 items-center">
+                        <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                            <span className="text-white text-8xl font-bold">BIY</span>
+                        </div>
+                        <div>
+                            <p className="text-primary-600 font-medium mb-2">Leadership</p>
+                            <h2 className="text-4xl font-bold text-gray-900 mb-2">
+                                Babatunde Ismail Yunus
+                            </h2>
+                            <p className="text-primary-600 font-medium mb-6">
+                                ACA, FCTI, ACE, CTP - Managing Partner
+                            </p>
+                            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                                Among the few professionals in Africa whose accounting skill and professional
+                                prowess have created solutions for countless persisting problems and have been
+                                a trail for later practitioners to blaze.
+                            </p>
+                            <p className="text-lg text-gray-600 leading-relaxed">
+                                His excellent and forward-thinking mindset has set BYC Chartered Accountants
+                                and Tax Practitioners on an ever excelling pace, establishing the firm as a
+                                trusted name in Nigeria's professional services landscape.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* CTA */}
-            <section className="py-24 bg-gray-900">
+            <section className="py-24 bg-primary-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-4xl font-bold text-white mb-6">
                         Ready to Work With Us?
                     </h2>
-                    <p className="text-xl text-gray-400 mb-10">
-                        Let's discuss how we can help your business achieve its goals.
+                    <p className="text-xl text-primary-100 mb-10">
+                        Let's discuss how we can support your organization's financial success.
                     </p>
-                    <a
-                        href="/contact"
-                        className="btn btn-primary btn-lg"
-                    >
+                    <a href="/contact" className="btn btn-white btn-lg">
                         Get in Touch
                     </a>
                 </div>

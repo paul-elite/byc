@@ -1,73 +1,92 @@
-import Image from 'next/image';
-
 export default function CaseStudies() {
-    const cases = [
+    const industries = [
+        'Manufacturing',
+        'Technology',
+        'Finance',
+        'Agriculture',
+        'Public Sector',
+        'Health Care',
+        'Real Estate',
+        'Entertainment',
+        'Media',
+        'Law',
+        'Trade & Investment',
+        'Communication',
+    ];
+
+    const strategies = [
         {
-            title: 'Banking Sector Digital Transformation',
-            client: 'Leading Nigerian Bank',
-            result: '40% increase in digital transactions, 60% reduction in processing time',
-            industry: 'Financial Services',
-            image: '/strategy-illustration.png',
+            number: '01',
+            title: 'Care',
+            description: 'We recognize and respect our valued clients. We put our clients first. They are the reason we are in business.',
         },
         {
-            title: 'Supply Chain Optimization',
-            client: 'Major FMCG Company',
-            result: '25% cost reduction, 35% improvement in delivery times',
-            industry: 'Consumer Goods',
-            image: '/team-collaboration.png',
+            number: '02',
+            title: 'Attention',
+            description: 'We give full attention to our clients\' needs, counting on our experience and expertise to deliver the best service.',
         },
         {
-            title: 'Market Expansion Strategy',
-            client: 'Tech Startup',
-            result: 'Successful entry into 5 new states, 200% revenue growth',
-            industry: 'Technology',
-            image: '/hero-lagos.png',
+            number: '03',
+            title: 'Response',
+            description: 'Instantaneous response to our clients\' needs and requirements helps maintain our good relationship.',
+        },
+        {
+            number: '04',
+            title: 'Excellence',
+            description: 'We are always committed to delivering excellent services at all times to our valued clients.',
         },
     ];
 
     return (
-        <section className="py-24 bg-gradient-to-br from-primary-50 to-white">
+        <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Strategy Section */}
                 <div className="text-center mb-16">
-                    <p className="text-primary-600 font-medium mb-2">Success Stories</p>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Proven Results
+                    <p className="text-primary-400 font-medium mb-2">Our Approach</p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                        The CARE Strategy
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Real impact for Nigerian businesses across diverse sectors
+                    <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        How we deliver excellence to every client, every time
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {cases.map((caseStudy, index) => (
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    {strategies.map((strategy, index) => (
                         <div
                             key={index}
-                            className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                            className="bg-gray-800/50 backdrop-blur border border-gray-700 rounded-2xl p-6 hover:border-primary-500/50 transition-all"
                         >
-                            <div className="relative h-48 overflow-hidden">
-                                <Image
-                                    src={caseStudy.image}
-                                    alt={caseStudy.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute top-4 right-4 bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                    {caseStudy.industry}
-                                </div>
-                            </div>
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                                    {caseStudy.title}
-                                </h3>
-                                <p className="text-gray-500 mb-4 text-sm">{caseStudy.client}</p>
-                                <div className="border-t border-gray-100 pt-4">
-                                    <p className="text-primary-700 font-semibold text-sm">
-                                        {caseStudy.result}
-                                    </p>
-                                </div>
-                            </div>
+                            <span className="text-primary-400 text-sm font-medium">{strategy.number}</span>
+                            <h3 className="text-2xl font-bold text-white mt-2 mb-3">
+                                {strategy.title}
+                            </h3>
+                            <p className="text-gray-400 text-sm leading-relaxed">
+                                {strategy.description}
+                            </p>
                         </div>
                     ))}
+                </div>
+
+                {/* Industries Section */}
+                <div className="text-center">
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                        Industries We Serve
+                    </h3>
+                    <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                        We serve organizations at the micro, small, medium-size, large and multi-national scale
+                        across government, NGOs, and the private sector.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {industries.map((industry, index) => (
+                            <span
+                                key={index}
+                                className="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm border border-gray-700 hover:border-primary-500 hover:text-primary-400 transition-colors"
+                            >
+                                {industry}
+                            </span>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="text-center mt-12">
@@ -75,7 +94,7 @@ export default function CaseStudies() {
                         href="/contact"
                         className="btn btn-primary btn-lg"
                     >
-                        Start Your Success Story
+                        Work With Us
                     </a>
                 </div>
             </div>
