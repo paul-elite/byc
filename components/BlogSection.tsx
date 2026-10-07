@@ -20,7 +20,7 @@ export default function BlogSection() {
 
     if (loading) {
         return (
-            <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-24 bg-[#fffaf0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
                         <div className="animate-pulse h-8 w-48 bg-gray-200 rounded mx-auto mb-4"></div>
@@ -32,21 +32,17 @@ export default function BlogSection() {
     }
 
     return (
-        <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-24 bg-[#fffaf0]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="flex items-center justify-center gap-4 mb-6">
-                        <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary-500"></div>
-                        <p className="text-primary-600 font-medium text-sm uppercase tracking-widest">
-                            Insights & Articles
-                        </p>
-                        <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary-500"></div>
-                    </div>
-                    <h2 className="text-4xl md:text-5xl mb-5 text-gray-900">
-                        Strategic Articles
+                    <p className="text-primary-700 font-bold text-sm uppercase tracking-[0.22em]">
+                        Insights & Articles
+                    </p>
+                    <h2 className="mt-5 text-4xl md:text-6xl mb-5 text-primary-950">
+                        Practical intelligence for finance leaders.
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-[#5c675f] max-w-2xl mx-auto">
                         Three practical reads on finance, tax, audit, and governance for ambitious Nigerian businesses.
                     </p>
                 </div>
@@ -56,7 +52,7 @@ export default function BlogSection() {
                     {blogs.map((blog, index) => (
                         <article
                             key={blog.id}
-                            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                            className="group bg-[#f7f1e4] rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-primary-100"
                             style={{ animationDelay: `${index * 100}ms` }}
                         >
                             {/* Cover Image */}
@@ -77,7 +73,7 @@ export default function BlogSection() {
                                     {blog.tags.slice(0, 2).map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-3 py-1 text-xs font-medium text-primary-700 bg-primary-50 rounded-full"
+                                            className="px-3 py-1 text-xs font-bold text-primary-800 bg-primary-100 rounded-full"
                                         >
                                             {tag}
                                         </span>
@@ -86,20 +82,20 @@ export default function BlogSection() {
 
                                 {/* Title */}
                                 <Link href={`/blog/${blog.slug}`}>
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors line-clamp-2">
+                                    <h3 className="text-xl font-bold text-primary-950 mb-3 group-hover:text-primary-700 transition-colors line-clamp-2">
                                         {blog.title}
                                     </h3>
                                 </Link>
 
                                 {/* Excerpt */}
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
+                                <p className="text-[#5c675f] text-sm leading-relaxed mb-4 line-clamp-2">
                                     {blog.excerpt}
                                 </p>
 
                                 {/* Meta */}
                                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                                     <div className="flex items-center gap-3">
-                                        <div className="w-9 h-9 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-semibold text-sm">
+                                        <div className="w-9 h-9 rounded-full bg-primary-900 flex items-center justify-center text-[#dcc781] font-bold text-sm">
                                             {blog.author.charAt(0)}
                                         </div>
                                         <div>

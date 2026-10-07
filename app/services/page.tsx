@@ -1,266 +1,67 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { Calculator, FileSearch, Shield, FileText, Users, Building2, Search, Laptop, BarChart3, BookOpen } from 'lucide-react';
 
 export default function ServicesPage() {
     const services = [
-        {
-            title: 'Accountancy',
-            description: 'Comprehensive accounting services including financial reporting, bookkeeping, payroll management, and management accounts to support informed business decisions.',
-            features: [
-                'Financial Statement Preparation',
-                'Monthly/Quarterly Reporting',
-                'Payroll Management',
-                'Account Reconciliation',
-                'Management Accounts',
-            ],
-            icon: Calculator,
-            gradient: 'from-emerald-500 to-teal-500',
-        },
-        {
-            title: 'Auditing',
-            description: 'Statutory audits, internal audits, and assurance services that provide stakeholders with confidence in your financial statements and compliance.',
-            features: [
-                'Statutory Audit Services',
-                'Internal Audit',
-                'Compliance Audits',
-                'Due Diligence Reviews',
-                'Special Purpose Audits',
-            ],
-            icon: FileSearch,
-            gradient: 'from-blue-500 to-cyan-500',
-        },
-        {
-            title: 'Tax Advisory',
-            description: 'Navigate Nigeria\'s tax landscape with expert guidance. We help optimize tax positions, ensure FIRS compliance, and minimize liabilities within legal frameworks.',
-            features: [
-                'Corporate Tax Planning',
-                'VAT & WHT Compliance',
-                'Tax Health Checks',
-                'Transfer Pricing',
-                'Tax Dispute Resolution',
-            ],
-            icon: FileText,
-            gradient: 'from-violet-500 to-purple-500',
-        },
-        {
-            title: 'Tax Audit & Monitoring',
-            description: 'Proactive tax audit support and continuous monitoring to ensure ongoing compliance and minimize your organization\'s tax exposure.',
-            features: [
-                'Tax Audit Representation',
-                'FIRS Liaison',
-                'Compliance Monitoring',
-                'Tax Risk Assessment',
-                'Remediation Support',
-            ],
-            icon: Search,
-            gradient: 'from-orange-500 to-amber-500',
-        },
-        {
-            title: 'Corporate Secretarial Services',
-            description: 'Comprehensive corporate secretarial support ensuring your company meets all CAC and regulatory requirements efficiently.',
-            features: [
-                'Company Registration',
-                'AGM & Board Meeting Support',
-                'Regulatory Compliance',
-                'Share Capital Management',
-                'Corporate Restructuring',
-            ],
-            icon: Building2,
-            gradient: 'from-pink-500 to-rose-500',
-        },
-        {
-            title: 'Internal Control & Investigation',
-            description: 'Design and review of internal controls, forensic audits, and fraud investigation services to protect your organization from financial irregularities.',
-            features: [
-                'Internal Control Design',
-                'Control Effectiveness Review',
-                'Forensic Audit',
-                'Fraud Investigation',
-                'Whistleblower Programs',
-            ],
-            icon: Shield,
-            gradient: 'from-red-500 to-orange-500',
-        },
-        {
-            title: 'Finance & Management Consultancy',
-            description: 'Strategic financial guidance to help your business thrive, from capital planning to performance optimization and risk management.',
-            features: [
-                'Financial Planning & Analysis',
-                'Business Valuation',
-                'Investment Advisory',
-                'Risk Management',
-                'Performance Improvement',
-            ],
-            icon: BarChart3,
-            gradient: 'from-indigo-500 to-blue-500',
-        },
-        {
-            title: 'Human Capital Training',
-            description: 'Capacity development and professional training programs to build your team\'s financial, accounting, and management capabilities.',
-            features: [
-                'Professional Development',
-                'Accounting Training',
-                'Tax Compliance Workshops',
-                'Leadership Programs',
-                'Technical Skills Development',
-            ],
-            icon: Users,
-            gradient: 'from-teal-500 to-cyan-500',
-        },
-        {
-            title: 'Accounting Software Solutions',
-            description: 'Implementation and support for modern accounting software to streamline your financial operations, reporting, and decision-making.',
-            features: [
-                'Software Selection',
-                'Implementation & Setup',
-                'Data Migration',
-                'Staff Training',
-                'Ongoing Support',
-            ],
-            icon: Laptop,
-            gradient: 'from-gray-600 to-gray-800',
-        },
-        {
-            title: 'Forensic Audit',
-            description: 'Specialized forensic accounting services to detect, investigate, and prevent financial fraud and irregularities in your organization.',
-            features: [
-                'Fraud Detection',
-                'Asset Tracing',
-                'Litigation Support',
-                'Expert Witness Services',
-                'Prevention Programs',
-            ],
-            icon: BookOpen,
-            gradient: 'from-rose-500 to-red-600',
-        },
-    ];
+        ['Accountancy', 'Financial reporting, bookkeeping, payroll, reconciliations, and management accounts.', Calculator],
+        ['Auditing', 'Statutory audit, internal audit, due diligence, and assurance reviews.', FileSearch],
+        ['Tax Advisory', 'Tax planning, VAT, WHT, PAYE, health checks, and dispute support.', FileText],
+        ['Tax Audit & Monitoring', 'FIRS liaison, audit representation, compliance monitoring, and remediation.', Search],
+        ['Corporate Secretarial', 'CAC filings, company registration, AGMs, and governance records.', Building2],
+        ['Internal Control', 'Control design, fraud-risk checks, forensic review, and process improvement.', Shield],
+        ['Finance Consultancy', 'Planning, valuation, risk management, and performance improvement.', BarChart3],
+        ['Human Capital Training', 'Training for tax, accounting, controls, leadership, and technical finance work.', Users],
+        ['Software Solutions', 'Accounting software selection, setup, migration, training, and support.', Laptop],
+        ['Forensic Audit', 'Fraud detection, asset tracing, litigation support, and prevention programs.', BookOpen],
+    ] as const;
 
     return (
-        <main>
+        <main className="bg-[#f7f1e4]">
             <Navigation />
-
-            {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary-900 to-gray-900"></div>
+            <section className="relative overflow-hidden bg-primary-950 pt-32 pb-20 text-[#fffaf0]">
+                <Image src="/brand/byc-abstract-ledger.png" alt="" fill sizes="100vw" className="object-cover opacity-24" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/92 to-primary-900/70" />
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <p className="text-primary-400 font-medium mb-4 tracking-wider uppercase text-sm">
-                            What We Do
-                        </p>
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tighter">
-                            Our Services
-                        </h1>
-                        <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-tight">
-                            Innovative solutions and excellent services for corporate and public sector
-                            organizations in accountancy, auditing, taxation, and financial management.
-                        </p>
-                    </div>
+                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">Services</p>
+                    <h1 className="mt-5 max-w-4xl text-5xl md:text-7xl text-[#fffaf0]">Financial services with implementation behind the advice.</h1>
+                    <p className="mt-7 max-w-3xl text-lg text-[#e7efe4]/80">BYC supports Nigerian organisations across audit, tax, accountancy, controls, corporate compliance, and finance transformation.</p>
                 </div>
             </section>
 
-            {/* Services Grid */}
-            <section className="py-24 bg-white">
+            <section className="py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {services.map((service, index) => {
-                            const Icon = service.icon;
-                            return (
-                                <div
-                                    key={index}
-                                    className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all"
-                                >
-                                    <div className={`inline-flex w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} items-center justify-center mb-6`}>
-                                        <Icon className="w-7 h-7 text-white" />
+                    <div className="grid md:grid-cols-2 gap-5">
+                        {services.map(([title, description, Icon], index) => (
+                            <article key={title} className="rounded-[1.5rem] border border-primary-100 bg-[#fffaf0] p-6 shadow-sm">
+                                <div className="flex items-start gap-5">
+                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-950 text-[#dcc781]">
+                                        <Icon className="h-7 w-7" />
                                     </div>
-                                    <h2 className="text-2xl font-bold text-gray-900 mb-4 tracking-tight">
-                                        {service.title}
-                                    </h2>
-                                    <p className="text-gray-600 mb-6 leading-relaxed tracking-tight">
-                                        {service.description}
-                                    </p>
-                                    <div className="space-y-2">
-                                        {service.features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-center gap-2">
-                                                <svg className="w-4 h-4 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span className="text-gray-700 text-sm tracking-tight">{feature}</span>
-                                            </div>
-                                        ))}
+                                    <div>
+                                        <p className="text-sm font-bold text-accent-600">0{index + 1}</p>
+                                        <h2 className="mt-2 text-2xl text-primary-950">{title}</h2>
+                                        <p className="mt-3 text-[#5c675f]">{description}</p>
                                     </div>
                                 </div>
-                            );
-                        })}
+                            </article>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us */}
-            <section className="py-24 bg-gray-900">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tighter">
-                            Why Choose BYC?
-                        </h2>
-                        <p className="text-xl text-gray-400 max-w-2xl mx-auto tracking-tight">
-                            Fast. Accurate. Affordable.
-                        </p>
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="text-center p-8 rounded-2xl bg-gray-800/50 border border-gray-700">
-                            <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Fast</h3>
-                            <p className="text-gray-400 tracking-tight">We always make efforts to complete assignments on time, delivering results when you need them.</p>
-                        </div>
-
-                        <div className="text-center p-8 rounded-2xl bg-gray-800/50 border border-gray-700">
-                            <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Accurate</h3>
-                            <p className="text-gray-400 tracking-tight">Precision in every engagement. Our team of professionals ensures accuracy in all deliverables.</p>
-                        </div>
-
-                        <div className="text-center p-8 rounded-2xl bg-gray-800/50 border border-gray-700">
-                            <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Affordable</h3>
-                            <p className="text-gray-400 tracking-tight">Quality services at competitive rates. We deliver value without compromising on excellence.</p>
-                        </div>
+            <section className="bg-primary-950 py-20 text-[#fffaf0]">
+                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">Why BYC</p>
+                    <h2 className="mt-5 text-4xl md:text-6xl text-[#fffaf0]">Fast, accurate, affordable, and defensible.</h2>
+                    <p className="mt-6 text-[#e7efe4]/78">The goal is not just to complete assignments. It is to leave your organisation with cleaner records, clearer obligations, and better control over financial decisions.</p>
+                    <div className="mt-9 flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="/contact" className="btn btn-white btn-lg">Start a service conversation</a>
+                        <a href="tel:+2349018811877" className="btn btn-ghost btn-lg border-white/25 text-[#fffaf0] hover:bg-white/10 hover:text-white">Call BYC</a>
                     </div>
                 </div>
             </section>
-
-            {/* CTA Section */}
-            <section className="py-24 bg-gradient-to-br from-primary-50 to-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tighter">
-                        Ready to Get Started?
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto tracking-tight">
-                        Let's discuss how our services can support your organization's financial success.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/contact" className="btn btn-primary btn-lg">
-                            Contact Us Today
-                        </a>
-                        <a href="tel:+2349018811877" className="btn btn-ghost btn-lg">
-                            Call +234 901 881 1877
-                        </a>
-                    </div>
-                </div>
-            </section>
-
             <Footer />
         </main>
     );

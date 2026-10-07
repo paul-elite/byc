@@ -46,6 +46,33 @@ CREATE TRIGGER byc_blogs_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at();
 
+-- Create editable portfolio content table
+CREATE TABLE IF NOT EXISTS portfolio_content (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  slug TEXT UNIQUE NOT NULL,
+  content JSONB NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+ALTER TABLE portfolio_content ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Public can read portfolio_content"
+  ON portfolio_content
+  FOR SELECT
+  USING (true);
+
+CREATE POLICY "Service role has full access on portfolio_content"
+  ON portfolio_content
+  FOR ALL
+  USING (true)
+  WITH CHECK (true);
+
+CREATE TRIGGER portfolio_content_updated_at
+  BEFORE UPDATE ON portfolio_content
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at();
+
 -- Insert sample blog posts
 INSERT INTO byc_blogs (slug, title, excerpt, content, author, author_role, cover_image, tags, status, reading_time, published_at) VALUES
 (

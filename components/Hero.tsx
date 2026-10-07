@@ -1,90 +1,84 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
+    const proof = [
+        { label: 'Professional bodies', value: 'ICAN / CITN / FRCN' },
+        { label: 'Coverage', value: 'Abuja, Ilorin, Nigeria' },
+        { label: 'Focus', value: 'Audit, tax, assurance' },
+    ];
+
+    const capabilities = ['Tax planning', 'Audit readiness', 'Management accounts', 'Internal controls'];
+
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070&auto=format&fit=crop"
-                    alt="African business professionals in meeting"
-                    fill
-                    className="object-cover"
-                    priority
-                    quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-primary-900/85 to-gray-900/90"></div>
+        <section className="relative overflow-hidden bg-[#031711] pt-28 text-[#fffaf0]">
+            <div className="absolute inset-0 opacity-35">
+                <Image src="/brand/byc-abstract-ledger.png" alt="" fill sizes="100vw" className="object-cover" priority />
             </div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(195,164,91,0.26),transparent_34%),linear-gradient(135deg,rgba(3,23,17,0.94),rgba(11,52,40,0.82)_48%,rgba(3,23,17,0.96))]" />
 
-            {/* Decorative Elements */}
-            <div className="absolute top-20 right-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
-
-            {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-                <div className="animate-fadeInUp">
-                    {/* Badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-                        <div className="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
-                        <span className="text-primary-300 text-sm font-medium tracking-tight">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28">
+                <div className="grid lg:grid-cols-[1.02fr_0.98fr] gap-12 lg:gap-16 items-center min-h-[760px] lg:min-h-[700px]">
+                    <div className="pt-8 lg:pt-0">
+                        <div className="inline-flex items-center gap-3 rounded-full border border-[#dcc781]/30 bg-white/8 px-4 py-2 text-sm font-semibold text-[#f4e8c8] backdrop-blur">
+                            <span className="h-2 w-2 rounded-full bg-[#dcc781]" />
                             Chartered Accountants & Tax Practitioners
-                        </span>
+                        </div>
+
+                        <h1 className="mt-8 max-w-3xl text-5xl sm:text-6xl lg:text-[5.35rem] text-[#fffaf0]">
+                            Serious financial clarity for Nigerian organisations.
+                        </h1>
+                        <p className="mt-7 max-w-2xl text-lg sm:text-xl text-[#e7efe4]/82">
+                            BYC helps boards, founders, NGOs, public institutions, and finance teams make sharper decisions through audit, tax, accounting, and governance work that stands up to scrutiny.
+                        </p>
+
+                        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                            <Link href="/contact" className="btn btn-white btn-lg">
+                                Book a consultation
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.7}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </Link>
+                            <Link href="/portfolio" className="btn btn-ghost btn-lg border-white/25 text-[#fffaf0] hover:bg-white/10 hover:text-white hover:border-white/55">
+                                View firm portfolio
+                            </Link>
+                        </div>
+
+                        <div className="mt-12 grid sm:grid-cols-3 gap-3">
+                            {proof.map((item) => (
+                                <div key={item.label} className="rounded-2xl border border-white/10 bg-white/8 p-4 backdrop-blur">
+                                    <p className="text-xs uppercase tracking-[0.18em] text-[#dcc781]">{item.label}</p>
+                                    <p className="mt-2 text-sm font-semibold text-[#fffaf0]">{item.value}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6">
-                        Fast. Accurate.
-                        <br />
-                        <span className="text-gradient">Affordable.</span>
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed tracking-tight">
-                        World-class audit, tax, and financial management services
-                        delivered with excellence and integrity across Nigeria.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/contact" className="btn btn-primary btn-lg">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                            </svg>
-                            Get Started
-                        </a>
-                        <a href="#services" className="btn btn-white btn-lg">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-                            </svg>
-                            Our Services
-                        </a>
-                    </div>
-
-                    {/* Trust Indicators */}
-                    <div className="mt-20 pt-10 border-t border-white/10">
-                        <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 md:gap-x-16">
-                            <div className="text-center">
-                                <p className="text-4xl md:text-5xl font-bold text-white tracking-tighter">3</p>
-                                <p className="text-gray-400 text-sm tracking-tight">Partners</p>
+                    <div className="relative">
+                        <div className="relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/8 p-3 shadow-[0_36px_100px_rgba(0,0,0,0.36)] backdrop-blur">
+                            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.45rem]">
+                                <Image
+                                    src="/brand/byc-nigerian-accountants-hero.png"
+                                    alt="Nigerian accounting professionals reviewing financial reports"
+                                    fill
+                                    sizes="(min-width: 1024px) 48vw, 100vw"
+                                    className="object-cover"
+                                    priority
+                                    quality={92}
+                                />
                             </div>
-                            <div className="text-center">
-                                <p className="text-4xl md:text-5xl font-bold text-white tracking-tighter">12+</p>
-                                <p className="text-gray-400 text-sm tracking-tight">Professionals</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-4xl md:text-5xl font-bold text-white tracking-tighter">9+</p>
-                                <p className="text-gray-400 text-sm tracking-tight">Accreditations</p>
-                            </div>
-                            <div className="text-center">
-                                <p className="text-4xl md:text-5xl font-bold text-white tracking-tighter">IFRS</p>
-                                <p className="text-gray-400 text-sm tracking-tight">Certified</p>
+                        </div>
+                        <div className="absolute -bottom-8 left-4 right-4 rounded-3xl border border-[#dcc781]/30 bg-[#fffaf0] p-5 text-primary-950 shadow-2xl lg:left-[-34px] lg:right-auto lg:w-[360px]">
+                            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary-700">Advisory desk</p>
+                            <div className="mt-4 grid grid-cols-2 gap-3">
+                                {capabilities.map((item) => (
+                                    <div key={item} className="rounded-2xl bg-primary-50 px-4 py-3 text-sm font-semibold">
+                                        {item}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <a href="#services" className="text-white/50 hover:text-white transition-colors">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
-                        </svg>
-                    </a>
                 </div>
             </div>
         </section>

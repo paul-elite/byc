@@ -60,13 +60,14 @@ export default function BlogPage() {
             <Navigation />
 
             {/* Hero Section */}
-            <section className="pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white">
+            <section className="pt-32 pb-16 bg-primary-950 text-[#fffaf0]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-3xl mx-auto">
-                        <h1 className="text-5xl md:text-6xl mb-6 text-gray-900">
+                        <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781] mb-5">BYC Insights</p>
+                        <h1 className="text-5xl md:text-6xl mb-6 text-[#fffaf0]">
                             Insights & Articles
                         </h1>
-                        <p className="text-xl text-gray-600 leading-relaxed">
+                        <p className="text-xl text-[#e7efe4]/78 leading-relaxed">
                             Expert perspectives on accounting, tax, audit, and business advisory from our team of chartered professionals.
                         </p>
                     </div>
@@ -82,7 +83,7 @@ export default function BlogPage() {
                                 placeholder="Search articles..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-12 pr-4 py-4 rounded-2xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all bg-white shadow-sm text-gray-900 placeholder-gray-400"
+                                className="w-full pl-12 pr-4 py-4 rounded-2xl border border-white/10 focus:border-[#dcc781] focus:ring-2 focus:ring-[#dcc781]/20 transition-all bg-white text-primary-950 shadow-sm placeholder-gray-400"
                             />
                         </div>
 
@@ -91,8 +92,8 @@ export default function BlogPage() {
                             <button
                                 onClick={() => setSelectedTag(null)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${!selectedTag
-                                        ? 'bg-primary-600 text-white'
-                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                        ? 'bg-[#dcc781] text-primary-950'
+                                        : 'bg-white/10 text-[#e7efe4] hover:bg-white/18'
                                     }`}
                             >
                                 All Topics
@@ -102,8 +103,8 @@ export default function BlogPage() {
                                     key={tag}
                                     onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedTag === tag
-                                            ? 'bg-primary-600 text-white'
-                                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                            ? 'bg-[#dcc781] text-primary-950'
+                                            : 'bg-white/10 text-[#e7efe4] hover:bg-white/18'
                                         }`}
                                 >
                                     {tag}
@@ -116,10 +117,10 @@ export default function BlogPage() {
 
             {/* Featured Post */}
             {featuredBlog && !searchQuery && !selectedTag && (
-                <section className="py-12 bg-white">
+                <section className="py-12 bg-[#f7f1e4]">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <Link href={`/blog/${featuredBlog.slug}`} className="group block">
-                            <article className="grid lg:grid-cols-2 gap-8 items-center bg-gray-50 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <article className="grid lg:grid-cols-2 gap-8 items-center bg-[#fffaf0] rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-primary-100">
                                 <div className="relative h-72 lg:h-[400px]">
                                     <Image
                                         src={featuredBlog.cover_image}
@@ -127,7 +128,7 @@ export default function BlogPage() {
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                                     />
-                                    <div className="absolute top-4 left-4 px-4 py-2 bg-primary-600 text-white text-sm font-semibold rounded-full">
+                                    <div className="absolute top-4 left-4 px-4 py-2 bg-primary-950 text-[#dcc781] text-sm font-bold rounded-full">
                                         Featured
                                     </div>
                                 </div>
@@ -139,7 +140,7 @@ export default function BlogPage() {
                                             </span>
                                         ))}
                                     </div>
-                                    <h2 className="text-3xl lg:text-4xl mb-4 text-gray-900 group-hover:text-primary-600 transition-colors">
+                                    <h2 className="text-3xl lg:text-4xl mb-4 text-primary-950 group-hover:text-primary-700 transition-colors">
                                         {featuredBlog.title}
                                     </h2>
                                     <p className="text-gray-600 text-lg leading-relaxed mb-6">
@@ -162,14 +163,14 @@ export default function BlogPage() {
             )}
 
             {/* Blog Grid */}
-            <section className="py-16 bg-white">
+            <section className="py-16 bg-[#f7f1e4]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {remainingBlogs.length > 0 ? (
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {remainingBlogs.map((blog) => (
                                 <article
                                     key={blog.id}
-                                    className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                                    className="group bg-[#fffaf0] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-primary-100"
                                 >
                                     <Link href={`/blog/${blog.slug}`} className="block relative h-52 overflow-hidden">
                                         <Image
@@ -224,7 +225,7 @@ export default function BlogPage() {
             </section>
 
             {/* Newsletter CTA */}
-            <section className="py-20 bg-gray-900">
+            <section className="py-20 bg-primary-950">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl md:text-4xl text-white mb-4">
                         Stay Informed
@@ -236,7 +237,7 @@ export default function BlogPage() {
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="flex-1 px-6 py-4 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                            className="flex-1 px-6 py-4 rounded-xl bg-white/8 border border-white/12 text-white placeholder-white/50 focus:border-[#dcc781] focus:ring-2 focus:ring-[#dcc781]/20 transition-all"
                         />
                         <button type="submit" className="btn btn-primary btn-lg whitespace-nowrap">
                             Subscribe

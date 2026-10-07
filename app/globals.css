@@ -1,33 +1,34 @@
 @import "tailwindcss";
 
-/* ===== BYC Design System ===== */
+/* ===== BYC Design System - Rich Green Edition ===== */
 
-/* Custom Theme - Analogous Green Palette */
+/* Custom Theme - Deep Emerald, Ivory, Brass, Charcoal */
 @theme {
-  /* Primary - Forest Green */
-  --color-primary-50: #ecfdf5;
-  --color-primary-100: #d1fae5;
-  --color-primary-200: #a7f3d0;
-  --color-primary-300: #6ee7b7;
-  --color-primary-400: #34d399;
-  --color-primary-500: #10b981;
-  --color-primary-600: #059669;
-  --color-primary-700: #047857;
-  --color-primary-800: #065f46;
-  --color-primary-900: #064e3b;
-  --color-primary-950: #022c22;
+  --color-primary-50: #f4f8f2;
+  --color-primary-100: #e7efe4;
+  --color-primary-200: #cbdcc7;
+  --color-primary-300: #9ebd9b;
+  --color-primary-400: #68966f;
+  --color-primary-500: #337249;
+  --color-primary-600: #19583b;
+  --color-primary-700: #0f4531;
+  --color-primary-800: #0b3428;
+  --color-primary-900: #082820;
+  --color-primary-950: #031711;
 
-  /* Accent - Teal (Analogous) */
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
+  --color-accent-400: #dcc781;
+  --color-accent-500: #c3a45b;
+  --color-accent-600: #9d7f35;
 
-  /* Secondary - Emerald (Analogous) */
-  --color-secondary-500: #22c55e;
-  --color-secondary-600: #16a34a;
+  --color-secondary-300: #d8d0bd;
+  --color-secondary-500: #b8aa8c;
+  --color-secondary-700: #786f5b;
+
+  --color-gold-400: #d2b66b;
+  --color-gold-500: #ad8d3f;
 
   /* Fonts */
   --font-inter: 'Inter', system-ui, sans-serif;
-  --font-playfair: 'Playfair Display', Georgia, serif;
 }
 
 /* Base Styles */
@@ -39,26 +40,91 @@ body {
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  background-color: #f7f1e4;
+  color: #111814;
 }
 
-/* Typography - Tighter Tracking */
+/* A4 web portfolio */
+.portfolio-document {
+  --portfolio-sheet-width: min(100%, 210mm);
+}
+
+.portfolio-a4-sheet {
+  width: var(--portfolio-sheet-width);
+  min-height: calc(var(--portfolio-sheet-width) * 1.414);
+}
+
+.portfolio-shell h1,
+.portfolio-shell h2,
+.portfolio-shell h3,
+.portfolio-shell h4,
+.portfolio-shell h5,
+.portfolio-shell h6 {
+  font-family: var(--font-inter) !important;
+  letter-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  .portfolio-document {
+    --portfolio-sheet-width: 100%;
+  }
+
+  .portfolio-a4-sheet {
+    min-height: auto;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  nav,
+  footer,
+  .portfolio-document + footer,
+  .portfolio-document ~ footer,
+  .portfolio-document ~ *,
+  .sticky {
+    display: none !important;
+  }
+
+  .portfolio-document {
+    display: block;
+    padding: 0;
+    max-width: none;
+  }
+
+  .portfolio-a4-sheet {
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-inter);
   font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
+  line-height: 1.15;
+  letter-spacing: 0;
+  color: inherit;
 }
 
 h1 {
-  letter-spacing: -0.035em;
+  font-weight: 800;
+  line-height: 1.05;
 }
 
 h2 {
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 p {
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
+  line-height: 1.7;
 }
 
 /* Button Components - Fixed Spacing */
@@ -71,13 +137,13 @@ p {
   transition: all 0.2s ease;
   cursor: pointer;
   text-decoration: none;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   gap: 0.5rem;
 }
 
 .btn:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 0 3px rgba(25, 88, 59, 0.28);
 }
 
 .btn-sm {
@@ -99,38 +165,38 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-primary-700) 100%);
-  color: white;
-  box-shadow: 0 2px 8px 0 rgba(5, 150, 105, 0.25);
+  background: linear-gradient(135deg, #0f4531 0%, #031711 100%);
+  color: #fffaf0;
+  box-shadow: 0 18px 40px rgba(3, 23, 17, 0.22);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-800) 100%);
+  background: linear-gradient(135deg, #19583b 0%, #082820 100%);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px 0 rgba(5, 150, 105, 0.35);
+  box-shadow: 0 22px 52px rgba(3, 23, 17, 0.3);
 }
 
 .btn-white {
-  background: white;
-  color: var(--color-primary-700);
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  background: #fffaf0;
+  color: var(--color-primary-900);
+  box-shadow: 0 16px 40px rgba(3, 23, 17, 0.18);
 }
 
 .btn-white:hover {
-  background: var(--color-primary-50);
+  background: #f7f1e4;
   transform: translateY(-1px);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-primary-600);
-  border: 1.5px solid var(--color-primary-600);
+  color: var(--color-primary-800);
+  border: 1.5px solid rgba(15, 69, 49, 0.28);
 }
 
 .btn-ghost:hover {
-  background: var(--color-primary-50);
+  background: rgba(15, 69, 49, 0.06);
   border-color: var(--color-primary-700);
-  color: var(--color-primary-700);
+  color: var(--color-primary-900);
 }
 
 /* Layout Utilities */
