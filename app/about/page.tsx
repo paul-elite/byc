@@ -11,13 +11,13 @@ import Faq from '@/components/Faq';
 
 export const metadata: Metadata = {
     title: 'About',
-    description: 'Babatunde Yunus & Co. is a firm of Chartered Accountants and Tax Practitioners with offices in Abuja and Kwara State.',
+    description: 'Babatunde Yunus & Co. is a firm of Chartered Accountants and Tax Practitioners serving organisations worldwide from offices in Abuja and Ilorin.',
 };
 
 const facts: [string, string][] = [
     ['3', 'Partners'],
     ['12', 'Professional accountants'],
-    ['2', 'Offices, in Abuja and Ilorin'],
+    ['2', 'Offices, in Abuja and Ilorin, Nigeria'],
     [String(defaultPortfolioContent.accreditations.length + defaultPortfolioContent.accreditationNotes.length), 'Professional affiliations'],
 ];
 
@@ -38,7 +38,7 @@ export default function AboutPage() {
     return (
         <main>
             <Navigation />
-            <PageHeader eyebrow="About BYC" title="Chartered accountants for Nigerian businesses and institutions.">
+            <PageHeader eyebrow="About BYC" title="Chartered accountants for businesses and institutions worldwide.">
                 Babatunde Yunus &amp; Co. provides accounting, audit, tax, training and financial management
                 consultancy to companies, public-sector bodies and non-profits.
             </PageHeader>
@@ -144,13 +144,13 @@ export default function AboutPage() {
                             <h2 className="text-2xl text-neutral-900">Vision</h2>
                             <p className="mt-3 text-neutral-600">
                                 To provide excellent services in accountancy, auditing, taxation, human capacity
-                                training and financial management consultancy in Nigeria.
+                                training and financial management consultancy to clients around the world.
                             </p>
                         </div>
                         <div>
                             <h2 className="text-2xl text-neutral-900">Mission</h2>
                             <p className="mt-3 text-neutral-600">
-                                To be a reputable consulting firm of choice in Nigeria, delivering innovative and
+                                To be a reputable, world-class consulting firm of choice, delivering innovative and
                                 excellent services to our clients.
                             </p>
                         </div>

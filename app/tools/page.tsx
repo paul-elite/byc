@@ -10,8 +10,8 @@ import { tools } from '@/lib/tools';
 const iconTone = ['bg-primary-500 text-white', 'bg-sun-400 text-primary-950', 'bg-blue-500 text-white'];
 
 export const metadata: Metadata = {
-    title: 'Free tax tools',
-    description: 'Free tools for Nigerian businesses and employees: PAYE calculator, small company checker and tax deadline calendar for 2026.',
+    title: 'Free Nigeria tax tools',
+    description: 'Free tools for anyone doing business or employing staff in Nigeria: PAYE calculator, small company checker and tax deadline calendar for 2026.',
 };
 
 const icons = { 'paye-calculator': Calculator, 'small-company-check': Building2, 'tax-calendar': CalendarDays } as const;
@@ -20,8 +20,8 @@ export default function ToolsPage() {
     return (
         <main>
             <Navigation />
-            <PageHeader eyebrow="Tools" title="Free tax tools for 2026">
-                Quick answers on the new tax rules. No sign-up, nothing stored — the figures you enter stay in
+            <PageHeader eyebrow="Tools" title="Free Nigeria tax tools for 2026">
+                Quick answers on Nigeria’s new tax rules, for anyone who employs or does business there. No sign-up, nothing stored — the figures you enter stay in
                 your browser.
             </PageHeader>
 

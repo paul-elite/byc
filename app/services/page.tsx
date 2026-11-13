@@ -31,8 +31,8 @@ const engagementFaqs = [
         answer: 'We arrange a call or meeting to understand your situation, ask for a few documents if needed, and then send a proposal with scope, timing and fees.',
     },
     {
-        question: 'Do you work with clients outside Abuja and Kwara?',
-        answer: 'Yes. Most of our work can be done remotely, and we travel for fieldwork when an engagement needs it.',
+        question: 'Do you work with clients outside Nigeria?',
+        answer: 'Yes. Most of our work can be done remotely, whichever country you are in, and we travel for fieldwork when an engagement needs it.',
     },
     {
         question: 'Can you take over from our current accountant or tax adviser?',

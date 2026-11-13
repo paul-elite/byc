@@ -7,7 +7,7 @@ import Accordion from '@/components/ui/Accordion';
 
 export const metadata: Metadata = {
     title: 'Contact',
-    description: 'Contact Babatunde Yunus & Co. in Abuja or Ilorin about audit, tax, accounting and company secretarial work.',
+    description: 'Contact Babatunde Yunus & Co. about audit, tax, accounting and company secretarial work, wherever you are based.',
 };
 
 const steps = [

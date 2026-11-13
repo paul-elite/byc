@@ -80,7 +80,7 @@ export default function TaxReform() {
         <section className="border-t border-neutral-100 bg-white py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
-                    <h2 className="text-3xl text-neutral-900 md:text-4xl">What changed on 1 January 2026</h2>
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">Operating in Nigeria? What changed on 1 January 2026</h2>
                     <p className="mt-4 text-lg text-neutral-600">
                         The Nigeria Tax Act and the Nigeria Tax Administration Act replaced most of the old tax
                         laws. Pick the part that applies to you.

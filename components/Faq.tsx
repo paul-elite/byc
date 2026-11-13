@@ -11,8 +11,8 @@ const faqs = [
         answer: 'Yes. We work with small and growing businesses as well as larger companies, public bodies and NGOs. Small businesses often benefit most from getting their records and tax position right early.',
     },
     {
-        question: 'How do the 2026 tax reforms affect my business?',
-        answer: 'It depends on your turnover, fixed assets, sector and staff. Small companies may now pay 0% company income tax, while other companies pay the 4% development levy and need to update payroll for the new PAYE bands. Our tax reform summary and small company checker are good places to start.',
+        question: 'How do Nigeria’s 2026 tax reforms affect my business?',
+        answer: 'If you operate or employ people in Nigeria, it depends on your turnover, fixed assets, sector and staff. Small companies may now pay 0% company income tax, while other companies pay the 4% development levy and need to update payroll for the new PAYE bands. Our tax reform summary and small company checker are good places to start.',
     },
     {
         question: 'Can you take over our books or tax filings from another firm?',
@@ -20,7 +20,7 @@ const faqs = [
     },
     {
         question: 'Where are you based?',
-        answer: 'We have offices in Garki, Abuja and in Ilorin, Kwara State. We also work with clients in other states, mostly remotely with site visits where needed.',
+        answer: 'Our offices are in Abuja and Ilorin, Nigeria. We take on clients wherever they are based: most of the work is done remotely, with site visits where an engagement needs them.',
     },
     {
         question: 'Are you registered with the professional bodies?',

@@ -34,7 +34,7 @@ export default function Footer({ showCta = true }: { showCta?: boolean }) {
                     <div className="grid gap-12 lg:grid-cols-[1.1fr_2fr]">
                         <div>
                             <p className="max-w-xs text-[15px] text-primary-100">
-                                Chartered Accountants and Tax Practitioners. Audit, tax and accounting for Nigerian organisations.
+                                Chartered Accountants and Tax Practitioners. Audit, tax and accounting for organisations worldwide.
                             </p>
                             <div className="mt-8 space-y-4 text-sm">
                                 <div>

@@ -52,13 +52,13 @@ export interface PortfolioContent {
 export const defaultPortfolioContent: PortfolioContent = {
     title: 'Firm Portfolio',
     subtitle: 'Babatunde Yunus & Co.',
-    intro: 'Chartered Accountants and Tax Practitioners delivering accountancy, auditing, tax advisory, and management consulting services across Nigeria.',
+    intro: 'Chartered Accountants and Tax Practitioners delivering accountancy, auditing, tax advisory, and management consulting services to organisations worldwide.',
     downloadLabel: 'Download Portfolio',
     coverTitle: 'FIRM’S\nPROFILE',
     tagline: 'CHARTERED ACCOUNTANTS & TAX PRACTITIONERS',
     website: 'www.byc.com.ng',
     firmDescriptor: 'Chartered Accountants and Tax Practitioners',
-    firmProfile: 'We are poised to be a reputable Tax Advisory & Consulting Company of choice in Nigeria by committing our self to delivering innovative and excellent services to our valued customers and maintain the best professional practice / standards at all times through our team of seasoned professionals.\nThe company’s business is to provide, among other things, innovative solutions and excellent services to corporate and public sector organizations in the areas of:',
+    firmProfile: 'We are poised to be a reputable Tax Advisory & Consulting Company of choice globally by committing our self to delivering innovative and excellent services to our valued customers and maintain the best professional practice / standards at all times through our team of seasoned professionals.\nThe company’s business is to provide, among other things, innovative solutions and excellent services to corporate and public sector organizations in the areas of:',
     stats: [
         { label: 'CAC Registration Number', value: 'BN 2861419' },
         { label: 'Practicing License Number', value: '050839' },
@@ -109,8 +109,8 @@ export const defaultPortfolioContent: PortfolioContent = {
         'We are a member of\nthe Financial Reporting\nCouncil of Nigeria (FRCN)',
         'have a Certificate of\nProficiency in International\nFinancial Reporting Standard (IFRS)',
     ],
-    vision: 'To provide excellent services in Accountancy & Auditing, Taxation, Human Capacity Training & Financial Management Consultancy in Nigeria’',
-    mission: 'To be a reputable world class Consulting Company of choice in Nigeria, with believe that our clients are the sole reason for our existence by committing our self to render innovative and excellent services to our valued customers and maintain the best professional standards at all times',
+    vision: 'To provide excellent services in Accountancy & Auditing, Taxation, Human Capacity Training & Financial Management Consultancy worldwide’',
+    mission: 'To be a reputable world class Consulting Company of choice globally, with believe that our clients are the sole reason for our existence by committing our self to render innovative and excellent services to our valued customers and maintain the best professional standards at all times',
     values: [
         'Service Excellence',
         'Customer Care',

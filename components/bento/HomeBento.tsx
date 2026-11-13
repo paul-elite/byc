@@ -22,8 +22,8 @@ export default function HomeBento() {
         <section className="bg-white py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
-                    <h2 className="text-3xl text-neutral-900 md:text-4xl">The 2026 rules at a glance</h2>
-                    <p className="mt-4 text-lg text-neutral-600">What the new tax laws mean in numbers, and what is due next.</p>
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">Nigeria’s 2026 tax rules at a glance</h2>
+                    <p className="mt-4 text-lg text-neutral-600">For businesses and employees in Nigeria: what the new tax laws mean in numbers, and what is due next.</p>
                 </div>
 
                 <div className="mt-12 grid gap-4 md:grid-cols-6">
@@ -98,7 +98,7 @@ export default function HomeBento() {
                             <p className="text-sm text-neutral-900">
                                 <span className="font-medium">3 partners · 12 accountants</span>
                                 <br />
-                                <span className="text-neutral-600">Offices in Abuja and Ilorin</span>
+                                <span className="text-neutral-600">Offices in Abuja and Ilorin, Nigeria</span>
                             </p>
                         </div>
                     </div>

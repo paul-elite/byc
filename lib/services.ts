@@ -102,7 +102,7 @@ export const services: Service[] = [
     {
         slug: 'tax-advisory',
         name: 'Tax advisory',
-        summary: 'Company income tax, VAT, WHT and PAYE — planning, returns, NRS audits and disputes.',
+        summary: 'Nigerian company income tax, VAT, WHT and PAYE — planning, returns, NRS audits and disputes.',
         intro: [
             'Nigeria’s tax system changed on 1 January 2026. The Nigeria Tax Act and the Nigeria Tax Administration Act replaced most of the old tax laws, and the Nigeria Revenue Service (NRS) replaced FIRS. Rates, reliefs, filing rules and penalties all moved.',
             'We handle your routine filings, help you plan around the new rules, and represent you when the NRS or a State Internal Revenue Service raises an assessment or opens an audit.',
@@ -145,10 +145,10 @@ export const services: Service[] = [
     {
         slug: 'corporate-secretarial',
         name: 'Corporate secretarial',
-        summary: 'CAC registrations and annual returns, AGMs, board minutes and statutory registers.',
+        summary: 'Nigerian company registrations and annual returns, AGMs, board minutes and statutory registers.',
         intro: [
             'Company law compliance is easy to forget until a bank, investor or regulator asks for an up-to-date status report and it shows years of unfiled returns or the wrong directors.',
-            'We keep your company in good standing with the Corporate Affairs Commission (CAC), maintain your statutory records, and handle the paperwork when something changes.',
+            'We keep your Nigerian company in good standing with the Corporate Affairs Commission (CAC), maintain your statutory records, and handle the paperwork when something changes.',
         ],
         forWho: [
             'New businesses registering a company or business name',

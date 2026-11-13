@@ -7,7 +7,7 @@ const factBorders = ['border-primary-400', 'border-sun-400', 'border-lime-500', 
 
 const facts = [
     ['Member of', 'ICAN, CITN and FRCN'],
-    ['Offices', 'Abuja and Ilorin, Kwara'],
+    ['Offices', 'Abuja and Ilorin, Nigeria'],
     ['Practice areas', 'Audit, tax and accounting'],
     ['Registration', 'CAC BN 2861419'],
 ];
@@ -18,12 +18,12 @@ export default function Hero() {
             <div className="container grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
                 <div>
                     <h1 className="text-4xl text-neutral-900 sm:text-5xl lg:text-[3.5rem]">
-                        Audit, tax and accounting for Nigerian organisations.
+                        Audit, tax and accounting for organisations worldwide.
                     </h1>
                     <p className="mt-6 max-w-xl text-lg text-neutral-600">
                         Babatunde Yunus &amp; Co. keeps your books accurate, your filings on time and your
-                        accounts ready for audit. We work with companies, public bodies and NGOs from our
-                        offices in Abuja and Ilorin.
+                        accounts ready for audit. We work with companies, public bodies and NGOs
+                        wherever they operate.
                     </p>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                         <Link href="/contact" className="btn btn-primary btn-lg">

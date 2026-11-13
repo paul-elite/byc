@@ -21,7 +21,7 @@ export default function About() {
 
                 <div>
                     <h2 className="text-3xl text-neutral-900 md:text-4xl">
-                        Accountants who know Nigerian business and regulation.
+                        Accountants who understand your business and the rules it works under.
                     </h2>
                     <p className="mt-5 text-lg text-neutral-600">
                         Babatunde Yunus &amp; Co. is a firm of chartered accountants and tax practitioners. We

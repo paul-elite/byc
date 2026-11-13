@@ -57,7 +57,7 @@ export default function BlogPage() {
         <main>
             <Navigation />
             <PageHeader eyebrow="Insights" title="Articles on tax, audit and accounting">
-                Practical guidance for Nigerian businesses from the team at Babatunde Yunus &amp; Co.
+                Practical guidance from the team at Babatunde Yunus &amp; Co., including detailed coverage of Nigeria’s 2026 tax reform.
             </PageHeader>
 
             <section className="bg-canvas py-12 lg:py-16">

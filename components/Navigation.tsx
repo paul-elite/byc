@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
-    { href: '/tools', label: 'Tax tools' },
+    { href: '/tools', label: 'Nigeria tax tools' },
     { href: '/blog', label: 'Insights' },
     { href: '/portfolio', label: 'Firm profile' },
 ];

@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     default: "BYC | Chartered Accountants & Tax Practitioners",
     template: "%s | BYC",
   },
-  description: "Babatunde Yunus & Co. is a firm of Chartered Accountants and Tax Practitioners in Abuja and Kwara State, Nigeria, providing audit, tax, accounting and company secretarial services.",
-  keywords: ["chartered accountants", "tax practitioners", "Nigeria", "audit", "tax advisory", "accounting", "Abuja", "ICAN", "FRCN", "financial services"],
+  description: "Babatunde Yunus & Co. is a firm of Chartered Accountants and Tax Practitioners providing audit, tax, accounting and company secretarial services to organisations worldwide.",
+  keywords: ["chartered accountants", "tax practitioners", "international", "Nigeria", "audit", "tax advisory", "accounting", "Abuja", "ICAN", "FRCN", "financial services"],
   authors: [{ name: "Babatunde Yunus & Co." }],
   creator: "Babatunde Yunus & Co.",
   openGraph: {
     type: "website",
-    locale: "en_NG",
+    locale: "en",
     siteName: "BYC - Babatunde Yunus & Co.",
     title: "BYC | Chartered Accountants & Tax Practitioners",
-    description: "Audit, tax, accounting and company secretarial services for Nigerian organisations.",
+    description: "Audit, tax, accounting and company secretarial services for organisations worldwide.",
   },
   twitter: {
     card: "summary_large_image",
     title: "BYC | Chartered Accountants & Tax Practitioners",
-    description: "Audit, tax, accounting and company secretarial services for Nigerian organisations.",
+    description: "Audit, tax, accounting and company secretarial services for organisations worldwide.",
   },
   icons: {
     icon: [
