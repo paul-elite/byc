@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { getPublishedBlogs, formatDate, Blog } from '@/lib/blogs';
 
 export default function BlogSection() {
@@ -10,119 +11,60 @@ export default function BlogSection() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function loadBlogs() {
-            const data = await getPublishedBlogs();
+        getPublishedBlogs().then((data) => {
             setBlogs(data.slice(0, 3));
             setLoading(false);
-        }
-        loadBlogs();
+        });
     }, []);
 
-    if (loading) {
-        return (
-            <section className="py-24 bg-[#fffaf0]">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <div className="animate-pulse h-8 w-48 bg-gray-200 rounded mx-auto mb-4"></div>
-                        <div className="animate-pulse h-4 w-96 bg-gray-200 rounded mx-auto"></div>
-                    </div>
-                </div>
-            </section>
-        );
-    }
+    if (!loading && blogs.length === 0) return null;
 
     return (
-        <section className="py-24 bg-[#fffaf0]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <p className="text-primary-700 font-bold text-sm uppercase tracking-[0.22em]">
-                        Insights & Articles
-                    </p>
-                    <h2 className="mt-5 text-4xl md:text-6xl mb-5 text-primary-950">
-                        Practical intelligence for finance leaders.
-                    </h2>
-                    <p className="text-lg text-[#5c675f] max-w-2xl mx-auto">
-                        Three practical reads on finance, tax, audit, and governance for ambitious Nigerian businesses.
-                    </p>
-                </div>
-
-                {/* Blog Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {blogs.map((blog, index) => (
-                        <article
-                            key={blog.id}
-                            className="group bg-[#f7f1e4] rounded-[1.5rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-primary-100"
-                            style={{ animationDelay: `${index * 100}ms` }}
-                        >
-                            {/* Cover Image */}
-                            <Link href={`/blog/${blog.slug}`} className="block relative h-52 overflow-hidden">
-                                <Image
-                                    src={blog.cover_image}
-                                    alt={blog.title}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </Link>
-
-                            {/* Content */}
-                            <div className="p-6">
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {blog.tags.slice(0, 2).map((tag) => (
-                                        <span
-                                            key={tag}
-                                            className="px-3 py-1 text-xs font-bold text-primary-800 bg-primary-100 rounded-full"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                {/* Title */}
-                                <Link href={`/blog/${blog.slug}`}>
-                                    <h3 className="text-xl font-bold text-primary-950 mb-3 group-hover:text-primary-700 transition-colors line-clamp-2">
-                                        {blog.title}
-                                    </h3>
-                                </Link>
-
-                                {/* Excerpt */}
-                                <p className="text-[#5c675f] text-sm leading-relaxed mb-4 line-clamp-2">
-                                    {blog.excerpt}
-                                </p>
-
-                                {/* Meta */}
-                                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                                    <div className="flex items-center gap-3">
-                                        <div className="w-9 h-9 rounded-full bg-primary-900 flex items-center justify-center text-[#dcc781] font-bold text-sm">
-                                            {blog.author.charAt(0)}
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-medium text-gray-900">{blog.author}</p>
-                                            <p className="text-xs text-gray-500">{formatDate(blog.published_at)}</p>
-                                        </div>
-                                    </div>
-                                    <span className="text-xs text-gray-500 flex items-center gap-1">
-                                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                        {blog.reading_time} min read
-                                    </span>
-                                </div>
-                            </div>
-                        </article>
-                    ))}
-                </div>
-
-                {/* CTA */}
-                <div className="text-center">
-                    <Link href="/blog" className="btn btn-primary btn-lg group">
-                        View All Articles
-                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                        </svg>
+        <section className="bg-white py-20 lg:py-28">
+            <div className="container">
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                    <div className="max-w-2xl">
+                        <p className="eyebrow">Insights</p>
+                        <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Latest articles</h2>
+                    </div>
+                    <Link href="/blog" className="inline-flex items-center gap-2 font-medium text-primary-700 hover:text-primary-800">
+                        All articles <ArrowRight className="h-4 w-4" />
                     </Link>
+                </div>
+
+                <div className="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
+                    {loading
+                        ? [0, 1, 2].map((i) => (
+                            <div key={i} className="animate-pulse">
+                                <div className="aspect-[3/2] rounded-lg bg-neutral-100" />
+                                <div className="mt-5 h-4 w-24 rounded bg-neutral-100" />
+                                <div className="mt-3 h-6 w-full rounded bg-neutral-100" />
+                            </div>
+                        ))
+                        : blogs.map((blog) => (
+                            <article key={blog.id} className="group">
+                                <Link href={`/blog/${blog.slug}`} className="block">
+                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-neutral-100">
+                                        {blog.cover_image && (
+                                            <Image
+                                                src={blog.cover_image}
+                                                alt=""
+                                                fill
+                                                sizes="(min-width: 768px) 33vw, 100vw"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                            />
+                                        )}
+                                    </div>
+                                    <p className="mt-5 text-sm text-neutral-500">
+                                        {blog.tags[0] && <span className="text-primary-700">{blog.tags[0]}</span>}
+                                        {blog.tags[0] && ' · '}
+                                        {formatDate(blog.published_at)}
+                                    </p>
+                                    <h3 className="mt-2 text-lg text-neutral-900 group-hover:text-primary-700">{blog.title}</h3>
+                                    <p className="mt-2 line-clamp-2 text-[15px] text-neutral-600">{blog.excerpt}</p>
+                                </Link>
+                            </article>
+                        ))}
                 </div>
             </div>
         </section>

@@ -1,65 +1,64 @@
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Image from 'next/image';
-import { Calculator, FileSearch, Shield, FileText, Users, Building2, Search, Laptop, BarChart3, BookOpen } from 'lucide-react';
+import PageHeader from '@/components/PageHeader';
+import { photos } from '@/lib/images';
+
+export const metadata: Metadata = {
+    title: 'Services',
+    description: 'Accounting, audit, tax advisory, corporate secretarial, internal control, forensic audit and finance training from Babatunde Yunus & Co.',
+};
+
+const services = [
+    ['Accounting', 'Financial reporting, bookkeeping, payroll, bank reconciliations and monthly management accounts.'],
+    ['Auditing', 'Statutory audits, internal audits, due diligence and assurance reviews.'],
+    ['Tax advisory', 'Tax planning, VAT, WHT and PAYE compliance, tax health checks and dispute support.'],
+    ['Tax audit & monitoring', 'Representation during FIRS and state tax audits, compliance monitoring and remediation.'],
+    ['Corporate secretarial', 'CAC company registration, annual returns, AGMs and statutory records.'],
+    ['Internal control', 'Control design, fraud-risk assessments and process improvement.'],
+    ['Forensic audit', 'Fraud investigation, asset tracing, litigation support and fraud prevention.'],
+    ['Finance consultancy', 'Business planning, valuations, risk management and performance reviews.'],
+    ['Training', 'Courses for finance teams on tax, accounting, internal controls and IFRS reporting.'],
+    ['Accounting software', 'Software selection, setup, data migration, staff training and support.'],
+];
 
 export default function ServicesPage() {
-    const services = [
-        ['Accountancy', 'Financial reporting, bookkeeping, payroll, reconciliations, and management accounts.', Calculator],
-        ['Auditing', 'Statutory audit, internal audit, due diligence, and assurance reviews.', FileSearch],
-        ['Tax Advisory', 'Tax planning, VAT, WHT, PAYE, health checks, and dispute support.', FileText],
-        ['Tax Audit & Monitoring', 'FIRS liaison, audit representation, compliance monitoring, and remediation.', Search],
-        ['Corporate Secretarial', 'CAC filings, company registration, AGMs, and governance records.', Building2],
-        ['Internal Control', 'Control design, fraud-risk checks, forensic review, and process improvement.', Shield],
-        ['Finance Consultancy', 'Planning, valuation, risk management, and performance improvement.', BarChart3],
-        ['Human Capital Training', 'Training for tax, accounting, controls, leadership, and technical finance work.', Users],
-        ['Software Solutions', 'Accounting software selection, setup, migration, training, and support.', Laptop],
-        ['Forensic Audit', 'Fraud detection, asset tracing, litigation support, and prevention programs.', BookOpen],
-    ] as const;
-
     return (
-        <main className="bg-[#f7f1e4]">
+        <main>
             <Navigation />
-            <section className="relative overflow-hidden bg-primary-950 pt-32 pb-20 text-[#fffaf0]">
-                <Image src="/brand/byc-abstract-ledger.png" alt="" fill sizes="100vw" className="object-cover opacity-24" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/92 to-primary-900/70" />
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">Services</p>
-                    <h1 className="mt-5 max-w-4xl text-5xl md:text-7xl text-[#fffaf0]">Financial services with implementation behind the advice.</h1>
-                    <p className="mt-7 max-w-3xl text-lg text-[#e7efe4]/80">BYC supports Nigerian organisations across audit, tax, accountancy, controls, corporate compliance, and finance transformation.</p>
-                </div>
-            </section>
+            <PageHeader eyebrow="Services" title="Our services">
+                We work across audit, tax, accounting, compliance and finance operations — and we stay
+                involved through implementation, not just the report.
+            </PageHeader>
 
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid md:grid-cols-2 gap-5">
-                        {services.map(([title, description, Icon], index) => (
-                            <article key={title} className="rounded-[1.5rem] border border-primary-100 bg-[#fffaf0] p-6 shadow-sm">
-                                <div className="flex items-start gap-5">
-                                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-950 text-[#dcc781]">
-                                        <Icon className="h-7 w-7" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm font-bold text-accent-600">0{index + 1}</p>
-                                        <h2 className="mt-2 text-2xl text-primary-950">{title}</h2>
-                                        <p className="mt-3 text-[#5c675f]">{description}</p>
-                                    </div>
-                                </div>
-                            </article>
+            <section className="bg-white py-16 lg:py-24">
+                <div className="container grid gap-12 lg:grid-cols-[1fr_0.75fr] lg:gap-16">
+                    <dl className="divide-y divide-neutral-200 border-y border-neutral-200">
+                        {services.map(([title, description]) => (
+                            <div key={title} className="grid gap-2 py-6 sm:grid-cols-[14rem_1fr] sm:gap-8">
+                                <dt className="text-lg font-medium text-neutral-900">{title}</dt>
+                                <dd className="text-neutral-600">{description}</dd>
+                            </div>
                         ))}
-                    </div>
-                </div>
-            </section>
+                    </dl>
 
-            <section className="bg-primary-950 py-20 text-[#fffaf0]">
-                <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">Why BYC</p>
-                    <h2 className="mt-5 text-4xl md:text-6xl text-[#fffaf0]">Fast, accurate, affordable, and defensible.</h2>
-                    <p className="mt-6 text-[#e7efe4]/78">The goal is not just to complete assignments. It is to leave your organisation with cleaner records, clearer obligations, and better control over financial decisions.</p>
-                    <div className="mt-9 flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="/contact" className="btn btn-white btn-lg">Start a service conversation</a>
-                        <a href="tel:+2349018811877" className="btn btn-ghost btn-lg border-white/25 text-[#fffaf0] hover:bg-white/10 hover:text-white">Call BYC</a>
-                    </div>
+                    <aside className="lg:sticky lg:top-28 lg:self-start">
+                        <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100">
+                            <Image src={photos.colleagues.src} alt={photos.colleagues.alt} fill sizes="(min-width: 1024px) 35vw, 100vw" className="object-cover" />
+                        </div>
+                        <div className="mt-6 rounded-lg border border-neutral-200 bg-neutral-50 p-6">
+                            <h2 className="text-lg text-neutral-900">Not sure where to start?</h2>
+                            <p className="mt-2 text-[15px] text-neutral-600">
+                                Tell us what&apos;s going on and we&apos;ll recommend the right service.
+                            </p>
+                            <div className="mt-5 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+                                <Link href="/contact" className="btn btn-primary btn-md">Contact us</Link>
+                                <a href="tel:+2349018811877" className="btn btn-outline btn-md">Call +234 901 881 1877</a>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </section>
             <Footer />

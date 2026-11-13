@@ -1,83 +1,119 @@
+import type { Metadata } from 'next';
+import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import Image from 'next/image';
+import PageHeader from '@/components/PageHeader';
+import { photos } from '@/lib/images';
+import { defaultPortfolioContent } from '@/lib/portfolioData';
+
+export const metadata: Metadata = {
+    title: 'About',
+    description: 'Babatunde Yunus & Co. is a firm of Chartered Accountants and Tax Practitioners with offices in Abuja and Kwara State.',
+};
+
+const facts: [string, string][] = [
+    ['3', 'Partners'],
+    ['12', 'Professional accountants'],
+    ['2', 'Offices, in Abuja and Ilorin'],
+    [String(defaultPortfolioContent.accreditations.length), 'Professional affiliations'],
+];
+
+const values = ['Service excellence', 'Customer care', 'Integrity', 'Professionalism', 'Hard work', 'Trustworthiness'];
+
+// "Institute of Chartered Accountants of Nigeria (ICAN)" -> ['ICAN', 'Institute of ...']
+const bodies = defaultPortfolioContent.accreditations.map((item) => {
+    const match = item.match(/^(.*)\s\(([^)]+)\)$/);
+    return match ? [match[2], match[1]] : [item, ''];
+});
 
 export default function AboutPage() {
-    const values = ['Service Excellence', 'Customer Care', 'Integrity', 'Professionalism', 'Hard Work', 'Trustworthiness'];
-    const bodies = ['ICAN', 'CITN', 'ICEN', 'CICMA', 'NIM', 'IMC', 'FRCN', 'IFRS'];
-
     return (
-        <main className="bg-[#fffaf0]">
+        <main>
             <Navigation />
-            <section className="relative overflow-hidden bg-primary-950 pt-32 pb-20 text-[#fffaf0]">
-                <Image src="/brand/byc-advisory-session.png" alt="" fill sizes="100vw" className="object-cover opacity-24" />
-                <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/93 to-primary-900/72" />
-                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">About BYC</p>
-                    <h1 className="mt-5 max-w-4xl text-5xl md:text-7xl text-[#fffaf0]">A Nigerian advisory firm built on care, evidence, and professional discipline.</h1>
-                    <p className="mt-7 max-w-3xl text-lg text-[#e7efe4]/82">Babatunde Yunus & Co. provides accountancy, auditing, taxation, training, and financial management consultancy to corporate and public-sector organisations.</p>
-                </div>
-            </section>
+            <PageHeader eyebrow="About BYC" title="Chartered accountants for Nigerian businesses and institutions.">
+                Babatunde Yunus &amp; Co. provides accounting, audit, tax, training and financial management
+                consultancy to companies, public-sector bodies and non-profits.
+            </PageHeader>
 
-            <section className="py-20 border-b border-primary-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-5">
-                    {[
-                        ['3', 'Partners'],
-                        ['12+', 'Professional accountants'],
-                        ['9+', 'Professional bodies'],
-                        ['IFRS', 'Certified'],
-                    ].map(([value, label]) => (
-                        <div key={label} className="rounded-3xl bg-[#f7f1e4] p-6 text-center">
-                            <p className="text-4xl font-extrabold text-primary-900">{value}</p>
-                            <p className="mt-2 text-sm font-semibold text-[#5c675f]">{label}</p>
+            <section className="border-b border-neutral-200 bg-white">
+                <dl className="container grid grid-cols-2 gap-x-6 gap-y-8 py-12 lg:grid-cols-4">
+                    {facts.map(([value, label]) => (
+                        <div key={label}>
+                            <dt className="sr-only">{label}</dt>
+                            <dd className="text-4xl font-semibold tracking-tight text-primary-700">{value}</dd>
+                            <dd className="mt-1 text-sm text-neutral-600">{label}</dd>
                         </div>
                     ))}
-                </div>
+                </dl>
             </section>
 
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+            <section className="bg-white py-20 lg:py-28">
+                <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
-                        <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-700">The firm</p>
-                        <h2 className="mt-5 text-4xl md:text-6xl text-primary-950">World-class ambition, grounded in Nigerian business realities.</h2>
-                        <p className="mt-7 text-lg text-[#4b5b50]">BYC is committed to innovative and excellent services delivered through experienced professionals and careful execution.</p>
-                        <p className="mt-5 text-[#5c675f]">The firm’s belief is direct: your success is our business. Every engagement is handled with attention to compliance, context, and the decisions leaders need to make.</p>
+                        <h2 className="text-3xl text-neutral-900 md:text-4xl">The firm</h2>
+                        <p className="mt-5 text-lg text-neutral-600">
+                            We are a practice of chartered accountants and tax practitioners. Our team handles
+                            the full range of statutory and advisory work a growing organisation needs.
+                        </p>
+                        <p className="mt-4 text-neutral-600">
+                            Our principle is simple: your success is our business. We take time to understand
+                            how each client operates, what regulators expect of them and the decisions their
+                            leadership has to make.
+                        </p>
                     </div>
-                    <div className="relative aspect-[4/4.7] overflow-hidden rounded-[2rem]">
-                        <Image src="/brand/byc-nigerian-accountants-hero.png" alt="Nigerian accounting professionals" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" quality={92} />
-                    </div>
-                </div>
-            </section>
-
-            <section className="bg-[#edf3e8] py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-6">
-                        <div className="rounded-[2rem] bg-[#fffaf0] p-8">
-                            <h2 className="text-3xl text-primary-950">Vision</h2>
-                            <p className="mt-4 text-[#5c675f]">To provide excellent services in accountancy, auditing, taxation, human capacity training, and financial management consultancy in Nigeria.</p>
-                        </div>
-                        <div className="rounded-[2rem] bg-primary-950 p-8 text-[#fffaf0]">
-                            <h2 className="text-3xl text-[#fffaf0]">Mission</h2>
-                            <p className="mt-4 text-[#e7efe4]/78">To be a reputable world-class consulting company of choice in Nigeria, rendering innovative and excellent services to valued clients.</p>
-                        </div>
-                    </div>
-                    <div className="mt-8 grid md:grid-cols-3 gap-4">
-                        {values.map((value) => (
-                            <div key={value} className="rounded-2xl bg-[#fffaf0] p-5 font-bold text-primary-950">{value}</div>
-                        ))}
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100">
+                        <Image src={photos.review.src} alt={photos.review.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                     </div>
                 </div>
             </section>
 
-            <section className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <p className="text-sm font-bold uppercase tracking-[0.22em] text-primary-700">Professional memberships</p>
-                    <h2 className="mt-5 text-4xl md:text-6xl text-primary-950">Accredited where the work matters.</h2>
-                    <div className="mt-10 flex flex-wrap gap-3">
-                        {bodies.map((body) => (
-                            <span key={body} className="rounded-full bg-primary-950 px-5 py-3 text-sm font-bold text-[#dcc781]">{body}</span>
-                        ))}
+            <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+                <div className="container">
+                    <div className="grid gap-10 md:grid-cols-2">
+                        <div>
+                            <h2 className="text-2xl text-neutral-900">Vision</h2>
+                            <p className="mt-3 text-neutral-600">
+                                To provide excellent services in accountancy, auditing, taxation, human capacity
+                                training and financial management consultancy in Nigeria.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 className="text-2xl text-neutral-900">Mission</h2>
+                            <p className="mt-3 text-neutral-600">
+                                To be a reputable consulting firm of choice in Nigeria, delivering innovative and
+                                excellent services to our clients.
+                            </p>
+                        </div>
                     </div>
+
+                    <div className="mt-14 border-t border-neutral-200 pt-10">
+                        <h2 className="text-2xl text-neutral-900">Our values</h2>
+                        <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+                            {values.map((value) => (
+                                <li key={value} className="flex items-center gap-3 text-neutral-800">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-primary-600" />
+                                    {value}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-white py-20 lg:py-28">
+                <div className="container">
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">Professional memberships</h2>
+                    <p className="mt-4 max-w-2xl text-lg text-neutral-600">
+                        The firm and its partners belong to these professional and regulatory bodies.
+                    </p>
+                    <dl className="mt-10 grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
+                        {bodies.map(([abbr, name]) => (
+                            <div key={abbr} className="bg-white p-5">
+                                <dt className="font-semibold text-neutral-900">{abbr}</dt>
+                                <dd className="mt-1 text-sm text-neutral-600">{name}</dd>
+                            </div>
+                        ))}
+                    </dl>
                 </div>
             </section>
             <Footer />

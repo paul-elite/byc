@@ -15,11 +15,11 @@ export default function Home() {
       <Hero />
       <Services />
       <About />
-      <PortfolioPreview />
       <CaseStudies />
+      <PortfolioPreview />
       <BlogSection />
       <Contact />
-      <Footer />
+      <Footer showCta={false} />
     </main>
   );
 }

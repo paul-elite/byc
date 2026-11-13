@@ -1,91 +1,102 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
-export default function Contact() {
+const CONTACT_EMAIL = 'info@byc.com.ng';
+
+const offices = [
+    ['Abuja', 'Suite B5, Melita Plaza, Gimbiya Street, Area 11, Garki, Abuja'],
+    ['Ilorin', 'No 2, Babatunde Yunus Street, Irewolede, Ilorin, Kwara State'],
+];
+
+export default function Contact({ asPage = false }: { asPage?: boolean }) {
     const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '' });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [opened, setOpened] = useState(false);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    // There is no mail backend yet, so the form opens the visitor's email app
+    // with the enquiry pre-filled and addressed to BYC.
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', company: '', message: '' });
-            setTimeout(() => setSubmitStatus('idle'), 5000);
-        }, 1000);
+        const subject = `Enquiry from ${formData.name}${formData.company ? ` (${formData.company})` : ''}`;
+        const body = `${formData.message}\n\n${formData.name}\n${formData.email}${formData.company ? `\n${formData.company}` : ''}`;
+        window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        setOpened(true);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const Heading = asPage ? 'h1' : 'h2';
+
     return (
-        <section id="contact" className="relative overflow-hidden bg-primary-950 py-24 text-[#fffaf0]">
-            <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block">
-                <Image src="/brand/byc-advisory-session.png" alt="" fill sizes="50vw" className="object-cover opacity-18" />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/96 to-primary-950/78" />
+        <section id="contact" className={`bg-white ${asPage ? 'pt-32 pb-20 lg:pt-40 lg:pb-28' : 'border-t border-neutral-200 py-20 lg:py-28'}`}>
+            <div className="container grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+                <div>
+                    <p className="eyebrow">Contact</p>
+                    <Heading className="mt-3 text-3xl text-neutral-900 md:text-4xl">Talk to us</Heading>
+                    <p className="mt-5 text-lg text-neutral-600">
+                        Tell us what you need help with — an audit, a tax matter, your accounts or company
+                        filings.
+                    </p>
 
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-12 items-start">
-                    <div>
-                        <p className="text-sm font-bold uppercase tracking-[0.22em] text-[#dcc781]">Talk to BYC</p>
-                        <h2 className="mt-5 text-4xl md:text-6xl text-[#fffaf0]">
-                            Bring the finance question. Leave with a path.
-                        </h2>
-                        <p className="mt-6 text-[#e7efe4]/78">
-                            Send a note to the advisory team for audit, tax, accounting, corporate compliance, or portfolio support.
-                        </p>
-
-                        <div className="mt-10 space-y-5">
-                            {[
-                                ['Phone', '+234 901 881 1877', 'tel:+2349018811877'],
-                                ['Email', 'info@byc.com.ng', 'mailto:info@byc.com.ng'],
-                                ['Website', 'byc.com.ng', 'https://byc.com.ng'],
-                            ].map(([label, value, href]) => (
-                                <a key={label} href={href} className="block rounded-2xl border border-white/10 bg-white/8 p-5 transition hover:bg-white/12">
-                                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#dcc781]">{label}</p>
-                                    <p className="mt-2 text-lg font-semibold text-[#fffaf0]">{value}</p>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-
-                    <form onSubmit={handleSubmit} className="rounded-[2rem] bg-[#fffaf0] p-6 md:p-8 text-primary-950 shadow-[0_30px_90px_rgba(0,0,0,0.28)]">
-                        <div className="grid md:grid-cols-2 gap-5">
-                            <Field label="Full Name" name="name" value={formData.name} onChange={handleChange} required />
-                            <Field label="Email" name="email" type="email" value={formData.email} onChange={handleChange} required />
-                        </div>
-                        <div className="mt-5">
-                            <Field label="Company" name="company" value={formData.company} onChange={handleChange} />
-                        </div>
-                        <div className="mt-5">
-                            <label htmlFor="message" className="block text-sm font-bold text-primary-950 mb-2">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows={5}
-                                className="w-full px-4 py-3 border border-primary-100 bg-white rounded-2xl focus:ring-2 focus:ring-primary-700 focus:border-primary-700 outline-none transition-all resize-none text-primary-950"
-                                placeholder="How can we help?"
-                            />
-                        </div>
-                        <button type="submit" disabled={isSubmitting} className={`mt-6 w-full btn btn-primary btn-lg ${isSubmitting ? 'opacity-60 cursor-not-allowed' : ''}`}>
-                            {isSubmitting ? 'Sending...' : 'Send message'}
-                        </button>
-                        {submitStatus === 'success' && (
-                            <div className="mt-5 rounded-2xl border border-primary-200 bg-primary-50 p-4 text-sm font-semibold text-primary-900">
-                                Message sent. BYC will respond shortly.
+                    <ul className="mt-10 space-y-6">
+                        <li className="flex gap-4">
+                            <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                            <div>
+                                <p className="text-sm text-neutral-500">Phone</p>
+                                <a href="tel:+2349018811877" className="font-medium text-neutral-900 hover:text-primary-700">+234 901 881 1877</a>
                             </div>
-                        )}
-                    </form>
+                        </li>
+                        <li className="flex gap-4">
+                            <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                            <div>
+                                <p className="text-sm text-neutral-500">Email</p>
+                                <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-neutral-900 hover:text-primary-700">{CONTACT_EMAIL}</a>
+                            </div>
+                        </li>
+                        {offices.map(([city, address]) => (
+                            <li key={city} className="flex gap-4">
+                                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                                <div>
+                                    <p className="text-sm text-neutral-500">{city} office</p>
+                                    <p className="font-medium text-neutral-900">{address}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
+
+                <form onSubmit={handleSubmit} className="rounded-lg border border-neutral-200 bg-neutral-50 p-6 md:p-8">
+                    <div className="grid gap-5 md:grid-cols-2">
+                        <Field label="Full name" name="name" value={formData.name} onChange={handleChange} autoComplete="name" required />
+                        <Field label="Email" name="email" type="email" value={formData.email} onChange={handleChange} autoComplete="email" required />
+                    </div>
+                    <div className="mt-5">
+                        <Field label="Company (optional)" name="company" value={formData.company} onChange={handleChange} autoComplete="organization" />
+                    </div>
+                    <div className="mt-5">
+                        <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-neutral-800">How can we help?</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                            value={formData.message}
+                            onChange={handleChange}
+                            rows={6}
+                            className="w-full resize-none rounded-md border border-neutral-300 bg-white px-3.5 py-2.5 text-neutral-900 outline-none transition focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20"
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-lg mt-6 w-full">
+                        Send message
+                    </button>
+                    <p className="mt-4 text-sm text-neutral-500">
+                        {opened
+                            ? `Your email app should have opened with your message. If it didn't, email us at ${CONTACT_EMAIL}.`
+                            : 'This opens your email app with your message ready to send. We only use your details to reply to you.'}
+                    </p>
+                </form>
             </div>
         </section>
     );
@@ -98,6 +109,7 @@ function Field({
     onChange,
     type = 'text',
     required = false,
+    autoComplete,
 }: {
     label: string;
     name: string;
@@ -105,10 +117,11 @@ function Field({
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     type?: string;
     required?: boolean;
+    autoComplete?: string;
 }) {
     return (
         <div>
-            <label htmlFor={name} className="block text-sm font-bold text-primary-950 mb-2">{label}</label>
+            <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-neutral-800">{label}</label>
             <input
                 type={type}
                 id={name}
@@ -116,8 +129,8 @@ function Field({
                 required={required}
                 value={value}
                 onChange={onChange}
-                className="w-full px-4 py-3 border border-primary-100 bg-white rounded-2xl focus:ring-2 focus:ring-primary-700 focus:border-primary-700 outline-none transition-all text-primary-950"
-                placeholder={label}
+                autoComplete={autoComplete}
+                className="h-11 w-full rounded-md border border-neutral-300 bg-white px-3.5 text-neutral-900 outline-none transition focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20"
             />
         </div>
     );
