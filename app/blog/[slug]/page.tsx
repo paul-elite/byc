@@ -112,7 +112,7 @@ export default function BlogPostPage() {
                         ))}
                     </div>
 
-                    <div className="mt-10 rounded-xl bg-sun-100 p-6">
+                    <div className="mt-10 rounded-xl border-l-4 border-sun-400 bg-mist p-6">
                         <p className="font-medium text-neutral-900">Questions about how this affects you?</p>
                         <p className="mt-1 text-[15px] text-neutral-600">This article is general guidance, not advice for your situation. Talk to us before acting on it.</p>
                         <Link href="/contact" className="btn btn-primary btn-sm mt-4">Contact us</Link>

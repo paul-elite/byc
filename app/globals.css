@@ -68,8 +68,8 @@
   --color-neutral-950: #12110d;
 
   /* Page backgrounds */
-  --color-canvas: #f6f1e3;
-  --color-mist: #ece4cc;
+  --color-canvas: #ffffff;
+  --color-mist: #f8f4e8;
 
   --font-inter: 'Inter', system-ui, sans-serif;
 }

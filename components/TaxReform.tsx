@@ -77,7 +77,7 @@ export default function TaxReform() {
     const tab = tabs.find((t) => t.id === active)!;
 
     return (
-        <section className="bg-sun-100 py-20 lg:py-28">
+        <section className="border-t border-neutral-100 bg-white py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
                     <p className="eyebrow">New tax laws</p>
@@ -88,7 +88,7 @@ export default function TaxReform() {
                     </p>
                 </div>
 
-                <div className="mt-10 flex gap-1 overflow-x-auto border-b border-sun-300" role="tablist" aria-label="Who the changes affect">
+                <div className="mt-10 flex gap-1 overflow-x-auto border-b border-neutral-200" role="tablist" aria-label="Who the changes affect">
                     {tabs.map((t) => (
                         <button
                             key={t.id}
@@ -107,7 +107,7 @@ export default function TaxReform() {
                 <div key={tab.id} id={`panel-${tab.id}`} role="tabpanel" aria-labelledby={`tab-${tab.id}`} className="grid gap-10 pt-10 [animation:fadeUp_.4s_ease-out] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
                     <div className="grid gap-4 sm:grid-cols-3">
                         {tab.stats.map(([value, label], i) => (
-                            <div key={label} className="rounded-xl bg-white p-6 shadow-[0_1px_2px_rgba(60,40,0,0.06)]">
+                            <div key={label} className="rounded-xl bg-mist p-6">
                                 <span aria-hidden className={`block h-1 w-8 rounded-full ${brandTones[i].solid}`} />
                                 <p className={`mt-4 text-4xl font-semibold tracking-tight ${brandTones[i].text}`}>{value}</p>
                                 <p className="mt-3 text-sm text-neutral-600">{label}</p>

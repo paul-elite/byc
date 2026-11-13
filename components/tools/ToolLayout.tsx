@@ -69,10 +69,10 @@ export default function ToolLayout({
                                 <p className="mt-1 font-medium text-neutral-900 group-hover:text-primary-700">{related.title}</p>
                             </Link>
                         )}
-                        <div className="rounded-xl bg-sun-400 p-5 text-primary-950">
+                        <div className="rounded-xl bg-primary-900 p-5 text-white">
                             <p className="font-medium">Want us to check your numbers?</p>
-                            <p className="mt-1 text-sm text-primary-950/75">We can review your payroll, returns or company position properly.</p>
-                            <Link href="/contact" className="btn btn-dark btn-sm mt-4">Contact us</Link>
+                            <p className="mt-1 text-sm text-primary-100">We can review your payroll, returns or company position properly.</p>
+                            <Link href="/contact" className="btn btn-sun btn-sm mt-4">Contact us</Link>
                         </div>
                         <div>
                             <p className="text-sm font-medium text-neutral-500">More tools</p>

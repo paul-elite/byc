@@ -30,7 +30,7 @@ const faqs = [
 
 export default function Faq() {
     return (
-        <section className="bg-primary-50 py-20 lg:py-28">
+        <section className="border-t border-neutral-100 bg-white py-20 lg:py-28">
             <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
                 <div>
                     <p className="eyebrow">FAQ</p>
