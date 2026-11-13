@@ -30,8 +30,11 @@ export const metadata: Metadata = {
     description: "Audit, tax, accounting and company secretarial services for Nigerian organisations.",
   },
   icons: {
-    icon: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: [
+      { url: '/favicon-light.svg', type: 'image/svg+xml', media: '(prefers-color-scheme: light)' },
+      { url: '/favicon-dark.svg', type: 'image/svg+xml', media: '(prefers-color-scheme: dark)' },
+    ],
+    apple: '/icon-mark.svg',
   },
   robots: {
     index: true,
