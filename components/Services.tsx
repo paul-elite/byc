@@ -1,7 +1,15 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpenCheck, Building2, Calculator, FileSearch, Percent, ShieldCheck } from 'lucide-react';
 import { services } from '@/lib/services';
-import { brandTones } from '@/components/ui/BrandBars';
+
+const look: Record<string, { icon: typeof Calculator; tile: string; card: string }> = {
+    accounting: { icon: Calculator, tile: 'bg-primary-500 text-white', card: 'bg-white' },
+    'audit-and-assurance': { icon: FileSearch, tile: 'bg-blue-500 text-white', card: 'bg-neutral-50' },
+    'tax-advisory': { icon: Percent, tile: 'bg-sun-400 text-primary-950', card: 'bg-white' },
+    'corporate-secretarial': { icon: Building2, tile: 'bg-lime-500 text-primary-950', card: 'bg-neutral-50' },
+    'internal-control': { icon: ShieldCheck, tile: 'bg-leaf-500 text-white', card: 'bg-white' },
+    'finance-training': { icon: BookOpenCheck, tile: 'bg-primary-700 text-white', card: 'bg-neutral-50' },
+};
 
 export default function Services() {
     return (
@@ -20,19 +28,26 @@ export default function Services() {
                     </Link>
                 </div>
 
-                <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
-                    {services.map((service, i) => {
-                        const tone = brandTones[i % 3];
+                <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {services.map((service) => {
+                        const l = look[service.slug];
+                        const Icon = l.icon;
                         return (
-                        <Link key={service.slug} href={`/services/${service.slug}`} className="group relative bg-white p-7 transition-colors hover:bg-canvas">
-                            <span aria-hidden className={`absolute inset-x-0 top-0 h-1 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${tone.solid}`} />
-                            <span className={`mb-5 inline-flex h-8 min-w-8 items-center justify-center rounded-md px-2 text-xs font-semibold tabular-nums ${tone.bg} ${tone.text}`}>{String(i + 1).padStart(2, '0')}</span>
-                            <div className="flex items-start justify-between gap-4">
-                                <h3 className="text-lg text-neutral-900 transition-colors group-hover:text-primary-700">{service.name}</h3>
-                                <ArrowUpRight className="h-5 w-5 shrink-0 text-neutral-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-700" />
-                            </div>
-                            <p className="mt-2 text-[15px] text-neutral-600">{service.summary}</p>
-                        </Link>
+                            <Link
+                                key={service.slug}
+                                href={`/services/${service.slug}`}
+                                className={`group relative flex flex-col rounded-2xl border border-neutral-200/70 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] ${l.card}`}
+                            >
+                                <div className="flex items-start justify-between">
+                                    <span className={`flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105 ${l.tile}`}>
+                                        <Icon className="h-6 w-6" strokeWidth={1.75} />
+                                    </span>
+                                    <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-700" />
+                                </div>
+                                <h3 className="mt-8 text-xl text-neutral-900">{service.name}</h3>
+                                <p className="mt-2 text-[15px] text-neutral-600">{service.summary}</p>
+                                <span className="mt-6 text-sm font-medium text-primary-700 opacity-0 transition-opacity group-hover:opacity-100">Learn more →</span>
+                            </Link>
                         );
                     })}
                 </div>

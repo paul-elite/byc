@@ -58,8 +58,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         <h2 className="mt-12 text-2xl text-neutral-900">Who this is for</h2>
                         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                             {service.forWho.map((item) => (
-                                <li key={item} className="flex gap-3 rounded-lg border border-neutral-200 bg-white p-4 text-[15px] text-neutral-700">
-                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-sun-500" />
+                                <li key={item} className="flex items-start gap-3 rounded-xl bg-neutral-50 p-4 text-[15px] text-neutral-700">
+                                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sun-400 text-primary-950"><Check className="h-3.5 w-3.5" strokeWidth={2.5} /></span>
                                     {item}
                                 </li>
                             ))}
@@ -93,12 +93,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         </ol>
                     </section>
 
-                    <section className="rounded-xl bg-primary-900 p-8 text-white">
-                        <h2 className="text-2xl">What you receive</h2>
+                    <section className="rounded-2xl bg-neutral-100 p-8">
+                        <h2 className="text-2xl text-neutral-900">What you receive</h2>
                         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                             {service.deliverables.map((d) => (
-                                <li key={d} className="flex gap-3 text-[15px] text-primary-50">
-                                    <FileText className="mt-0.5 h-4 w-4 shrink-0 text-lime-400" />
+                                <li key={d} className="flex items-start gap-3 rounded-xl bg-white p-4 text-[15px] text-neutral-700">
+                                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white"><FileText className="h-4 w-4" /></span>
                                     {d}
                                 </li>
                             ))}
@@ -124,11 +124,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 <aside className="lg:sticky lg:top-28 lg:self-start">
-                    <div className="rounded-xl bg-primary-900 p-6 text-white">
-                        <h2 className="text-lg text-white">Talk to us about {service.name.toLowerCase()}</h2>
-                        <p className="mt-2 text-sm text-primary-100">Tell us where you are now and what you need. We will suggest a scope and fee.</p>
-                        <Link href="/contact" className="btn btn-sun btn-md mt-5 w-full">Contact us</Link>
-                        <a href="tel:+2349018811877" className="mt-3 block text-center text-sm font-medium text-primary-100 hover:text-white">+234 901 881 1877</a>
+                    <div className="rounded-2xl border border-neutral-200 bg-mist p-6">
+                        <h2 className="text-lg text-neutral-900">Talk to us about {service.name.toLowerCase()}</h2>
+                        <p className="mt-2 text-sm text-neutral-600">Tell us where you are now and what you need. We will suggest a scope and fee.</p>
+                        <Link href="/contact" className="btn btn-primary btn-md mt-5 w-full">Contact us</Link>
+                        <a href="tel:+2349018811877" className="mt-3 block text-center text-sm font-medium text-neutral-700 hover:text-primary-700">+234 901 881 1877</a>
                     </div>
                     <nav aria-label="Other services" className="mt-8">
                         <h2 className="text-sm font-medium text-neutral-500">Other services</h2>

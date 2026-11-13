@@ -6,10 +6,10 @@ const approach = [
 ];
 
 const cards = [
-    { card: 'bg-primary-700 text-white', badge: 'bg-white/15 text-white', body: 'text-primary-100' },
-    { card: 'bg-sun-400 text-primary-950', badge: 'bg-primary-950/10 text-primary-950', body: 'text-primary-950/75' },
-    { card: 'bg-lime-500 text-primary-950', badge: 'bg-primary-950/10 text-primary-950', body: 'text-primary-950/75' },
-    { card: 'bg-primary-950 text-white', badge: 'bg-white/15 text-white', body: 'text-primary-100' },
+    { card: 'bg-white border border-neutral-200', tile: 'bg-primary-500 text-white' },
+    { card: 'bg-neutral-50 border border-neutral-200/70', tile: 'bg-sun-400 text-primary-950' },
+    { card: 'bg-neutral-100', tile: 'bg-lime-500 text-primary-950' },
+    { card: 'bg-neutral-200/70', tile: 'bg-blue-500 text-white' },
 ];
 
 const sectors = ['Manufacturing', 'Technology', 'Financial services', 'Agriculture', 'Public sector', 'Health care', 'Real estate', 'Non-profits'];
@@ -25,14 +25,14 @@ export default function CaseStudies() {
                 <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {approach.map(([title, description], index) => (
                         <li key={title} className={`rounded-xl p-6 transition-transform hover:-translate-y-1 lg:p-7 ${cards[index].card}`}>
-                            <span className={`flex h-10 w-10 items-center justify-center rounded-lg text-base font-semibold ${cards[index].badge}`}>
+                            <span className={`flex h-12 w-12 items-center justify-center rounded-xl text-lg font-semibold ${cards[index].tile}`}>
                                 {title.charAt(0)}
                             </span>
-                            <h3 className="mt-8 text-xl">
+                            <h3 className="mt-8 text-xl text-neutral-900">
                                 <span className="sr-only">Step {index + 1}: </span>
                                 {title}
                             </h3>
-                            <p className={`mt-2 text-[15px] ${cards[index].body}`}>{description}</p>
+                            <p className="mt-2 text-[15px] text-neutral-600">{description}</p>
                         </li>
                     ))}
                 </ol>

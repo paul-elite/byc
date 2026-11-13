@@ -42,14 +42,14 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
 
                     <ul className="mt-10 space-y-6">
                         <li className="flex gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-700"><Phone className="h-4 w-4" /></span>
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-500 text-white"><Phone className="h-4 w-4" /></span>
                             <div>
                                 <p className="text-sm text-neutral-500">Phone</p>
                                 <a href="tel:+2349018811877" className="font-medium text-neutral-900 hover:text-primary-700">+234 901 881 1877</a>
                             </div>
                         </li>
                         <li className="flex gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-700"><Mail className="h-4 w-4" /></span>
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-500 text-white"><Mail className="h-4 w-4" /></span>
                             <div>
                                 <p className="text-sm text-neutral-500">Email</p>
                                 <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-neutral-900 hover:text-primary-700">{CONTACT_EMAIL}</a>
@@ -57,7 +57,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                         </li>
                         {offices.map(([city, address]) => (
                             <li key={city} className="flex gap-4">
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sun-100 text-sun-700"><MapPin className="h-4 w-4" /></span>
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sun-400 text-primary-950"><MapPin className="h-4 w-4" /></span>
                                 <div>
                                     <p className="text-sm text-neutral-500">{city} office</p>
                                     <p className="font-medium text-neutral-900">{address}</p>

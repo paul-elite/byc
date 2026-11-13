@@ -24,7 +24,7 @@ export default function Footer({ showCta = true }: { showCta?: boolean }) {
                 <BrandBars size="lg" className="absolute -bottom-10 right-[8%] opacity-90" />
                 <div className="container relative flex flex-col gap-6 py-14 md:flex-row md:items-center md:justify-between">
                     <div>
-                        <p className="text-2xl font-semibold tracking-tight">Need help with an audit, tax or your accounts?</p>
+                        <p className="text-2xl font-medium tracking-tight">Need help with an audit, tax or your accounts?</p>
                         <p className="mt-2 text-primary-100">Call +234 901 881 1877 or send us a message.</p>
                     </div>
                     <Link href="/contact" className="btn btn-sun btn-lg shrink-0 md:mr-48">

@@ -106,9 +106,9 @@ export default function TaxReform() {
                 <div key={tab.id} id={`panel-${tab.id}`} role="tabpanel" aria-labelledby={`tab-${tab.id}`} className="grid gap-10 pt-10 [animation:fadeUp_.4s_ease-out] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
                     <div className="grid gap-4 sm:grid-cols-3">
                         {tab.stats.map(([value, label], i) => (
-                            <div key={label} className="rounded-xl bg-mist p-6">
-                                <span aria-hidden className={`block h-1 w-8 rounded-full ${brandTones[i].solid}`} />
-                                <p className={`mt-4 text-4xl font-semibold tracking-tight ${brandTones[i].text}`}>{value}</p>
+                            <div key={label} className={`rounded-2xl p-6 ${['bg-neutral-50 border border-neutral-200/70', 'bg-neutral-100', 'bg-mist border border-neutral-200/70'][i]}`}>
+                                <span aria-hidden className={`block h-1.5 w-10 rounded-full ${['bg-primary-500', 'bg-sun-400', 'bg-lime-500'][i]}`} />
+                                <p className={`mt-4 text-4xl font-medium tracking-tight ${brandTones[i].text}`}>{value}</p>
                                 <p className="mt-3 text-sm text-neutral-600">{label}</p>
                             </div>
                         ))}

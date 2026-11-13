@@ -3,7 +3,7 @@ import { ArrowUpRight, Building2, Calculator, CalendarDays } from 'lucide-react'
 import UpcomingDeadlines from '@/components/tools/UpcomingDeadlines';
 import { tools } from '@/lib/tools';
 
-const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-sun-100 text-sun-700 group-hover:bg-sun-500', 'bg-blue-100 text-blue-700 group-hover:bg-blue-600'];
+const iconTone = ['bg-primary-500 text-white', 'bg-sun-400 text-primary-950', 'bg-blue-500 text-white'];
 
 const icons = { 'paye-calculator': Calculator, 'small-company-check': Building2, 'tax-calendar': CalendarDays } as const;
 
@@ -20,7 +20,7 @@ export default function ToolsTeaser() {
                             return (
                                 <li key={t.slug}>
                                     <Link href={`/tools/${t.slug}`} className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-sun-400">
-                                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:text-white ${iconTone[i]}`}>
+                                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-transform group-hover:-rotate-6 ${iconTone[i]}`}>
                                             <Icon className="h-5 w-5" />
                                         </span>
                                         <span className="min-w-0 flex-1">

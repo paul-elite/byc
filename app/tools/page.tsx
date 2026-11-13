@@ -7,7 +7,7 @@ import PageHeader from '@/components/PageHeader';
 import UpcomingDeadlines from '@/components/tools/UpcomingDeadlines';
 import { tools } from '@/lib/tools';
 
-const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-sun-100 text-sun-700 group-hover:bg-sun-500', 'bg-blue-100 text-blue-700 group-hover:bg-blue-600'];
+const iconTone = ['bg-primary-500 text-white', 'bg-sun-400 text-primary-950', 'bg-blue-500 text-white'];
 
 export const metadata: Metadata = {
     title: 'Free tax tools',
@@ -28,11 +28,12 @@ export default function ToolsPage() {
             <section className="bg-canvas py-16 lg:py-20">
                 <div className="container grid gap-5 md:grid-cols-3">
                     {tools.map((tool, i) => {
+                        const cardBg = ['bg-white', 'bg-neutral-50', 'bg-neutral-100'][i];
                         const Icon = icons[tool.slug as keyof typeof icons];
                         return (
-                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group flex flex-col rounded-xl border border-neutral-200 p-6 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-white">
+                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className={`group flex flex-col rounded-2xl border border-neutral-200/70 p-6 transition-all hover:-translate-y-1 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] ${cardBg}`}>
                                 <div className="flex items-center justify-between">
-                                    <span className={`flex h-11 w-11 items-center justify-center rounded-lg transition-colors group-hover:text-white ${iconTone[i]}`}>
+                                    <span className={`flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:-rotate-6 ${iconTone[i]}`}>
                                         <Icon className="h-5 w-5" />
                                     </span>
                                     <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-colors group-hover:text-primary-700" />

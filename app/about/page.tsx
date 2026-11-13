@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Building2, HeartHandshake, Landmark } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
@@ -42,7 +43,7 @@ export default function AboutPage() {
                     {facts.map(([value, label], i) => (
                         <div key={label} className={`border-t-[3px] pt-4 ${['border-primary-500', 'border-sun-400', 'border-lime-500', 'border-blue-500'][i]}`}>
                             <dt className="sr-only">{label}</dt>
-                            <dd className="text-4xl font-semibold tracking-tight text-neutral-900">{value}</dd>
+                            <dd className="text-4xl font-medium tracking-tight text-neutral-900">{value}</dd>
                             <dd className="mt-1 text-sm text-neutral-600">{label}</dd>
                         </div>
                     ))}
@@ -108,12 +109,13 @@ export default function AboutPage() {
                             size — micro, small, medium, large and multinational.
                         </p>
                         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                            {[
-                                ['Private companies', 'Accounts, audit, tax and company secretarial work as they grow.'],
-                                ['Public sector', 'Audit, financial management and capacity building for agencies and institutions.'],
-                                ['NGOs and projects', 'Donor reporting, project audits and internal controls over restricted funds.'],
-                            ].map(([t, d]) => (
-                                <div key={t} className="rounded-xl border border-neutral-200 bg-white p-5">
+                            {([
+                                ['Private companies', 'Accounts, audit, tax and company secretarial work as they grow.', Building2, 'bg-primary-500 text-white', 'bg-white'],
+                                ['Public sector', 'Audit, financial management and capacity building for agencies and institutions.', Landmark, 'bg-blue-500 text-white', 'bg-neutral-50'],
+                                ['NGOs and projects', 'Donor reporting, project audits and internal controls over restricted funds.', HeartHandshake, 'bg-sun-400 text-primary-950', 'bg-neutral-100'],
+                            ] as const).map(([t, d, Icon, tile, card]) => (
+                                <div key={t} className={`rounded-2xl border border-neutral-200/70 p-5 ${card}`}>
+                                    <span className={`mb-5 flex h-10 w-10 items-center justify-center rounded-xl ${tile}`}><Icon className="h-5 w-5" /></span>
                                     <p className="font-medium text-neutral-900">{t}</p>
                                     <p className="mt-2 text-sm text-neutral-600">{d}</p>
                                 </div>

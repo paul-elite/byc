@@ -123,9 +123,9 @@ export default async function PortfolioPage() {
                                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">Vision</p>
                                 <p className="mt-3 text-base leading-7 text-neutral-600">{portfolio.vision}</p>
                             </div>
-                            <div className="bg-primary-800 p-6 text-white">
-                                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-200">Mission</p>
-                                <p className="mt-3 text-base leading-7 text-white/85">{portfolio.mission}</p>
+                            <div className="bg-neutral-100 p-6 text-neutral-900">
+                                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-600">Mission</p>
+                                <p className="mt-3 text-base leading-7 text-neutral-700">{portfolio.mission}</p>
                             </div>
                         </div>
                     </div>
@@ -180,9 +180,9 @@ export default async function PortfolioPage() {
                         </div>
 
                         <div className="grid content-start gap-6">
-                            <div className="bg-primary-800 p-6 text-white">
-                                <h3 className="[font-family:var(--font-inter)] text-xl font-semibold tracking-normal text-white">Client Base</h3>
-                                <p className="mt-3 text-sm leading-7 text-white/80">{portfolio.clientBase}</p>
+                            <div className="bg-neutral-100 p-6 text-neutral-900">
+                                <h3 className="[font-family:var(--font-inter)] text-xl font-semibold tracking-normal text-neutral-900">Client Base</h3>
+                                <p className="mt-3 text-sm leading-7 text-neutral-700">{portfolio.clientBase}</p>
                             </div>
                             <div>
                                 <h3 className="[font-family:var(--font-inter)] text-xl font-semibold tracking-normal text-neutral-900">Sectors</h3>
@@ -227,30 +227,30 @@ export default async function PortfolioPage() {
                             </div>
                         </div>
 
-                        <div className="bg-primary-800 p-6 text-white">
+                        <div className="bg-neutral-100 p-6 text-neutral-900">
                             <SectionLabel>Contact</SectionLabel>
                             <div className="mt-6 space-y-5">
-                                <a href={`mailto:${portfolio.contactEmail}`} className="flex items-center gap-3 text-base font-semibold text-white">
-                                    <Mail className="h-5 w-5 text-primary-200" />
+                                <a href={`mailto:${portfolio.contactEmail}`} className="flex items-center gap-3 text-base font-semibold text-neutral-900">
+                                    <Mail className="h-5 w-5 text-primary-600" />
                                     {portfolio.contactEmail}
                                 </a>
-                                <a href={`tel:${portfolio.contactPhone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-base font-semibold text-white">
-                                    <Phone className="h-5 w-5 text-primary-200" />
+                                <a href={`tel:${portfolio.contactPhone.replace(/\s/g, '')}`} className="flex items-center gap-3 text-base font-semibold text-neutral-900">
+                                    <Phone className="h-5 w-5 text-primary-600" />
                                     {portfolio.contactPhone}
                                 </a>
                                 <div className="grid gap-4 pt-2">
                                     {portfolio.offices.map((office) => (
-                                        <div key={office.title} className="flex gap-3 border-t border-white/15 pt-4">
-                                            <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary-200" />
+                                        <div key={office.title} className="flex gap-3 border-t border-neutral-200 pt-4">
+                                            <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary-600" />
                                             <div>
-                                                <p className="text-sm font-semibold text-white">{office.title}</p>
-                                                <p className="mt-1 text-sm leading-6 text-white/70">{office.body}</p>
+                                                <p className="text-sm font-semibold text-neutral-900">{office.title}</p>
+                                                <p className="mt-1 text-sm leading-6 text-neutral-600">{office.body}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <a href={PORTFOLIO_DOWNLOAD_PATH} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary-200">
+                            <a href={PORTFOLIO_DOWNLOAD_PATH} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary-600">
                                 Download the official PDF
                                 <ArrowUpRight className="h-4 w-4" />
                             </a>
