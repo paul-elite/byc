@@ -1,21 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useToday } from '@/lib/useToday';
 import { deadlinesForMonth } from '@/lib/tax';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export default function TaxCalendar() {
-    const [year, setYear] = useState(2026);
-    const [month, setMonth] = useState(0);
-    const [today, setToday] = useState<Date | null>(null);
-
-    useEffect(() => {
-        const now = new Date();
-        setToday(now);
-        setYear(now.getFullYear());
-        setMonth(now.getMonth());
-    }, []);
+    const today = useToday();
+    const [picked, setPicked] = useState<{ year: number; month: number } | null>(null);
+    const year = picked?.year ?? today?.getFullYear() ?? 2026;
+    const month = picked?.month ?? today?.getMonth() ?? 0;
+    const setYear = (y: number) => setPicked({ year: y, month });
+    const setMonth = (m: number) => setPicked({ year, month: m });
 
     const items = deadlinesForMonth(year, month);
     const isPast = (d: Date) => !!today && d < new Date(today.getFullYear(), today.getMonth(), today.getDate());

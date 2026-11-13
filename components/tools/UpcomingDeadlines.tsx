@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { upcomingDeadlines, type Deadline } from '@/lib/tax';
+import { useMemo } from 'react';
+import { useToday } from '@/lib/useToday';
+import { upcomingDeadlines } from '@/lib/tax';
 
 const SHORT_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -11,15 +12,9 @@ function daysUntil(date: Date, today: Date) {
 }
 
 export default function UpcomingDeadlines({ count = 4, showDetail = true }: { count?: number; showDetail?: boolean }) {
-    const [today, setToday] = useState<Date | null>(null);
-    const [items, setItems] = useState<Deadline[]>([]);
-
-    // Computed on the client so the list always reflects the visitor's current date.
-    useEffect(() => {
-        const now = new Date();
-        setToday(now);
-        setItems(upcomingDeadlines(now, count));
-    }, [count]);
+    const today = useToday();
+    const todayTime = today?.getTime();
+    const items = useMemo(() => (todayTime ? upcomingDeadlines(new Date(todayTime), count) : []), [todayTime, count]);
 
     if (!today) {
         return (
