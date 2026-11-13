@@ -38,16 +38,21 @@ export default function AboutPage() {
                 consultancy to companies, public-sector bodies and non-profits.
             </PageHeader>
 
-            <section className="border-b border-neutral-200 bg-canvas">
-                <dl className="container grid grid-cols-2 gap-x-6 gap-y-8 py-12 lg:grid-cols-4">
+            <section className="bg-canvas py-16 lg:py-20">
+                <div className="container grid gap-4 md:grid-cols-4 md:grid-rows-2">
+                    <div className="relative min-h-72 overflow-hidden rounded-3xl bg-loader md:col-span-2 md:row-span-2">
+                        <Image src={photos.meeting.src} alt={photos.meeting.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                    </div>
                     {facts.map(([value, label], i) => (
-                        <div key={label} className={`border-t-[3px] pt-4 ${['border-primary-500', 'border-sun-400', 'border-lime-500', 'border-blue-500'][i]}`}>
-                            <dt className="sr-only">{label}</dt>
-                            <dd className="text-4xl font-medium tracking-tight text-neutral-900">{value}</dd>
-                            <dd className="mt-1 text-sm text-neutral-600">{label}</dd>
+                        <div key={label} className={`flex flex-col justify-between rounded-3xl p-6 ${['bg-neutral-100', 'bg-white border border-neutral-200', 'bg-mist border border-neutral-200/70', 'bg-neutral-50 border border-neutral-200/70'][i]}`}>
+                            <span aria-hidden className={`h-1.5 w-10 rounded-full ${['bg-primary-500', 'bg-sun-400', 'bg-lime-500', 'bg-blue-500'][i]}`} />
+                            <div className="mt-8">
+                                <p className="text-5xl font-medium tracking-tight text-neutral-900">{value}</p>
+                                <p className="mt-1 text-sm text-neutral-600">{label}</p>
+                            </div>
                         </div>
                     ))}
-                </dl>
+                </div>
             </section>
 
             <section className="bg-canvas py-20 lg:py-28">

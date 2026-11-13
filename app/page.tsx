@@ -4,7 +4,7 @@ import Services from '@/components/Services';
 import TaxReform from '@/components/TaxReform';
 import About from '@/components/About';
 import CaseStudies from '@/components/CaseStudies';
-import ToolsTeaser from '@/components/ToolsTeaser';
+import HomeBento from '@/components/bento/HomeBento';
 import PortfolioPreview from '@/components/PortfolioPreview';
 import BlogSection from '@/components/BlogSection';
 import Faq from '@/components/Faq';
@@ -18,7 +18,7 @@ export default function Home() {
       <Hero />
       <Services />
       <TaxReform />
-      <ToolsTeaser />
+      <HomeBento />
       <About />
       <CaseStudies />
       <PortfolioPreview />

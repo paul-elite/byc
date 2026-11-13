@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ToolLayout from '@/components/tools/ToolLayout';
 import SmallCompanyChecker from '@/components/tools/SmallCompanyChecker';
+import CompanyTaxChart from '@/components/charts/CompanyTaxChart';
 
 export const metadata: Metadata = {
     title: 'Small company checker',
@@ -39,6 +40,11 @@ export default function Page() {
                             <tr><td>Monthly VAT returns</td><td>Not required</td><td>Due by the 21st</td></tr>
                         </tbody>
                     </table>
+                    <h2>What the exemption is worth</h2>
+                    <p>Tax payable by a company that does not qualify, at different profit levels. A small company pays nothing.</p>
+                    <div className="mb-8 rounded-2xl border border-neutral-200 p-5">
+                        <CompanyTaxChart />
+                    </div>
                     <h2>What does not change</h2>
                     <p>
                         A small company still files an annual company income tax return, deducts and remits PAYE

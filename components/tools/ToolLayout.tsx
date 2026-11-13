@@ -49,7 +49,7 @@ export default function ToolLayout({
 
             <section className="border-t border-neutral-200 bg-canvas py-16 lg:py-20">
                 <div className="container grid gap-14 lg:grid-cols-[1fr_20rem] lg:gap-16">
-                    <div className="min-w-0 max-w-3xl text-[16px] leading-relaxed text-neutral-700 [&_h2]:mb-4 [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:text-neutral-900 [&_h2:first-child]:mt-0 [&_li]:mb-2 [&_p]:mb-4 [&_table]:mb-6 [&_td]:border-b [&_td]:border-neutral-100 [&_td]:py-2.5 [&_td]:pr-4 [&_th]:border-b [&_th]:border-neutral-200 [&_th]:py-2.5 [&_th]:pr-4 [&_th]:text-left [&_th]:text-sm [&_th]:font-medium [&_th]:text-neutral-900 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5">
+                    <div className="min-w-0 max-w-3xl text-[16px] leading-relaxed text-neutral-700 [&_h2]:mb-4 [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:text-neutral-900 [&_h2:first-child]:mt-0 [&_li]:mb-2 [&_p]:mb-4 [&_table]:mb-6 [&_td]:border-b [&_td]:border-neutral-100 [&_td]:py-2.5 [&_td]:pr-4 [&_th]:border-b [&_th]:border-neutral-200 [&_th]:py-2.5 [&_th]:pr-4 [&_th]:text-left [&_th]:text-sm [&_th]:font-medium [&_th]:text-neutral-900 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5 [&_figure_p]:mb-0 [&_figure_table]:mb-0">
                         {explainer}
                         <h2>Common questions</h2>
                         <Accordion items={faqs} defaultOpen={null} />

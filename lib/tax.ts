@@ -39,6 +39,38 @@ export function personalIncomeTax(chargeableIncome: number): { total: number; ba
     return { total: bands.reduce((sum, b) => sum + b.tax, 0), bands };
 }
 
+// Previous regime (Personal Income Tax Act, repealed from 2026), for comparison
+// charts only: consolidated relief allowance of the higher of ₦200,000 or 1% of
+// gross, plus 20% of gross, then six bands from 7% to 24%.
+export const OLD_PIT_BANDS = [
+    { size: 300_000, rate: 0.07 },
+    { size: 300_000, rate: 0.11 },
+    { size: 500_000, rate: 0.15 },
+    { size: 500_000, rate: 0.19 },
+    { size: 1_600_000, rate: 0.21 },
+    { size: Infinity, rate: 0.24 },
+] as const;
+
+function bandTax(income: number, bands: readonly { size: number; rate: number }[]) {
+    let remaining = Math.max(0, income);
+    let total = 0;
+    for (const b of bands) {
+        const slice = Math.min(remaining, b.size);
+        total += slice * b.rate;
+        remaining -= slice;
+    }
+    return total;
+}
+
+export function oldRegimeTax(gross: number) {
+    const cra = Math.max(200_000, gross * 0.01) + gross * 0.2;
+    return bandTax(gross - cra, OLD_PIT_BANDS);
+}
+
+export function newRegimeTax(gross: number) {
+    return bandTax(gross, PIT_BANDS);
+}
+
 export function rentRelief(annualRent: number) {
     return Math.min(Math.max(0, annualRent) * RENT_RELIEF_RATE, RENT_RELIEF_CAP);
 }

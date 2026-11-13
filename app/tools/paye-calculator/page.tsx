@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ToolLayout from '@/components/tools/ToolLayout';
 import PayeCalculator from '@/components/tools/PayeCalculator';
+import EffectiveRateChart from '@/components/charts/EffectiveRateChart';
 
 export const metadata: Metadata = {
     title: 'PAYE calculator 2026',
@@ -48,6 +49,15 @@ export default function Page() {
                         So someone with ₦3,000,000 of chargeable income pays nothing on the first ₦800,000 and
                         15% on the remaining ₦2,200,000 — ₦330,000 for the year, an effective rate of 11%.
                     </p>
+                    <h2>Old rules vs 2026 rules</h2>
+                    <p>
+                        With no deductions, the 2026 rules tax less than the old rules on salaries below about
+                        ₦17.5 million a year, and more above it. Pension contributions and rent relief move the
+                        lines, so try your own figures in the calculator above.
+                    </p>
+                    <div className="not-prose mb-8 rounded-2xl border border-neutral-200 p-5">
+                        <EffectiveRateChart height={280} />
+                    </div>
                     <h2>Deductions you can claim</h2>
                     <ul>
                         <li><strong>Pension</strong> — your employee contribution under the Pension Reform Act, normally 8% of basic, housing and transport pay.</li>
