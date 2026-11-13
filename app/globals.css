@@ -184,6 +184,16 @@ p {
 }
 .btn-sun:hover { background: var(--color-sun-300); }
 
+.btn-outline-light {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.btn-outline-light:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .btn-dark {
   background: var(--color-primary-950);
   color: #ffffff;
