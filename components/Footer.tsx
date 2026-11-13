@@ -91,7 +91,7 @@ export default function Footer({ showCta = true }: { showCta?: boolean }) {
                     </div>
                 </div>
 
-                <div className="px-6 pb-8 pt-4 md:px-10 md:pb-10 lg:px-14 lg:pb-14">
+                <div className="container pb-10 pt-4 lg:pb-14">
                     <Image src="/logo-white.svg" alt="Babatunde Yunus & Co. — Chartered Accountants & Tax Practitioners" width={485} height={110} className="h-auto w-full" />
                 </div>
             </div>
