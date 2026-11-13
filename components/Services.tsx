@@ -4,11 +4,11 @@ import { services } from '@/lib/services';
 
 const look: Record<string, { icon: typeof Calculator; tile: string; card: string }> = {
     accounting: { icon: Calculator, tile: 'bg-primary-500 text-white', card: 'bg-white' },
-    'audit-and-assurance': { icon: FileSearch, tile: 'bg-blue-500 text-white', card: 'bg-neutral-50' },
+    'audit-and-assurance': { icon: FileSearch, tile: 'bg-blue-500 text-white', card: 'bg-white' },
     'tax-advisory': { icon: Percent, tile: 'bg-sun-400 text-primary-950', card: 'bg-white' },
-    'corporate-secretarial': { icon: Building2, tile: 'bg-lime-500 text-primary-950', card: 'bg-neutral-50' },
+    'corporate-secretarial': { icon: Building2, tile: 'bg-lime-500 text-primary-950', card: 'bg-white' },
     'internal-control': { icon: ShieldCheck, tile: 'bg-leaf-500 text-white', card: 'bg-white' },
-    'finance-training': { icon: BookOpenCheck, tile: 'bg-primary-700 text-white', card: 'bg-neutral-50' },
+    'finance-training': { icon: BookOpenCheck, tile: 'bg-primary-700 text-white', card: 'bg-white' },
 };
 
 export default function Services() {
