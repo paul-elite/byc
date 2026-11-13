@@ -1,3 +1,4 @@
+import { revalidatePath } from 'next/cache';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
 import { ADMIN_COOKIE_NAME, verifyAdminSession } from '@/lib/adminAuth';
@@ -26,6 +27,8 @@ export async function PUT(request: NextRequest) {
     try {
         const body = await request.json();
         const content = await savePortfolioContent(body);
+        // The homepage teaser reads the same content.
+        revalidatePath('/');
         return NextResponse.json(content);
     } catch (error) {
         console.error('Error saving portfolio:', error);

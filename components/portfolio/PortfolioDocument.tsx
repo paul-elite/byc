@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from 'react';
+import { Children, type CSSProperties, type ReactElement, type ReactNode } from 'react';
 import Image from 'next/image';
 import type { PortfolioContent } from '@/lib/portfolioData';
 import '@fontsource-variable/montserrat/wght.css';
@@ -112,7 +112,8 @@ const abbrOf = (value: string) => splitAbbr(value)[1];
 
 /* ------------------------------------------------------------------ */
 
-export default function PortfolioDocument({ content }: { content: PortfolioContent }) {
+/** `only` renders a single page (0 = cover), used by the admin editor's preview. */
+export default function PortfolioDocument({ content, only }: { content: PortfolioContent; only?: number }) {
     const c = content;
 
     // Accreditations already named in a green note are not repeated in the grid.
@@ -123,8 +124,8 @@ export default function PortfolioDocument({ content }: { content: PortfolioConte
     const partnerLast = nameParts.length > 1 ? nameParts.pop() : '';
     const partnerFirst = nameParts.join(' ');
 
-    return (
-        <div className="pf-stack">
+    const sheets: ReactElement<{ children: ReactNode }> = (
+        <>
             {/* ---------- Cover ---------- */}
             <Page label="Cover">
                 <LogoMark x={98.4} y={65.5} w={99.8} />
@@ -408,6 +409,10 @@ export default function PortfolioDocument({ content }: { content: PortfolioConte
                 <p className="pf-white pf-nowrap" style={text(98, 512.4, 16, 19.2)}>VISIT OUR WEBSITE</p>
                 <p className="pf-medium pf-center pf-nowrap" style={{ ...text(42.8, 577.3, 17.4, 20.9, 236.8), ...track(12) }}>{c.website.replace(/^www\./, '')}</p>
             </Page>
-        </div>
+        </>
     );
+
+    const pages = Children.toArray(sheets.props.children);
+
+    return <div className="pf-stack">{only === undefined ? pages : pages[only]}</div>;
 }
