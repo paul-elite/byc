@@ -45,7 +45,7 @@ export default function MiniPaye() {
                 <p className="text-sm text-primary-200">PAYE per month</p>
                 <p className="text-4xl font-medium tabular-nums tracking-tight text-sun-300">{naira(r.monthlyTax)}</p>
                 <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/10">
-                    <div className="h-full rounded-full bg-sun-400 transition-all duration-300" style={{ width: `${Math.min(100, share * 400)}%` }} />
+                    <div className="h-full origin-left rounded-full bg-sun-400 transition-transform duration-200 ease-out" style={{ transform: `scaleX(${Math.min(1, share * 4)})` }} />
                 </div>
                 <p className="mt-2 text-xs text-primary-200">{(share * 100).toFixed(1)}% of salary · after 8% pension</p>
                 <Link href="/tools/paye-calculator" className="mt-4 inline-block text-sm font-medium text-white underline decoration-white/30 underline-offset-4 hover:decoration-white">Full calculator →</Link>

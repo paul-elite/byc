@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import RevealObserver from "@/components/motion/RevealObserver";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({
@@ -51,6 +52,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
         {children}
+        <RevealObserver />
         <WhatsAppButton />
       </body>
     </html>

@@ -118,7 +118,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                                 <p className="text-sm text-neutral-500">Related reading</p>
                                 <p className="mt-1 font-medium text-neutral-900 group-hover:text-primary-700">{service.relatedArticle.title}</p>
                             </div>
-                            <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-transform group-hover:translate-x-1 group-hover:text-primary-700" />
+                            <ArrowRight className="h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 ease-out motion-safe:group-hover:translate-x-1 group-hover:text-primary-700" />
                         </Link>
                     )}
                 </div>

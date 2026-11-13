@@ -39,7 +39,7 @@ export default function BlogPostPage() {
             <main>
                 <Navigation />
                 <div className="min-h-screen flex items-center justify-center">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+                    <div className="animate-spin [animation-duration:0.6s] rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
                 </div>
                 <Footer />
             </main>
@@ -129,7 +129,7 @@ export default function BlogPostPage() {
                                 <Link key={relBlog.id} href={`/blog/${relBlog.slug}`} className="group block">
                                     <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                         {relBlog.cover_image && (
-                                            <Image src={relBlog.cover_image} alt="" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                                            <Image src={relBlog.cover_image} alt="" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]" />
                                         )}
                                     </div>
                                     <p className="mt-4 text-sm text-neutral-500">{formatDate(relBlog.published_at)}</p>

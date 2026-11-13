@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { photos } from '@/lib/images';
@@ -17,15 +18,15 @@ export default function Hero() {
         <section className="bg-canvas pt-16 lg:pt-[72px]">
             <div className="container grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
                 <div>
-                    <h1 className="text-4xl text-neutral-900 sm:text-5xl lg:text-[3.5rem]">
+                    <h1 className="rise text-4xl text-neutral-900 sm:text-5xl lg:text-[3.5rem]" style={{ '--rise': '14px' } as CSSProperties}>
                         Audit, tax and accounting for organisations worldwide.
                     </h1>
-                    <p className="mt-6 max-w-xl text-lg text-neutral-600">
+                    <p className="rise mt-6 max-w-xl text-lg text-neutral-600" style={{ '--delay': '90ms' } as CSSProperties}>
                         Babatunde Yunus &amp; Co. keeps your books accurate, your filings on time and your
                         accounts ready for audit. We work with companies, public bodies and NGOs
                         wherever they operate.
                     </p>
-                    <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                    <div className="rise mt-8 flex flex-col gap-3 sm:flex-row" style={{ '--delay': '160ms' } as CSSProperties}>
                         <Link href="/contact" className="btn btn-primary btn-lg">
                             Book a consultation
                         </Link>
@@ -35,7 +36,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="relative">
+                <div className="rise relative" style={{ '--delay': '120ms', '--rise': '0px' } as CSSProperties}>
                 
                 <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-loader shadow-[0_20px_60px_-20px_rgba(7,46,24,0.35)]">
                     <Image

@@ -51,7 +51,7 @@ export default function BlogSection() {
                                                 alt=""
                                                 fill
                                                 sizes="(min-width: 768px) 33vw, 100vw"
-                                                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                                                className="object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]"
                                             />
                                         )}
                                     </div>

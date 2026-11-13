@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 const approach = [
     ['Care', 'We start by understanding your business, your records and your regulatory exposure.'],
     ['Attention', 'We check the details that change tax, audit and reporting outcomes.'],
@@ -24,7 +25,7 @@ export default function CaseStudies() {
 
                 <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {approach.map(([title, description], index) => (
-                        <li key={title} className={`rounded-xl p-6 transition-transform hover:-translate-y-1 lg:p-7 ${cards[index].card}`}>
+                        <li key={title} data-reveal="up" style={{ '--delay': `${[0, 70, 130, 180][index] ?? 180}ms` } as CSSProperties} className={`rounded-xl p-6 lg:p-7 ${cards[index].card}`}>
                             <span className={`flex h-12 w-12 items-center justify-center rounded-xl text-lg font-semibold ${cards[index].tile}`}>
                                 {title.charAt(0)}
                             </span>

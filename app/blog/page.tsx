@@ -108,7 +108,7 @@ export default function BlogPage() {
                                 <Link href={`/blog/${featuredBlog.slug}`} className="group mt-12 grid items-center gap-8 border-b border-neutral-200 pb-12 lg:grid-cols-2 lg:gap-12">
                                     <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                         {featuredBlog.cover_image && (
-                                            <Image src={featuredBlog.cover_image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                                            <Image src={featuredBlog.cover_image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]" />
                                         )}
                                     </div>
                                     <div>
@@ -132,7 +132,7 @@ export default function BlogPage() {
                                             <Link href={`/blog/${blog.slug}`} className="block">
                                                 <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                                     {blog.cover_image && (
-                                                        <Image src={blog.cover_image} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                                                        <Image src={blog.cover_image} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.03]" />
                                                     )}
                                                 </div>
                                                 <p className="mt-5 text-sm text-neutral-500">

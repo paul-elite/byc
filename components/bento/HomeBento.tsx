@@ -70,7 +70,7 @@ export default function HomeBento() {
 
                     {/* Small company stat */}
                     <Link href="/tools/small-company-check" className={`${tile} group relative overflow-hidden bg-mist md:col-span-2`}>
-                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-lime-500 text-primary-950 transition-transform group-hover:-rotate-6"><Building2 className="h-5 w-5" /></span>
+                        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-lime-500 text-primary-950 transition-transform duration-200 ease-out motion-safe:group-hover:-rotate-6"><Building2 className="h-5 w-5" /></span>
                         <p className="mt-6 text-5xl font-medium tracking-tight text-neutral-900">0%</p>
                         <p className="mt-2 text-[15px] text-neutral-700">Company income tax for small companies: turnover up to ₦100m and fixed assets up to ₦250m.</p>
                         <p className="mt-4 text-sm font-medium text-primary-700">Check if you qualify →</p>
@@ -108,7 +108,7 @@ export default function HomeBento() {
                         <div className="grid gap-3 md:grid-cols-3">
                             {toolLinks.map(({ href, label, note, icon: Icon, tone }) => (
                                 <Link key={href} href={href} className="group flex items-center gap-4 rounded-2xl p-3 transition-colors hover:bg-neutral-50">
-                                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform group-hover:-rotate-6 ${tone}`}>
+                                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 ease-out motion-safe:group-hover:-rotate-6 ${tone}`}>
                                         <Icon className="h-5 w-5" />
                                     </span>
                                     <span className="min-w-0 flex-1">

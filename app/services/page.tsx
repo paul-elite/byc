@@ -60,7 +60,7 @@ export default function ServicesPage() {
                                         {service.name}
                                     </span>
                                     <span className="text-[15px] text-neutral-600">{service.summary}</span>
-                                    <ArrowUpRight className="hidden h-6 w-6 text-neutral-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-700 md:block" />
+                                    <ArrowUpRight className="hidden h-6 w-6 text-neutral-300 transition-[translate,color] duration-200 ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 group-hover:text-primary-700 md:block" />
                                 </Link>
                             </li>
                         ))}

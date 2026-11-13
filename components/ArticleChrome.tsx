@@ -31,7 +31,7 @@ export default function ArticleChrome({ headings, children }: { headings: { id: 
     return (
         <>
             <div className="fixed inset-x-0 top-16 z-40 h-0.5 bg-transparent lg:top-[72px]" aria-hidden>
-                <div className="h-full origin-left bg-primary-600 transition-transform duration-150" style={{ transform: `scaleX(${progress})` }} />
+                <div className="h-full origin-left bg-primary-600 transition-transform duration-150 ease-linear" style={{ transform: `scaleX(${progress})` }} />
             </div>
             <div className="mx-auto grid max-w-5xl gap-12 px-5 lg:grid-cols-[1fr_14rem]">
                 <div ref={bodyRef} className="min-w-0 max-w-3xl">{children}</div>

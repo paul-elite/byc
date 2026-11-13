@@ -29,7 +29,7 @@ export default function Accordion({ items, defaultOpen = 0 }: { items: Accordion
                                 <span className={`text-base font-medium transition-colors md:text-[17px] ${isOpen ? 'text-primary-700' : 'text-neutral-900 group-hover:text-primary-700'}`}>
                                     {item.question}
                                 </span>
-                                <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'rotate-45 border-lime-500 bg-lime-500 text-primary-950' : 'border-neutral-300 text-neutral-500 group-hover:border-primary-600 group-hover:text-primary-700'}`}>
+                                <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-[rotate,background-color,border-color,color] duration-200 ease-out ${isOpen ? 'rotate-45 border-lime-500 bg-lime-500 text-primary-950' : 'border-neutral-300 text-neutral-500 group-hover:border-primary-600 group-hover:text-primary-700'}`}>
                                     <Plus className="h-3.5 w-3.5" />
                                 </span>
                             </button>
@@ -38,9 +38,9 @@ export default function Accordion({ items, defaultOpen = 0 }: { items: Accordion
                             id={panelId}
                             role="region"
                             aria-labelledby={buttonId}
-                            className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
+                            className={`grid transition-[grid-template-rows] duration-[250ms] ease-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
                         >
-                            <div className="overflow-hidden">
+                            <div className={`overflow-hidden transition-opacity ease-out ${isOpen ? 'opacity-100 duration-[250ms]' : 'opacity-0 duration-150'}`}>
                                 <div className="max-w-3xl pb-6 pr-10 text-[15px] leading-relaxed text-neutral-600">{item.answer}</div>
                             </div>
                         </div>

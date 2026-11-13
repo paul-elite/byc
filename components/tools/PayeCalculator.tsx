@@ -136,7 +136,7 @@ export default function PayeCalculator({ compact = false }: { compact?: boolean 
                         {usedBands.map((b, i) => (
                             <div
                                 key={b.from}
-                                className={`${bandShades[result.bands.indexOf(b)]} h-full transition-all duration-500 ${i > 0 ? 'border-l border-primary-900' : ''}`}
+                                className={`${bandShades[result.bands.indexOf(b)]} h-full ${i > 0 ? 'border-l border-primary-900' : ''}`}
                                 style={{ width: `${(b.taxable / Math.max(result.chargeable, 1)) * 100}%` }}
                             />
                         ))}

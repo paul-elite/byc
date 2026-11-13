@@ -19,8 +19,8 @@ export default function ToolsTeaser() {
                             const Icon = icons[t.slug as keyof typeof icons];
                             return (
                                 <li key={t.slug}>
-                                    <Link href={`/tools/${t.slug}`} className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 transition-all hover:-translate-y-0.5 hover:border-sun-400">
-                                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-transform group-hover:-rotate-6 ${iconTone[i]}`}>
+                                    <Link href={`/tools/${t.slug}`} className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 transition-[translate,border-color] duration-200 ease-out motion-safe:hover:-translate-y-0.5 active:translate-y-0 hover:border-sun-400">
+                                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 ease-out motion-safe:group-hover:-rotate-6 ${iconTone[i]}`}>
                                             <Icon className="h-5 w-5" />
                                         </span>
                                         <span className="min-w-0 flex-1">

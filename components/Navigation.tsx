@@ -54,7 +54,7 @@ export default function Navigation() {
             </nav>
 
             {isOpen && (
-                <div className="border-t border-neutral-200 bg-canvas lg:hidden">
+                <div className="enter-down border-t border-neutral-200 bg-canvas lg:hidden">
                     <div className="container flex flex-col py-3">
                         {navLinks.map((link) => (
                             <Link

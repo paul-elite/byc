@@ -31,9 +31,9 @@ export default function ToolsPage() {
                         const cardBg = ['bg-white', 'bg-neutral-50', 'bg-neutral-100'][i];
                         const Icon = icons[tool.slug as keyof typeof icons];
                         return (
-                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className={`group flex flex-col rounded-2xl border border-neutral-200/70 p-6 transition-all hover:-translate-y-1 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] ${cardBg}`}>
+                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className={`group flex flex-col rounded-2xl border border-neutral-200/70 p-6 transition-[translate,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-1 active:translate-y-0 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] ${cardBg}`}>
                                 <div className="flex items-center justify-between">
-                                    <span className={`flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:-rotate-6 ${iconTone[i]}`}>
+                                    <span className={`flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-200 ease-out motion-safe:group-hover:-rotate-6 ${iconTone[i]}`}>
                                         <Icon className="h-5 w-5" />
                                     </span>
                                     <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-colors group-hover:text-primary-700" />

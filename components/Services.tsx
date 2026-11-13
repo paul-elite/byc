@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, BookOpenCheck, Building2, Calculator, FileSearch, Percent, ShieldCheck } from 'lucide-react';
 import { services } from '@/lib/services';
@@ -29,20 +30,22 @@ export default function Services() {
                 </div>
 
                 <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {services.map((service) => {
+                    {services.map((service, i) => {
                         const l = look[service.slug];
                         const Icon = l.icon;
                         return (
                             <Link
                                 key={service.slug}
                                 href={`/services/${service.slug}`}
-                                className={`group relative flex flex-col rounded-2xl border border-neutral-200/70 p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] ${l.card}`}
+                                data-reveal="up"
+                                style={{ '--delay': `${[0, 70, 130, 180, 220, 250][i] ?? 250}ms` } as CSSProperties}
+                                className={`group relative flex flex-col rounded-2xl border border-neutral-200/70 p-7 transition-[translate,box-shadow] duration-200 ease-out motion-safe:hover:-translate-y-1 hover:shadow-[0_14px_40px_-18px_rgba(60,40,0,0.35)] active:translate-y-0 ${l.card}`}
                             >
                                 <div className="flex items-start justify-between">
-                                    <span className={`flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105 ${l.tile}`}>
+                                    <span className={`flex h-12 w-12 items-center justify-center rounded-xl transition-transform duration-200 ease-out motion-safe:group-hover:-rotate-6 ${l.tile}`}>
                                         <Icon className="h-6 w-6" strokeWidth={1.75} />
                                     </span>
-                                    <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-700" />
+                                    <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-[translate,color] duration-200 ease-out motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5 group-hover:text-primary-700" />
                                 </div>
                                 <h3 className="mt-8 text-xl text-neutral-900">{service.name}</h3>
                                 <p className="mt-2 text-[15px] text-neutral-600">{service.summary}</p>
