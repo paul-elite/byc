@@ -18,13 +18,18 @@ const facts: [string, string][] = [
     ['3', 'Partners'],
     ['12', 'Professional accountants'],
     ['2', 'Offices, in Abuja and Ilorin'],
-    [String(defaultPortfolioContent.accreditations.length), 'Professional affiliations'],
+    [String(defaultPortfolioContent.accreditations.length + defaultPortfolioContent.accreditationNotes.length), 'Professional affiliations'],
 ];
 
 const values = ['Service excellence', 'Customer care', 'Integrity', 'Professionalism', 'Hard work', 'Trustworthiness'];
 
 // "Institute of Chartered Accountants of Nigeria (ICAN)" -> ['ICAN', 'Institute of ...']
-const bodies = defaultPortfolioContent.accreditations.map((item) => {
+const bodies = [
+    ...defaultPortfolioContent.accreditations,
+    'Financial Reporting Council of Nigeria (FRCN)',
+    'International Financial Reporting Standard certification (IFRS)',
+].map((raw) => {
+    const item = raw.replace(/\s*\n\s*/g, ' ');
     const match = item.match(/^(.*)\s\(([^)]+)\)$/);
     return match ? [match[2], match[1]] : [item, ''];
 });

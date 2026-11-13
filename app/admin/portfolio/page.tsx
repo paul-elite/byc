@@ -41,11 +41,23 @@ function ListEditor({
     title,
     items,
     onChange,
+    multiline = false,
+    hint,
 }: {
     title: string;
     items: string[];
     onChange: (items: string[]) => void;
+    /** Line breaks typed here are kept on the page. */
+    multiline?: boolean;
+    hint?: string;
 }) {
+    const fieldClass = 'flex-1 rounded-lg border border-gray-200 px-4 py-3 text-gray-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200';
+    const setItem = (index: number, value: string) => {
+        const next = [...items];
+        next[index] = value;
+        onChange(next);
+    };
+
     return (
         <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
             <div className="flex items-center justify-between mb-4">
@@ -54,18 +66,15 @@ function ListEditor({
                     Add item
                 </button>
             </div>
+            {hint && <p className="text-sm text-gray-500 -mt-2 mb-4">{hint}</p>}
             <div className="space-y-3">
                 {items.map((item, index) => (
                     <div key={index} className="flex gap-3">
-                        <input
-                            value={item}
-                            onChange={(event) => {
-                                const next = [...items];
-                                next[index] = event.target.value;
-                                onChange(next);
-                            }}
-                            className="flex-1 rounded-lg border border-gray-200 px-4 py-3 text-gray-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-200"
-                        />
+                        {multiline ? (
+                            <textarea value={item} rows={Math.max(2, item.split('\n').length)} onChange={(event) => setItem(index, event.target.value)} className={fieldClass} />
+                        ) : (
+                            <input value={item} onChange={(event) => setItem(index, event.target.value)} className={fieldClass} />
+                        )}
                         <button type="button" onClick={() => onChange(items.filter((_, itemIndex) => itemIndex !== index))} className="px-3 text-sm text-red-600 hover:text-red-700">
                             Remove
                         </button>
@@ -287,6 +296,10 @@ export default function AdminPortfolioPage() {
                         <TextField label="Download button text" value={portfolio.downloadLabel} onChange={(value) => updateField('downloadLabel', value)} />
                         <TextField label="Phone" value={portfolio.contactPhone} onChange={(value) => updateField('contactPhone', value)} />
                         <TextField label="Email" value={portfolio.contactEmail} onChange={(value) => updateField('contactEmail', value)} />
+                        <TextField label="Website" value={portfolio.website} onChange={(value) => updateField('website', value)} />
+                        <TextField label="Firm descriptor (after the firm name)" value={portfolio.firmDescriptor} onChange={(value) => updateField('firmDescriptor', value)} />
+                        <TextField label="Managing partner name" value={portfolio.partnerName} onChange={(value) => updateField('partnerName', value)} />
+                        <TextField label="Managing partner credentials" value={portfolio.partnerCredentials} onChange={(value) => updateField('partnerCredentials', value)} />
                     </div>
                     <div className="grid md:grid-cols-2 gap-5 mt-5">
                         <TextField label="Intro" value={portfolio.intro} onChange={(value) => updateField('intro', value)} multiline />
@@ -294,13 +307,20 @@ export default function AdminPortfolioPage() {
                         <TextField label="Vision" value={portfolio.vision} onChange={(value) => updateField('vision', value)} multiline />
                         <TextField label="Mission" value={portfolio.mission} onChange={(value) => updateField('mission', value)} multiline />
                         <TextField label="Client base" value={portfolio.clientBase} onChange={(value) => updateField('clientBase', value)} multiline />
+                        <TextField label="Cover title" value={portfolio.coverTitle} onChange={(value) => updateField('coverTitle', value)} multiline />
+                        <TextField label="Tagline under the logo" value={portfolio.tagline} onChange={(value) => updateField('tagline', value)} multiline />
+                        <TextField label="Managing partner profile" value={portfolio.partnerBio} onChange={(value) => updateField('partnerBio', value)} multiline />
+                        <TextField label="Our symbol: introduction" value={portfolio.symbolIntro} onChange={(value) => updateField('symbolIntro', value)} multiline />
                     </div>
                 </section>
 
                 <PairEditor title="Registration & Profile Rows" items={portfolio.stats} firstLabel="Label" secondLabel="Value" firstKey="label" secondKey="value" onChange={(items) => updateField('stats', items)} />
                 <PairEditor title="Beliefs" items={portfolio.beliefs} firstLabel="Heading" secondLabel="Text" firstKey="title" secondKey="body" onChange={(items) => updateField('beliefs', items)} />
                 <ListEditor title="Services" items={portfolio.services} onChange={(items) => updateField('services', items)} />
-                <ListEditor title="Accreditations" items={portfolio.accreditations} onChange={(items) => updateField('accreditations', items)} />
+                <ListEditor title="Service Cards (Our Services page)" items={portfolio.serviceCards} onChange={(items) => updateField('serviceCards', items)} multiline hint="Eight cards. Press Enter where a line should break." />
+                <ListEditor title="Accreditations" items={portfolio.accreditations} onChange={(items) => updateField('accreditations', items)} multiline hint="Nine boxes. Press Enter where a line should break; end with the abbreviation in brackets." />
+                <ListEditor title="Accreditation Notes (green boxes)" items={portfolio.accreditationNotes} onChange={(items) => updateField('accreditationNotes', items)} multiline hint="Two boxes under the grid." />
+                <ListEditor title="Our Symbol Words" items={portfolio.symbolWords} onChange={(items) => updateField('symbolWords', items)} hint="Three words, one per bar." />
                 <ListEditor title="Values" items={portfolio.values} onChange={(items) => updateField('values', items)} />
                 <PairEditor title="Strategy" items={portfolio.strategy} firstLabel="Heading" secondLabel="Text" firstKey="title" secondKey="body" onChange={(items) => updateField('strategy', items)} />
                 <ListEditor title="Client Sectors" items={portfolio.sectors} onChange={(items) => updateField('sectors', items)} />

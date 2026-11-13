@@ -219,46 +219,6 @@ p {
   background: #ffffff;
 }
 
-/* Portfolio A4 document */
-.portfolio-document {
-  --portfolio-sheet-width: min(100%, 210mm);
-}
-
-.portfolio-a4-sheet {
-  width: var(--portfolio-sheet-width);
-  min-height: calc(var(--portfolio-sheet-width) * 1.414);
-}
-
-@media (max-width: 767px) {
-  .portfolio-document { --portfolio-sheet-width: 100%; }
-  .portfolio-a4-sheet { min-height: auto; }
-}
-
-@media print {
-  body { background: white; }
-
-  nav,
-  footer,
-  .portfolio-document ~ *,
-  .sticky {
-    display: none !important;
-  }
-
-  .portfolio-document {
-    display: block;
-    padding: 0;
-    max-width: none;
-  }
-
-  .portfolio-a4-sheet {
-    width: 210mm;
-    min-height: 297mm;
-    box-shadow: none;
-    page-break-after: always;
-    break-after: page;
-  }
-}
-
 ::selection {
   background: var(--color-primary-100);
   color: var(--color-primary-900);

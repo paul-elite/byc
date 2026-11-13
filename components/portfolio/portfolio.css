@@ -1,0 +1,247 @@
+/* BYC firm portfolio: an exact rebuild of the printed A4 brochure.
+   Every measurement is in PDF points (the page is 595.276 x 841.89pt).
+   `--u` is one point at the current rendered width, so the whole page scales. */
+
+.pf-sheet {
+    container-type: inline-size;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 595.276 / 841.89;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.pf-page {
+    --u: calc(100cqw / 595.276);
+    position: absolute;
+    inset: 0;
+    font-family: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
+    color: #231f20;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+}
+
+.pf-page *,
+.pf-page *::before,
+.pf-page *::after {
+    box-sizing: border-box;
+}
+
+.pf-page p,
+.pf-page h1,
+.pf-page h2,
+.pf-page h3,
+.pf-page ul,
+.pf-page ol,
+.pf-page dl,
+.pf-page dd,
+.pf-page dt {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    color: inherit;
+    list-style: none;
+}
+
+.pf-page .pf-abs { position: absolute; }
+.pf-page .pf-img { position: absolute; display: block; object-fit: cover; }
+.pf-page .pf-pre { white-space: pre-line; }
+.pf-page .pf-nowrap { white-space: nowrap; }
+
+.pf-page .pf-light { font-weight: 300; }
+.pf-page .pf-regular { font-weight: 400; }
+.pf-page .pf-medium { font-weight: 500; }
+.pf-page .pf-semibold { font-weight: 600; }
+.pf-page .pf-bold { font-weight: 700; }
+.pf-page .pf-extrabold { font-weight: 800; }
+.pf-page .pf-black { font-weight: 900; }
+.pf-page .pf-italic { font-style: italic; }
+.pf-page .pf-center { text-align: center; }
+.pf-page .pf-white { color: #ffffff; }
+
+/* Red strip along the bottom edge of every page */
+.pf-strip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e91d25;
+}
+
+/* Page number, top right */
+.pf-num {
+    position: absolute;
+    right: calc(var(--u) * 18.2);
+    font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    font-weight: 300;
+    font-size: calc(var(--u) * 40.5);
+    line-height: 1;
+    letter-spacing: calc(var(--u) * 0.4);
+}
+
+/* Section title in the photo banner */
+.pf-page .pf-title {
+    position: absolute;
+    font-weight: 400;
+    font-size: calc(var(--u) * 60);
+    line-height: calc(var(--u) * 72);
+    white-space: pre-line;
+}
+
+/* Green square bullets */
+.pf-bullets > li { position: relative; }
+.pf-bullets > li::before {
+    content: "";
+    position: absolute;
+    background: var(--pf-bullet, #59ba47);
+    width: calc(var(--u) * var(--pf-bullet-size, 7.3));
+    height: calc(var(--u) * var(--pf-bullet-size, 7.3));
+    left: calc(var(--u) * var(--pf-bullet-x, -21));
+    top: calc(var(--u) * var(--pf-bullet-y, 15));
+}
+
+/* Portfolio table */
+.pf-table {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border: calc(var(--u) * 0.73) solid #231f20;
+}
+.pf-table::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(var(--u) * 223.7);
+    width: calc(var(--u) * 0.8);
+    background: #231f20;
+}
+.pf-row { position: relative; min-height: 0; }
+.pf-row > * { position: absolute; }
+
+/* Accreditation grid */
+.pf-grid9 {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    border-top: calc(var(--u) * 0.27) solid #231f20;
+    border-left: calc(var(--u) * 0.27) solid #231f20;
+}
+.pf-grid9 > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #eeecee;
+    border-right: calc(var(--u) * 0.27) solid #231f20;
+    border-bottom: calc(var(--u) * 0.27) solid #231f20;
+    padding: 0 calc(var(--u) * 3);
+    font-size: calc(var(--u) * 19.3);
+    line-height: calc(var(--u) * 23.1);
+    white-space: pre-line;
+    text-wrap: balance;
+}
+
+.pf-note {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #109246;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: calc(var(--u) * 14.6);
+    line-height: calc(var(--u) * 17.5);
+    padding: 0 calc(var(--u) * 8);
+    white-space: pre-line;
+    text-wrap: balance;
+}
+.pf-page .pf-note b {
+    font-weight: 700;
+    font-size: calc(var(--u) * 19.3);
+    line-height: calc(var(--u) * 24);
+}
+
+/* Service cards */
+.pf-cards {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, calc(var(--u) * 245.1));
+    justify-content: space-between;
+    align-content: space-between;
+}
+.pf-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #454a4b;
+    border-radius: calc(var(--u) * 5);
+    padding: calc(var(--u) * 15) calc(var(--u) * 4) calc(var(--u) * 19.5);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: calc(var(--u) * 23.6);
+    line-height: calc(var(--u) * 28.4);
+    letter-spacing: -0.022em;
+    text-align: center;
+    white-space: pre-line;
+}
+.pf-card-icon {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: calc(var(--u) * 37.9);
+}
+.pf-card-icon img { display: block; width: auto; }
+.pf-card.is-long {
+    font-size: calc(var(--u) * 22.6);
+    letter-spacing: -0.07em;
+    line-height: calc(var(--u) * 27.6);
+}
+.pf-card.is-tight { letter-spacing: -0.046em; }
+
+/* Screen wrapper + print */
+.pf-stack {
+    display: grid;
+    gap: 28px;
+    width: min(100%, 210mm);
+    margin: 0 auto;
+}
+.pf-stack .pf-sheet {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 12px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html, body { background: #ffffff !important; }
+    body * { visibility: hidden; }
+    .pf-stack, .pf-stack * { visibility: visible; }
+    .pf-stack {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 210mm;
+        margin: 0;
+    }
+    .pf-stack .pf-sheet {
+        width: 210mm;
+        height: 297mm;
+        aspect-ratio: auto;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+    }
+    .pf-page { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
