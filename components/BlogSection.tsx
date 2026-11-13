@@ -25,8 +25,7 @@ export default function BlogSection() {
             <div className="container">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
-                        <p className="eyebrow">Insights</p>
-                        <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Latest articles</h2>
+                        <h2 className="text-3xl text-neutral-900 md:text-4xl">Latest articles</h2>
                     </div>
                     <Link href="/blog" className="inline-flex items-center gap-2 font-medium text-primary-700 hover:text-primary-800">
                         All articles <ArrowRight className="h-4 w-4" />

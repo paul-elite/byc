@@ -20,8 +20,7 @@ export default function About() {
                 </div>
 
                 <div>
-                    <p className="eyebrow">About the firm</p>
-                    <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">
                         Accountants who know Nigerian business and regulation.
                     </h2>
                     <p className="mt-5 text-lg text-neutral-600">

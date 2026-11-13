@@ -12,8 +12,7 @@ export default function ToolsTeaser() {
         <section className="bg-primary-900 py-20 text-white lg:py-28">
             <div className="container grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
                 <div>
-                    <p className="eyebrow !text-lime-300">Free tools</p>
-                    <h2 className="mt-3 text-3xl text-white md:text-4xl">Work it out yourself</h2>
+                    <h2 className="text-3xl text-white md:text-4xl">Work it out yourself</h2>
                     <p className="mt-4 text-lg text-primary-100">Quick answers on the 2026 rules. Nothing to sign up for.</p>
                     <ul className="mt-8 space-y-3">
                         {tools.map((t, i) => {

@@ -5,12 +5,11 @@ import { brandTones } from '@/components/ui/BrandBars';
 
 export default function Services() {
     return (
-        <section id="services" className="bg-canvas py-20 lg:py-28">
+        <section id="services" className="bg-mist py-20 lg:py-28">
             <div className="container">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
-                        <p className="eyebrow">Services</p>
-                        <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">What we do</h2>
+                        <h2 className="text-3xl text-neutral-900 md:text-4xl">What we do</h2>
                         <p className="mt-4 text-lg text-neutral-600">
                             Most clients start with one service — an audit, a tax problem, a set of accounts — and
                             stay with us for the rest.

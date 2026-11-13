@@ -33,8 +33,7 @@ export default function Faq() {
         <section className="border-t border-neutral-100 bg-white py-20 lg:py-28">
             <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
                 <div>
-                    <p className="eyebrow">FAQ</p>
-                    <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Questions we often get</h2>
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">Questions we often get</h2>
                     <p className="mt-4 text-lg text-neutral-600">Can’t find what you’re looking for? Ask us directly.</p>
                     <Link href="/contact" className="btn btn-outline btn-md mt-8">Ask a question</Link>
                 </div>

@@ -17,13 +17,7 @@ export default function Hero() {
         <section className="bg-canvas pt-16 lg:pt-[72px]">
             <div className="container grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
                 <div>
-                    <Link href="/blog/nigeria-tax-reform-2026-what-changed-for-businesses" className="group mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white py-1 pl-1 pr-3 text-sm text-neutral-700 transition-colors hover:border-primary-300">
-                        <span className="rounded-full bg-sun-400 px-2 py-0.5 text-xs font-semibold text-primary-950">2026</span>
-                        What the new tax laws mean for you
-                        <span className="text-neutral-400 transition-transform group-hover:translate-x-0.5">→</span>
-                    </Link>
-                    <p className="eyebrow">Chartered Accountants &amp; Tax Practitioners</p>
-                    <h1 className="mt-4 text-4xl text-neutral-900 sm:text-5xl lg:text-[3.5rem]">
+                    <h1 className="text-4xl text-neutral-900 sm:text-5xl lg:text-[3.5rem]">
                         Audit, tax and accounting for Nigerian organisations.
                     </h1>
                     <p className="mt-6 max-w-xl text-lg text-neutral-600">

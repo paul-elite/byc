@@ -34,8 +34,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
         <section id="contact" className={`bg-canvas ${asPage ? 'pt-32 pb-20 lg:pt-40 lg:pb-28' : 'border-t border-neutral-200 py-20 lg:py-28'}`}>
             <div className="container grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
                 <div>
-                    <p className="eyebrow">Contact</p>
-                    <Heading className="mt-3 text-3xl text-neutral-900 md:text-4xl">Talk to us</Heading>
+                    <Heading className="text-3xl text-neutral-900 md:text-4xl">Talk to us</Heading>
                     <p className="mt-5 text-lg text-neutral-600">
                         Tell us what you need help with — an audit, a tax matter, your accounts or company
                         filings.

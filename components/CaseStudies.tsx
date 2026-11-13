@@ -19,8 +19,7 @@ export default function CaseStudies() {
         <section className="bg-canvas py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
-                    <p className="eyebrow">How we work</p>
-                    <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Our CARE approach</h2>
+                    <h2 className="text-3xl text-neutral-900 md:text-4xl">Our CARE approach</h2>
                 </div>
 
                 <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
