@@ -7,7 +7,7 @@ import PageHeader from '@/components/PageHeader';
 import UpcomingDeadlines from '@/components/tools/UpcomingDeadlines';
 import { tools } from '@/lib/tools';
 
-const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-leaf-100 text-leaf-700 group-hover:bg-leaf-500', 'bg-lime-100 text-lime-700 group-hover:bg-lime-500'];
+const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-sun-100 text-sun-700 group-hover:bg-sun-500', 'bg-blue-100 text-blue-700 group-hover:bg-blue-600'];
 
 export const metadata: Metadata = {
     title: 'Free tax tools',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { photos } from '@/lib/images';
 import BrandBars from '@/components/ui/BrandBars';
 
-const factBorders = ['border-primary-500', 'border-leaf-500', 'border-lime-500', 'border-primary-900'];
+const factBorders = ['border-primary-400', 'border-sun-400', 'border-lime-500', 'border-leaf-500'];
 
 const facts = [
     ['Member of', 'ICAN, CITN and FRCN'],
@@ -18,7 +18,7 @@ export default function Hero() {
             <div className="container grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
                 <div>
                     <Link href="/blog/nigeria-tax-reform-2026-what-changed-for-businesses" className="group mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white py-1 pl-1 pr-3 text-sm text-neutral-700 transition-colors hover:border-primary-300">
-                        <span className="rounded-full bg-primary-700 px-2 py-0.5 text-xs font-medium text-white">2026</span>
+                        <span className="rounded-full bg-sun-400 px-2 py-0.5 text-xs font-semibold text-primary-950">2026</span>
                         What the new tax laws mean for you
                         <span className="text-neutral-400 transition-transform group-hover:translate-x-0.5">→</span>
                     </Link>
@@ -55,18 +55,18 @@ export default function Hero() {
                 </div>
                 <BrandBars size="md" className="absolute -top-3 right-8 z-10 hidden drop-shadow-sm sm:flex" />
                 <div className="absolute -bottom-5 left-6 hidden items-center gap-3 rounded-lg bg-white px-4 py-3 shadow-lg sm:flex">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-lime-500 text-sm font-semibold text-primary-950">₦</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sun-400 text-sm font-semibold text-primary-950">₦</span>
                     <span className="text-sm leading-tight text-neutral-700"><span className="block font-medium text-neutral-900">Updated for 2026</span>New tax laws, new rates</span>
                 </div>
                 </div>
             </div>
 
-            <div className="border-y border-neutral-200 bg-mist">
+            <div className="bg-primary-900">
                 <dl className="container grid grid-cols-2 gap-x-6 gap-y-6 py-8 lg:grid-cols-4">
                     {facts.map(([label, value], i) => (
                         <div key={label} className={`border-l-[3px] pl-4 ${factBorders[i]}`}>
-                            <dt className="text-sm text-neutral-500">{label}</dt>
-                            <dd className="mt-1 font-medium text-neutral-900">{value}</dd>
+                            <dt className="text-sm text-primary-200">{label}</dt>
+                            <dd className="mt-1 font-medium text-white">{value}</dd>
                         </div>
                     ))}
                 </dl>

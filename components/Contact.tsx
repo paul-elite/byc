@@ -50,7 +50,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                             </div>
                         </li>
                         <li className="flex gap-4">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-leaf-100 text-leaf-700"><Mail className="h-4 w-4" /></span>
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-700"><Mail className="h-4 w-4" /></span>
                             <div>
                                 <p className="text-sm text-neutral-500">Email</p>
                                 <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-neutral-900 hover:text-primary-700">{CONTACT_EMAIL}</a>
@@ -58,7 +58,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                         </li>
                         {offices.map(([city, address]) => (
                             <li key={city} className="flex gap-4">
-                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-lime-100 text-lime-700"><MapPin className="h-4 w-4" /></span>
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sun-100 text-sun-700"><MapPin className="h-4 w-4" /></span>
                                 <div>
                                     <p className="text-sm text-neutral-500">{city} office</p>
                                     <p className="font-medium text-neutral-900">{address}</p>
@@ -69,7 +69,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                 </div>
 
                 <form onSubmit={handleSubmit} className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 pt-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-8 md:pt-10">
-                    <div aria-hidden className="absolute inset-x-0 top-0 flex h-1.5"><span className="flex-1 bg-primary-500" /><span className="flex-1 bg-leaf-500" /><span className="flex-1 bg-lime-500" /></div>
+                    <div aria-hidden className="absolute inset-x-0 top-0 flex h-1.5"><span className="flex-1 bg-primary-500" /><span className="flex-1 bg-lime-500" /><span className="flex-1 bg-sun-400" /></div>
                     <div className="grid gap-5 md:grid-cols-2">
                         <Field label="Full name" name="name" value={formData.name} onChange={handleChange} autoComplete="name" required />
                         <Field label="Email" name="email" type="email" value={formData.email} onChange={handleChange} autoComplete="email" required />

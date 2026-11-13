@@ -12,6 +12,6 @@ export default function BrandBars({ className = '', size = 'md' }: { className?:
 
 export const brandTones = [
     { bg: 'bg-primary-50', text: 'text-primary-700', solid: 'bg-primary-500', border: 'border-primary-500' },
-    { bg: 'bg-leaf-50', text: 'text-leaf-700', solid: 'bg-leaf-500', border: 'border-leaf-500' },
+    { bg: 'bg-sun-50', text: 'text-sun-700', solid: 'bg-sun-400', border: 'border-sun-400' },
     { bg: 'bg-lime-50', text: 'text-lime-700', solid: 'bg-lime-500', border: 'border-lime-500' },
 ];

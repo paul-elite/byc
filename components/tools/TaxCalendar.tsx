@@ -39,8 +39,8 @@ export default function TaxCalendar() {
                             className={`relative rounded-md py-2 text-sm transition-colors ${active ? 'bg-primary-700 font-medium text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}
                         >
                             {m}
-                            {hasAnnual && <span className={`absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full ${active ? 'bg-white' : 'bg-primary-500'}`} aria-hidden />}
-                            {isCurrent && !active && <span className="absolute inset-x-3 bottom-1 h-0.5 rounded-full bg-primary-500" aria-hidden />}
+                            {hasAnnual && <span className={`absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full ${active ? 'bg-sun-300' : 'bg-blue-500'}`} aria-hidden />}
+                            {isCurrent && !active && <span className="absolute inset-x-3 bottom-1 h-0.5 rounded-full bg-sun-400" aria-hidden />}
                         </button>
                     );
                 })}
@@ -54,11 +54,11 @@ export default function TaxCalendar() {
                         <div>
                             <p className="flex flex-wrap items-center gap-2 font-medium text-neutral-900">
                                 {d.title}
-                                {d.kind === 'annual' && <span className="rounded-full bg-primary-50 px-2 py-0.5 text-xs font-medium text-primary-700">Annual</span>}
+                                {d.kind === 'annual' && <span className="rounded-full bg-blue-100 px-2 py-0.5 text-xs font-medium text-blue-700">Annual</span>}
                                 {isPast(d.date) && <span className="text-xs font-normal text-neutral-500">Passed</span>}
                             </p>
                             <p className="mt-1 text-sm text-neutral-600">{d.detail}</p>
-                            <p className="mt-1 text-xs text-neutral-400">{d.authority}</p>
+                            <p className="mt-1.5"><span className="rounded bg-blue-50 px-1.5 py-0.5 text-[11px] font-medium text-blue-700">{d.authority}</span></p>
                         </div>
                     </li>
                 ))}

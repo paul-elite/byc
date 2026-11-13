@@ -29,9 +29,47 @@
   --color-lime-500: #a8cc48; /* logo lime */
   --color-lime-700: #6b8a24;
 
-  /* Neutral page backgrounds */
-  --color-canvas: #f6f6f1;
-  --color-mist: #ecede5;
+  /* Warm yellow that complements the greens */
+  --color-sun-50: #fff9e8;
+  --color-sun-100: #fdefc3;
+  --color-sun-200: #fbe08c;
+  --color-sun-300: #f8cf5a;
+  --color-sun-400: #f5bf33;
+  --color-sun-500: #eaa917;
+  --color-sun-600: #c98a0c;
+  --color-sun-700: #9a660b;
+  --color-sun-800: #6b470b;
+
+  /* Red: urgency and warnings only */
+  --color-red-50: #fdf0ee;
+  --color-red-100: #fbdcd6;
+  --color-red-500: #e0533f;
+  --color-red-600: #c63f2c;
+  --color-red-700: #9f3223;
+
+  /* Blue: reference information (authorities, annual dates, sources) */
+  --color-blue-50: #eef4fc;
+  --color-blue-100: #d8e6f8;
+  --color-blue-500: #3b7dd8;
+  --color-blue-600: #2c66bc;
+  --color-blue-700: #23519a;
+
+  /* Warm, slightly saturated neutrals (override Tailwind's grey) */
+  --color-neutral-50: #faf7ee;
+  --color-neutral-100: #f2ecdc;
+  --color-neutral-200: #e4dcc6;
+  --color-neutral-300: #d1c6aa;
+  --color-neutral-400: #a69c80;
+  --color-neutral-500: #7c735c;
+  --color-neutral-600: #5d5645;
+  --color-neutral-700: #464135;
+  --color-neutral-800: #2e2b23;
+  --color-neutral-900: #1d1b16;
+  --color-neutral-950: #12110d;
+
+  /* Page backgrounds */
+  --color-canvas: #f6f1e3;
+  --color-mist: #ece4cc;
 
   --font-inter: 'Inter', system-ui, sans-serif;
 }
@@ -45,7 +83,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-canvas);
-  color: #171717;
+  color: var(--color-neutral-900);
 }
 
 /* Typography */
@@ -98,7 +136,7 @@ p {
   width: 1.25rem;
   height: 0.375rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--color-primary-500) 0 33%, var(--color-leaf-500) 33% 66%, var(--color-lime-500) 66% 100%);
+  background: linear-gradient(90deg, var(--color-primary-500) 0 25%, var(--color-leaf-500) 25% 50%, var(--color-lime-500) 50% 75%, var(--color-sun-400) 75% 100%);
 }
 
 /* Buttons */
@@ -137,6 +175,18 @@ p {
 }
 .btn-lime:hover { background: var(--color-lime-400); }
 
+.btn-sun {
+  background: var(--color-sun-400);
+  color: var(--color-primary-950);
+}
+.btn-sun:hover { background: var(--color-sun-300); }
+
+.btn-dark {
+  background: var(--color-primary-950);
+  color: #ffffff;
+}
+.btn-dark:hover { background: var(--color-primary-900); }
+
 .btn-white {
   background: #ffffff;
   color: var(--color-primary-800);
@@ -146,7 +196,7 @@ p {
 .btn-ghost,
 .btn-outline {
   background: transparent;
-  color: #171717;
+  color: var(--color-neutral-900);
   border-color: #d4d4d4;
 }
 .btn-ghost:hover,

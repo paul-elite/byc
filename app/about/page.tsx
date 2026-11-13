@@ -40,7 +40,7 @@ export default function AboutPage() {
             <section className="border-b border-neutral-200 bg-canvas">
                 <dl className="container grid grid-cols-2 gap-x-6 gap-y-8 py-12 lg:grid-cols-4">
                     {facts.map(([value, label], i) => (
-                        <div key={label} className={`border-t-[3px] pt-4 ${['border-primary-500', 'border-leaf-500', 'border-lime-500', 'border-primary-900'][i]}`}>
+                        <div key={label} className={`border-t-[3px] pt-4 ${['border-primary-500', 'border-sun-400', 'border-lime-500', 'border-blue-500'][i]}`}>
                             <dt className="sr-only">{label}</dt>
                             <dd className="text-4xl font-semibold tracking-tight text-neutral-900">{value}</dd>
                             <dd className="mt-1 text-sm text-neutral-600">{label}</dd>
@@ -77,7 +77,7 @@ export default function AboutPage() {
                     </div>
                     <div className="rounded-xl border border-neutral-200 p-8 bg-white">
                         <div className="flex items-center gap-5">
-                            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime-500 text-xl font-semibold text-primary-950">IY</span>
+                            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-sun-400 text-xl font-semibold text-primary-950">IY</span>
                             <div>
                                 <p className="text-xl font-medium text-neutral-900">Dr. Ismail Babatunde Yunus</p>
                                 <p className="text-neutral-600">Managing Partner</p>

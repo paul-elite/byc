@@ -5,7 +5,12 @@ const approach = [
     ['Excellence', 'You come away with clean records, filed returns and controls that hold up.'],
 ];
 
-const badge = ['bg-primary-500 text-white', 'bg-leaf-500 text-white', 'bg-lime-500 text-primary-950', 'bg-primary-900 text-white'];
+const cards = [
+    { card: 'bg-primary-700 text-white', badge: 'bg-white/15 text-white', body: 'text-primary-100' },
+    { card: 'bg-sun-400 text-primary-950', badge: 'bg-primary-950/10 text-primary-950', body: 'text-primary-950/75' },
+    { card: 'bg-lime-500 text-primary-950', badge: 'bg-primary-950/10 text-primary-950', body: 'text-primary-950/75' },
+    { card: 'bg-primary-950 text-white', badge: 'bg-white/15 text-white', body: 'text-primary-100' },
+];
 
 const sectors = ['Manufacturing', 'Technology', 'Financial services', 'Agriculture', 'Public sector', 'Health care', 'Real estate', 'Non-profits'];
 
@@ -18,17 +23,17 @@ export default function CaseStudies() {
                     <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Our CARE approach</h2>
                 </div>
 
-                <ol className="mt-12 grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
+                <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {approach.map(([title, description], index) => (
-                        <li key={title} className="bg-white p-6 lg:p-7">
-                            <span className={`flex h-10 w-10 items-center justify-center rounded-lg text-base font-semibold ${badge[index]}`}>
+                        <li key={title} className={`rounded-xl p-6 transition-transform hover:-translate-y-1 lg:p-7 ${cards[index].card}`}>
+                            <span className={`flex h-10 w-10 items-center justify-center rounded-lg text-base font-semibold ${cards[index].badge}`}>
                                 {title.charAt(0)}
                             </span>
-                            <h3 className="mt-5 text-lg text-neutral-900">
+                            <h3 className="mt-8 text-xl">
                                 <span className="sr-only">Step {index + 1}: </span>
                                 {title}
                             </h3>
-                            <p className="mt-2 text-[15px] text-neutral-600">{description}</p>
+                            <p className={`mt-2 text-[15px] ${cards[index].body}`}>{description}</p>
                         </li>
                     ))}
                 </ol>

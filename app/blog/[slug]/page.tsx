@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getBlogBySlug, getRelatedBlogs, formatDate, Blog } from '@/lib/blogs';
 import { renderMarkdown, extractHeadings } from '@/lib/markdown';
+import { tagTone } from '@/lib/tagTone';
 import ArticleChrome from '@/components/ArticleChrome';
 
 export default function BlogPostPage() {
@@ -78,7 +79,7 @@ export default function BlogPostPage() {
                 <div className="mx-auto max-w-5xl px-5 pt-14 lg:pt-20 [&>*]:max-w-3xl">
                     <Link href="/blog" className="text-sm text-neutral-500 hover:text-primary-700">&larr; All articles</Link>
                     {blog.tags.length > 0 && (
-                        <p className="mt-6 text-sm text-primary-700">{blog.tags.join(' · ')}</p>
+                        <p className="mt-6 flex flex-wrap gap-2">{blog.tags.map((t) => <span key={t} className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${tagTone(t)}`}>{t}</span>)}</p>
                     )}
                     <h1 className="mt-3 text-4xl text-neutral-900 md:text-5xl">{blog.title}</h1>
                     <p className="mt-5 text-xl text-neutral-600">{blog.excerpt}</p>
@@ -111,7 +112,7 @@ export default function BlogPostPage() {
                         ))}
                     </div>
 
-                    <div className="mt-10 rounded-lg border border-neutral-200 bg-neutral-50 p-6">
+                    <div className="mt-10 rounded-xl bg-sun-100 p-6">
                         <p className="font-medium text-neutral-900">Questions about how this affects you?</p>
                         <p className="mt-1 text-[15px] text-neutral-600">This article is general guidance, not advice for your situation. Talk to us before acting on it.</p>
                         <Link href="/contact" className="btn btn-primary btn-sm mt-4">Contact us</Link>

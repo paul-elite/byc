@@ -49,15 +49,15 @@ export default function SmallCompanyChecker() {
             </div>
 
             <div className="border-t border-neutral-200 bg-canvas p-6 md:p-8 lg:border-l lg:border-t-0" aria-live="polite">
-                <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${r.isSmall ? 'bg-lime-200 text-primary-900' : 'bg-neutral-200 text-neutral-800'}`}>
-                    <span className={`h-2 w-2 rounded-full ${r.isSmall ? 'bg-primary-600' : 'bg-neutral-500'}`} />
+                <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${r.isSmall ? 'bg-lime-200 text-primary-900' : 'bg-red-100 text-red-700'}`}>
+                    <span className={`h-2 w-2 rounded-full ${r.isSmall ? 'bg-primary-600' : 'bg-red-500'}`} />
                     {r.isSmall ? 'Likely a small company' : 'Not a small company'}
                 </span>
 
                 <ul className="mt-6 space-y-3">
                     {tests.map((t) => (
                         <li key={t.label} className="flex items-center gap-3 text-[15px]">
-                            <span className={`flex h-5 w-5 items-center justify-center rounded-full ${t.ok ? 'bg-primary-600 text-white' : 'bg-neutral-300 text-neutral-600'}`}>
+                            <span className={`flex h-5 w-5 items-center justify-center rounded-full ${t.ok ? 'bg-primary-600 text-white' : 'bg-red-500 text-white'}`}>
                                 {t.ok ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
                             </span>
                             <span className={t.ok ? 'text-neutral-800' : 'text-neutral-500'}>{t.label}</span>

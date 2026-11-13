@@ -77,7 +77,7 @@ export default function TaxReform() {
     const tab = tabs.find((t) => t.id === active)!;
 
     return (
-        <section className="border-t border-neutral-200 bg-mist py-20 lg:py-28">
+        <section className="bg-sun-100 py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
                     <p className="eyebrow">New tax laws</p>
@@ -88,7 +88,7 @@ export default function TaxReform() {
                     </p>
                 </div>
 
-                <div className="mt-10 flex gap-1 overflow-x-auto border-b border-neutral-200" role="tablist" aria-label="Who the changes affect">
+                <div className="mt-10 flex gap-1 overflow-x-auto border-b border-sun-300" role="tablist" aria-label="Who the changes affect">
                     {tabs.map((t) => (
                         <button
                             key={t.id}
@@ -97,7 +97,7 @@ export default function TaxReform() {
                             aria-selected={active === t.id}
                             aria-controls={`panel-${t.id}`}
                             onClick={() => setActive(t.id)}
-                            className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-[15px] transition-colors ${active === t.id ? 'border-lime-500 font-medium text-primary-800' : 'border-transparent text-neutral-500 hover:text-neutral-900'}`}
+                            className={`-mb-px shrink-0 border-b-2 px-4 py-3 text-[15px] transition-colors ${active === t.id ? 'border-primary-700 font-medium text-primary-900' : 'border-transparent text-neutral-500 hover:text-neutral-900'}`}
                         >
                             {t.label}
                         </button>
@@ -107,7 +107,7 @@ export default function TaxReform() {
                 <div key={tab.id} id={`panel-${tab.id}`} role="tabpanel" aria-labelledby={`tab-${tab.id}`} className="grid gap-10 pt-10 [animation:fadeUp_.4s_ease-out] lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
                     <div className="grid gap-4 sm:grid-cols-3">
                         {tab.stats.map(([value, label], i) => (
-                            <div key={label} className={`rounded-xl p-6 ${brandTones[i].bg} ring-1 ring-inset ring-black/[0.04]`}>
+                            <div key={label} className="rounded-xl bg-white p-6 shadow-[0_1px_2px_rgba(60,40,0,0.06)]">
                                 <span aria-hidden className={`block h-1 w-8 rounded-full ${brandTones[i].solid}`} />
                                 <p className={`mt-4 text-4xl font-semibold tracking-tight ${brandTones[i].text}`}>{value}</p>
                                 <p className="mt-3 text-sm text-neutral-600">{label}</p>
@@ -118,7 +118,7 @@ export default function TaxReform() {
                         <ul className="space-y-3">
                             {tab.points.map((p) => (
                                 <li key={p} className="flex gap-3 text-[15px] text-neutral-700">
-                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-500" />
+                                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-600" />
                                     {p}
                                 </li>
                             ))}

@@ -59,7 +59,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                             {service.forWho.map((item) => (
                                 <li key={item} className="flex gap-3 rounded-lg border border-neutral-200 bg-white p-4 text-[15px] text-neutral-700">
-                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf-500" />
+                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-sun-500" />
                                     {item}
                                 </li>
                             ))}
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         <h2 className="text-2xl text-neutral-900">What’s included</h2>
                         <dl className="mt-6 grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2">
                             {service.included.map((item) => (
-                                <div key={item.title} className="bg-white p-6 transition-colors hover:bg-neutral-50">
+                                <div key={item.title} className="bg-white p-6 transition-colors hover:bg-sun-50">
                                     <dt className="font-medium text-neutral-900">{item.title}</dt>
                                     <dd className="mt-2 text-[15px] text-neutral-600">{item.detail}</dd>
                                 </div>
@@ -124,11 +124,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 <aside className="lg:sticky lg:top-28 lg:self-start">
-                    <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-6">
-                        <h2 className="text-lg text-neutral-900">Talk to us about {service.name.toLowerCase()}</h2>
-                        <p className="mt-2 text-sm text-neutral-600">Tell us where you are now and what you need. We will suggest a scope and fee.</p>
-                        <Link href="/contact" className="btn btn-primary btn-md mt-5 w-full">Contact us</Link>
-                        <a href="tel:+2349018811877" className="mt-3 block text-center text-sm font-medium text-neutral-700 hover:text-primary-700">+234 901 881 1877</a>
+                    <div className="rounded-xl bg-primary-900 p-6 text-white">
+                        <h2 className="text-lg text-white">Talk to us about {service.name.toLowerCase()}</h2>
+                        <p className="mt-2 text-sm text-primary-100">Tell us where you are now and what you need. We will suggest a scope and fee.</p>
+                        <Link href="/contact" className="btn btn-sun btn-md mt-5 w-full">Contact us</Link>
+                        <a href="tel:+2349018811877" className="mt-3 block text-center text-sm font-medium text-primary-100 hover:text-white">+234 901 881 1877</a>
                     </div>
                     <nav aria-label="Other services" className="mt-8">
                         <h2 className="text-sm font-medium text-neutral-500">Other services</h2>

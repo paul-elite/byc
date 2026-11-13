@@ -7,6 +7,7 @@ import Navigation from '@/components/Navigation';
 import PageHeader from '@/components/PageHeader';
 import Footer from '@/components/Footer';
 import { getPublishedBlogs, formatDate, Blog } from '@/lib/blogs';
+import { tagTone } from '@/lib/tagTone';
 
 export default function BlogPage() {
     const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -46,7 +47,7 @@ export default function BlogPage() {
 
     const tagButton = (active: boolean) =>
         `rounded-full border px-3.5 py-1.5 text-sm transition-colors ${active
-            ? 'border-primary-700 bg-primary-700 text-white'
+            ? 'border-primary-800 bg-primary-800 text-white'
             : 'border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400'}`;
 
     const showFeatured = featuredBlog && !searchQuery && !selectedTag;
@@ -112,7 +113,7 @@ export default function BlogPage() {
                                     </div>
                                     <div>
                                         <p className="text-sm text-neutral-500">
-                                            <span className="text-primary-700">Latest</span>
+                                            <span className="rounded-full bg-sun-400 px-2 py-0.5 text-xs font-semibold text-primary-950">Latest</span>
                                             {featuredBlog.tags[0] && ` · ${featuredBlog.tags[0]}`}
                                         </p>
                                         <h2 className="mt-3 text-3xl text-neutral-900 group-hover:text-primary-700 lg:text-4xl">{featuredBlog.title}</h2>
@@ -135,7 +136,7 @@ export default function BlogPage() {
                                                     )}
                                                 </div>
                                                 <p className="mt-5 text-sm text-neutral-500">
-                                                    {blog.tags[0] && <span className="text-primary-700">{blog.tags[0]} · </span>}
+                                                    {blog.tags[0] && <span className={`mr-2 rounded-full px-2 py-0.5 text-xs font-medium ${tagTone(blog.tags[0])}`}>{blog.tags[0]}</span>}
                                                     {formatDate(blog.published_at)}
                                                 </p>
                                                 <h3 className="mt-2 text-lg text-neutral-900 group-hover:text-primary-700">{blog.title}</h3>

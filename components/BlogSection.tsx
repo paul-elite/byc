@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { getPublishedBlogs, formatDate, Blog } from '@/lib/blogs';
+import { tagTone } from '@/lib/tagTone';
 
 export default function BlogSection() {
     const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -56,7 +57,7 @@ export default function BlogSection() {
                                         )}
                                     </div>
                                     <p className="mt-5 text-sm text-neutral-500">
-                                        {blog.tags[0] && <span className="rounded-full bg-lime-100 px-2 py-0.5 text-xs font-medium text-primary-900">{blog.tags[0]}</span>}
+                                        {blog.tags[0] && <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${tagTone(blog.tags[0])}`}>{blog.tags[0]}</span>}
                                         {blog.tags[0] && ' · '}
                                         {formatDate(blog.published_at)}
                                     </p>
