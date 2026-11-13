@@ -74,7 +74,7 @@ export default function BlogPostPage() {
         <main>
             <Navigation />
 
-            <section className="bg-white pt-16 lg:pt-[72px]">
+            <section className="bg-canvas pt-16 lg:pt-[72px]">
                 <div className="mx-auto max-w-5xl px-5 pt-14 lg:pt-20 [&>*]:max-w-3xl">
                     <Link href="/blog" className="text-sm text-neutral-500 hover:text-primary-700">&larr; All articles</Link>
                     {blog.tags.length > 0 && (
@@ -96,7 +96,7 @@ export default function BlogPostPage() {
                 )}
             </section>
 
-            <section className="bg-white py-14">
+            <section className="bg-canvas py-14">
                 <ArticleChrome headings={extractHeadings(blog.content)}>
                     <article className="text-[17px]">
                         {renderMarkdown(blog.content)}
@@ -120,7 +120,7 @@ export default function BlogPostPage() {
             </section>
 
             {relatedBlogs.length > 0 && (
-                <section className="border-t border-neutral-200 bg-neutral-50 py-16">
+                <section className="border-t border-neutral-200 bg-mist py-16">
                     <div className="mx-auto max-w-5xl px-5">
                         <h2 className="text-2xl text-neutral-900">Related articles</h2>
                         <div className="mt-8 grid gap-10 md:grid-cols-2">

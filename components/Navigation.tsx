@@ -20,10 +20,10 @@ export default function Navigation() {
     const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
     return (
-        <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur">
+        <header className="fixed inset-x-0 top-0 z-50 border-b border-neutral-200 bg-canvas/90 backdrop-blur">
             <nav className="container flex h-16 items-center justify-between lg:h-[72px]" aria-label="Main">
                 <Link href="/" className="flex items-center" aria-label="BYC home">
-                    <Image src="/logo.svg" alt="Babatunde Yunus & Co." width={164} height={35} priority />
+                    <Image src="/logo.svg" alt="Babatunde Yunus & Co." width={144} height={42} priority className="h-[38px] w-auto lg:h-[42px]" />
                 </Link>
 
                 <div className="hidden items-center gap-7 lg:flex">
@@ -54,7 +54,7 @@ export default function Navigation() {
             </nav>
 
             {isOpen && (
-                <div className="border-t border-neutral-200 bg-white lg:hidden">
+                <div className="border-t border-neutral-200 bg-canvas lg:hidden">
                     <div className="container flex flex-col py-3">
                         {navLinks.map((link) => (
                             <Link

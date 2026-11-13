@@ -5,7 +5,7 @@ import MoneyInput from '@/components/ui/MoneyInput';
 import { calculatePaye, naira, percent } from '@/lib/tax';
 
 const presets = [150_000, 400_000, 900_000, 2_500_000];
-const bandShades = ['bg-neutral-200', 'bg-primary-200', 'bg-primary-300', 'bg-primary-500', 'bg-primary-700', 'bg-primary-900'];
+const bandShades = ['bg-white/25', 'bg-lime-200', 'bg-lime-500', 'bg-leaf-500', 'bg-primary-400', 'bg-primary-200'];
 
 export default function PayeCalculator({ compact = false }: { compact?: boolean }) {
     const [period, setPeriod] = useState<'monthly' | 'annual'>('monthly');
@@ -73,7 +73,7 @@ export default function PayeCalculator({ compact = false }: { compact?: boolean 
                                 key={p}
                                 type="button"
                                 onClick={() => setGross(v)}
-                                className={`rounded-full border px-3 py-1 text-sm tabular-nums transition-colors ${gross === v ? 'border-primary-600 bg-primary-50 text-primary-800' : 'border-neutral-200 text-neutral-600 hover:border-neutral-400'}`}
+                                className={`rounded-full border px-3 py-1 text-sm tabular-nums transition-colors ${gross === v ? 'border-lime-500 bg-lime-100 text-primary-900' : 'border-neutral-200 text-neutral-600 hover:border-neutral-400'}`}
                             >
                                 {naira(v, { compact: true })}
                             </button>
@@ -116,9 +116,9 @@ export default function PayeCalculator({ compact = false }: { compact?: boolean 
             </div>
 
             {/* Results */}
-            <div className="bg-primary-900 p-6 text-white md:p-8" aria-live="polite">
+            <div className="relative bg-primary-900 p-6 text-white md:p-8" aria-live="polite">
                 <p className="text-sm text-primary-200">Estimated PAYE per month</p>
-                <p className="mt-1 text-4xl font-semibold tabular-nums tracking-tight md:text-5xl">{naira(result.monthlyTax)}</p>
+                <p className="mt-1 text-4xl font-semibold tabular-nums tracking-tight text-lime-400 md:text-5xl">{naira(result.monthlyTax)}</p>
                 <dl className="mt-6 grid grid-cols-2 gap-4 border-t border-white/10 pt-6">
                     <div>
                         <dt className="text-sm text-primary-200">Take-home per month</dt>

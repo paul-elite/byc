@@ -30,7 +30,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <main>
             <Navigation />
 
-            <section className="border-b border-neutral-200 bg-neutral-50 pt-16 lg:pt-[72px]">
+            <section className="border-b border-neutral-200 bg-mist pt-16 lg:pt-[72px]">
                 <div className="container grid items-center gap-10 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:py-16">
                     <div>
                         <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
@@ -58,8 +58,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         <h2 className="mt-12 text-2xl text-neutral-900">Who this is for</h2>
                         <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                             {service.forWho.map((item) => (
-                                <li key={item} className="flex gap-3 rounded-lg border border-neutral-200 p-4 text-[15px] text-neutral-700">
-                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary-600" />
+                                <li key={item} className="flex gap-3 rounded-lg border border-neutral-200 bg-white p-4 text-[15px] text-neutral-700">
+                                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf-500" />
                                     {item}
                                 </li>
                             ))}
@@ -83,7 +83,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         <ol className="relative mt-8 space-y-8 border-l border-neutral-200 pl-8">
                             {service.process.map((step, i) => (
                                 <li key={step.title} className="relative">
-                                    <span className="absolute -left-[45px] flex h-7 w-7 items-center justify-center rounded-full border border-primary-200 bg-white text-xs font-semibold text-primary-700">
+                                    <span className="absolute -left-[45px] flex h-7 w-7 items-center justify-center rounded-full bg-lime-500 text-xs font-semibold text-primary-950">
                                         {i + 1}
                                     </span>
                                     <h3 className="font-medium text-neutral-900">{step.title}</h3>
@@ -93,12 +93,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                         </ol>
                     </section>
 
-                    <section className="rounded-lg bg-primary-800 p-8 text-white">
+                    <section className="rounded-xl bg-primary-900 p-8 text-white">
                         <h2 className="text-2xl">What you receive</h2>
                         <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                             {service.deliverables.map((d) => (
                                 <li key={d} className="flex gap-3 text-[15px] text-primary-50">
-                                    <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary-200" />
+                                    <FileText className="mt-0.5 h-4 w-4 shrink-0 text-lime-400" />
                                     {d}
                                 </li>
                             ))}
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     </section>
 
                     {service.relatedArticle && (
-                        <Link href={`/blog/${service.relatedArticle.slug}`} className="group flex items-center justify-between gap-6 rounded-lg border border-neutral-200 p-6 transition-colors hover:border-primary-300 hover:bg-primary-50/40">
+                        <Link href={`/blog/${service.relatedArticle.slug}`} className="group flex items-center justify-between gap-6 rounded-lg border border-neutral-200 bg-white p-6 transition-colors hover:border-lime-500">
                             <div>
                                 <p className="text-sm text-neutral-500">Related reading</p>
                                 <p className="mt-1 font-medium text-neutral-900 group-hover:text-primary-700">{service.relatedArticle.title}</p>

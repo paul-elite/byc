@@ -48,8 +48,8 @@ export default function SmallCompanyChecker() {
                 </fieldset>
             </div>
 
-            <div className="border-t border-neutral-200 bg-neutral-50 p-6 md:p-8 lg:border-l lg:border-t-0" aria-live="polite">
-                <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${r.isSmall ? 'bg-primary-100 text-primary-800' : 'bg-neutral-200 text-neutral-800'}`}>
+            <div className="border-t border-neutral-200 bg-canvas p-6 md:p-8 lg:border-l lg:border-t-0" aria-live="polite">
+                <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-sm font-medium ${r.isSmall ? 'bg-lime-200 text-primary-900' : 'bg-neutral-200 text-neutral-800'}`}>
                     <span className={`h-2 w-2 rounded-full ${r.isSmall ? 'bg-primary-600' : 'bg-neutral-500'}`} />
                     {r.isSmall ? 'Likely a small company' : 'Not a small company'}
                 </span>

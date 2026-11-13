@@ -31,7 +31,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
     const Heading = asPage ? 'h1' : 'h2';
 
     return (
-        <section id="contact" className={`bg-white ${asPage ? 'pt-32 pb-20 lg:pt-40 lg:pb-28' : 'border-t border-neutral-200 py-20 lg:py-28'}`}>
+        <section id="contact" className={`bg-canvas ${asPage ? 'pt-32 pb-20 lg:pt-40 lg:pb-28' : 'border-t border-neutral-200 py-20 lg:py-28'}`}>
             <div className="container grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
                 <div>
                     <p className="eyebrow">Contact</p>
@@ -43,14 +43,14 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
 
                     <ul className="mt-10 space-y-6">
                         <li className="flex gap-4">
-                            <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-700"><Phone className="h-4 w-4" /></span>
                             <div>
                                 <p className="text-sm text-neutral-500">Phone</p>
                                 <a href="tel:+2349018811877" className="font-medium text-neutral-900 hover:text-primary-700">+234 901 881 1877</a>
                             </div>
                         </li>
                         <li className="flex gap-4">
-                            <Mail className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-leaf-100 text-leaf-700"><Mail className="h-4 w-4" /></span>
                             <div>
                                 <p className="text-sm text-neutral-500">Email</p>
                                 <a href={`mailto:${CONTACT_EMAIL}`} className="font-medium text-neutral-900 hover:text-primary-700">{CONTACT_EMAIL}</a>
@@ -58,7 +58,7 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                         </li>
                         {offices.map(([city, address]) => (
                             <li key={city} className="flex gap-4">
-                                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary-700" />
+                                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-lime-100 text-lime-700"><MapPin className="h-4 w-4" /></span>
                                 <div>
                                     <p className="text-sm text-neutral-500">{city} office</p>
                                     <p className="font-medium text-neutral-900">{address}</p>
@@ -68,7 +68,8 @@ export default function Contact({ asPage = false }: { asPage?: boolean }) {
                     </ul>
                 </div>
 
-                <form onSubmit={handleSubmit} className="rounded-lg border border-neutral-200 bg-neutral-50 p-6 md:p-8">
+                <form onSubmit={handleSubmit} className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-6 pt-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)] md:p-8 md:pt-10">
+                    <div aria-hidden className="absolute inset-x-0 top-0 flex h-1.5"><span className="flex-1 bg-primary-500" /><span className="flex-1 bg-leaf-500" /><span className="flex-1 bg-lime-500" /></div>
                     <div className="grid gap-5 md:grid-cols-2">
                         <Field label="Full name" name="name" value={formData.name} onChange={handleChange} autoComplete="name" required />
                         <Field label="Email" name="email" type="email" value={formData.email} onChange={handleChange} autoComplete="email" required />

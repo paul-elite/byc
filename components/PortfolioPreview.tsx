@@ -6,7 +6,7 @@ export default async function PortfolioPreview() {
     const portfolio = await getPortfolioContent();
 
     return (
-        <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+        <section className="border-t border-neutral-200 bg-mist py-20 lg:py-28">
             <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
                 <div>
                     <p className="eyebrow">Firm profile</p>

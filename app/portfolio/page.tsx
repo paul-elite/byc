@@ -23,7 +23,7 @@ function A4Sheet({
     className?: string;
 }) {
     return (
-        <section className={`portfolio-a4-sheet relative mx-auto w-full overflow-hidden bg-white text-neutral-900 shadow-sm ring-1 ring-neutral-200 ${className}`}>
+        <section className={`portfolio-a4-sheet relative mx-auto w-full overflow-hidden bg-canvas text-neutral-900 shadow-sm ring-1 ring-neutral-200 ${className}`}>
             {children}
         </section>
     );
@@ -41,7 +41,7 @@ export default async function PortfolioPage() {
         <main className="portfolio-shell min-h-screen bg-neutral-100 [font-family:var(--font-inter)]">
             <Navigation />
 
-            <div className="sticky top-0 z-40 border-b border-neutral-200 bg-white/95 pt-16 backdrop-blur lg:pt-[72px]">
+            <div className="sticky top-0 z-40 border-b border-neutral-200 bg-canvas/90 pt-16 backdrop-blur lg:pt-[72px]">
                 <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
                     <div>
                         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-700">Babatunde Yunus &amp; Co.</p>

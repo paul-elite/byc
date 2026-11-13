@@ -33,7 +33,7 @@ export default function UpcomingDeadlines({ count = 4, showDetail = true }: { co
                 const urgent = days <= 7;
                 return (
                     <li key={`${d.title}-${d.date.toISOString()}`} className="flex items-center gap-4 rounded-lg border border-neutral-200 bg-white p-4 transition-colors hover:border-neutral-300">
-                        <div className={`flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-md ${urgent ? 'bg-primary-700 text-white' : 'bg-neutral-100 text-neutral-800'}`}>
+                        <div className={`flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-md ${urgent ? 'bg-primary-600 text-white' : 'bg-lime-100 text-primary-900'}`}>
                             <span className="text-[11px] font-medium uppercase leading-none tracking-wide opacity-80">{SHORT_MONTHS[d.date.getMonth()]}</span>
                             <span className="mt-1 text-xl font-semibold leading-none tabular-nums">{d.date.getDate()}</span>
                         </div>

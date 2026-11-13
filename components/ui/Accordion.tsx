@@ -29,7 +29,7 @@ export default function Accordion({ items, defaultOpen = 0 }: { items: Accordion
                                 <span className={`text-base font-medium transition-colors md:text-[17px] ${isOpen ? 'text-primary-700' : 'text-neutral-900 group-hover:text-primary-700'}`}>
                                     {item.question}
                                 </span>
-                                <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'rotate-45 border-primary-600 bg-primary-600 text-white' : 'border-neutral-300 text-neutral-500 group-hover:border-primary-600 group-hover:text-primary-700'}`}>
+                                <span className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${isOpen ? 'rotate-45 border-lime-500 bg-lime-500 text-primary-950' : 'border-neutral-300 text-neutral-500 group-hover:border-primary-600 group-hover:text-primary-700'}`}>
                                     <Plus className="h-3.5 w-3.5" />
                                 </span>
                             </button>

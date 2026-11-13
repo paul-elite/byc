@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { services } from '@/lib/services';
 import { tools } from '@/lib/tools';
+import BrandBars from '@/components/ui/BrandBars';
 
 const links = [
     ['About', '/about'],
@@ -19,23 +20,24 @@ export default function Footer({ showCta = true }: { showCta?: boolean }) {
     return (
         <footer>
             {showCta && (
-            <div className="bg-primary-800 text-white">
-                <div className="container flex flex-col gap-6 py-12 md:flex-row md:items-center md:justify-between">
+            <div className="relative overflow-hidden bg-primary-900 text-white">
+                <BrandBars size="lg" className="absolute -bottom-10 right-[8%] opacity-90" />
+                <div className="container relative flex flex-col gap-6 py-14 md:flex-row md:items-center md:justify-between">
                     <div>
                         <p className="text-2xl font-semibold tracking-tight">Need help with an audit, tax or your accounts?</p>
                         <p className="mt-2 text-primary-100">Call +234 901 881 1877 or send us a message.</p>
                     </div>
-                    <Link href="/contact" className="btn btn-white btn-lg shrink-0">
+                    <Link href="/contact" className="btn btn-lime btn-lg shrink-0 md:mr-48">
                         Contact us
                     </Link>
                 </div>
             </div>
             )}
 
-            <div className="border-t border-neutral-200 bg-neutral-50">
+            <div className="border-t border-neutral-200 bg-mist">
                 <div className="container grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_0.9fr_1.1fr]">
                     <div>
-                        <Image src="/logo.svg" alt="Babatunde Yunus & Co." width={164} height={35} />
+                        <Image src="/logo.svg" alt="Babatunde Yunus & Co." width={165} height={48} />
                         <p className="mt-5 max-w-xs text-sm text-neutral-600">
                             Chartered Accountants and Tax Practitioners serving organisations across Nigeria.
                         </p>

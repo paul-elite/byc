@@ -49,7 +49,7 @@ export default function ServicesPage() {
                 how we work and what you receive.
             </PageHeader>
 
-            <section className="bg-white py-16 lg:py-20">
+            <section className="bg-canvas py-16 lg:py-20">
                 <div className="container">
                     <ul className="border-t border-neutral-200">
                         {services.map((service, i) => (
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            <section className="border-t border-neutral-200 bg-neutral-50 py-16 lg:py-20">
+            <section className="border-t border-neutral-200 bg-mist py-16 lg:py-20">
                 <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200">
                         <Image src={photos.colleagues.src} alt={photos.colleagues.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
@@ -87,7 +87,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-16 lg:py-24">
+            <section className="bg-canvas py-16 lg:py-24">
                 <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
                     <div>
                         <h2 className="text-3xl text-neutral-900">Working with us</h2>

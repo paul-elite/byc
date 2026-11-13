@@ -20,7 +20,7 @@ export default function BlogSection() {
     if (!loading && blogs.length === 0) return null;
 
     return (
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-canvas py-20 lg:py-28">
             <div className="container">
                 <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
                     <div className="max-w-2xl">
@@ -56,7 +56,7 @@ export default function BlogSection() {
                                         )}
                                     </div>
                                     <p className="mt-5 text-sm text-neutral-500">
-                                        {blog.tags[0] && <span className="text-primary-700">{blog.tags[0]}</span>}
+                                        {blog.tags[0] && <span className="rounded-full bg-lime-100 px-2 py-0.5 text-xs font-medium text-primary-900">{blog.tags[0]}</span>}
                                         {blog.tags[0] && ' · '}
                                         {formatDate(blog.published_at)}
                                     </p>

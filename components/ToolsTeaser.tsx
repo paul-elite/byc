@@ -3,23 +3,25 @@ import { ArrowUpRight, Building2, Calculator, CalendarDays } from 'lucide-react'
 import UpcomingDeadlines from '@/components/tools/UpcomingDeadlines';
 import { tools } from '@/lib/tools';
 
+const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-leaf-100 text-leaf-700 group-hover:bg-leaf-500', 'bg-lime-100 text-lime-700 group-hover:bg-lime-500'];
+
 const icons = { 'paye-calculator': Calculator, 'small-company-check': Building2, 'tax-calendar': CalendarDays } as const;
 
 export default function ToolsTeaser() {
     return (
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-canvas py-20 lg:py-28">
             <div className="container grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
                 <div>
                     <p className="eyebrow">Free tools</p>
                     <h2 className="mt-3 text-3xl text-neutral-900 md:text-4xl">Work it out yourself</h2>
                     <p className="mt-4 text-lg text-neutral-600">Quick answers on the 2026 rules. Nothing to sign up for.</p>
                     <ul className="mt-8 space-y-3">
-                        {tools.map((t) => {
+                        {tools.map((t, i) => {
                             const Icon = icons[t.slug as keyof typeof icons];
                             return (
                                 <li key={t.slug}>
-                                    <Link href={`/tools/${t.slug}`} className="group flex items-start gap-4 rounded-xl border border-neutral-200 p-5 transition-all hover:border-primary-300 hover:bg-primary-50/30">
-                                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-50 text-primary-700 transition-colors group-hover:bg-primary-700 group-hover:text-white">
+                                    <Link href={`/tools/${t.slug}`} className="group flex items-start gap-4 rounded-xl border border-neutral-200 bg-white p-5 transition-all hover:border-lime-500 hover:shadow-sm">
+                                        <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-colors group-hover:text-white ${iconTone[i]}`}>
                                             <Icon className="h-5 w-5" />
                                         </span>
                                         <span className="min-w-0 flex-1">

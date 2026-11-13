@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Accordion, { type AccordionItem } from '@/components/ui/Accordion';
 import { tools } from '@/lib/tools';
+import BrandBars from '@/components/ui/BrandBars';
 
 export default function ToolLayout({
     slug,
@@ -29,8 +30,9 @@ export default function ToolLayout({
     return (
         <main>
             <Navigation />
-            <section className="border-b border-neutral-200 bg-neutral-50 pt-16 lg:pt-[72px]">
-                <div className="container pb-10 pt-12 lg:pt-16">
+            <section className="border-b border-neutral-200 bg-mist pt-16 lg:pt-[72px]">
+                <div className="container relative pb-10 pt-12 lg:pt-16">
+                    <BrandBars size="md" className="absolute right-8 top-0 hidden md:flex" />
                     <nav aria-label="Breadcrumb" className="text-sm text-neutral-500">
                         <Link href="/tools" className="hover:text-primary-700">Tools</Link>
                         <span className="mx-2">/</span>
@@ -41,11 +43,11 @@ export default function ToolLayout({
                 </div>
             </section>
 
-            <section className="bg-neutral-50 pb-16">
+            <section className="bg-mist pb-16">
                 <div className="container">{tool}</div>
             </section>
 
-            <section className="border-t border-neutral-200 bg-white py-16 lg:py-20">
+            <section className="border-t border-neutral-200 bg-canvas py-16 lg:py-20">
                 <div className="container grid gap-14 lg:grid-cols-[1fr_20rem] lg:gap-16">
                     <div className="min-w-0 max-w-3xl text-[16px] leading-relaxed text-neutral-700 [&_h2]:mb-4 [&_h2]:mt-12 [&_h2]:text-2xl [&_h2]:text-neutral-900 [&_h2:first-child]:mt-0 [&_li]:mb-2 [&_p]:mb-4 [&_table]:mb-6 [&_td]:border-b [&_td]:border-neutral-100 [&_td]:py-2.5 [&_td]:pr-4 [&_th]:border-b [&_th]:border-neutral-200 [&_th]:py-2.5 [&_th]:pr-4 [&_th]:text-left [&_th]:text-sm [&_th]:font-medium [&_th]:text-neutral-900 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-5">
                         {explainer}
@@ -62,7 +64,7 @@ export default function ToolLayout({
                     </div>
                     <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
                         {related && (
-                            <Link href={related.href} className="group block rounded-lg border border-neutral-200 p-5 transition-colors hover:border-primary-300">
+                            <Link href={related.href} className="group block rounded-lg border border-neutral-200 p-5 transition-colors hover:border-primary-300 bg-white">
                                 <p className="text-sm text-neutral-500">Read the guide</p>
                                 <p className="mt-1 font-medium text-neutral-900 group-hover:text-primary-700">{related.title}</p>
                             </Link>

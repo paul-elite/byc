@@ -5,11 +5,13 @@ const approach = [
     ['Excellence', 'You come away with clean records, filed returns and controls that hold up.'],
 ];
 
+const badge = ['bg-primary-500 text-white', 'bg-leaf-500 text-white', 'bg-lime-500 text-primary-950', 'bg-primary-900 text-white'];
+
 const sectors = ['Manufacturing', 'Technology', 'Financial services', 'Agriculture', 'Public sector', 'Health care', 'Real estate', 'Non-profits'];
 
 export default function CaseStudies() {
     return (
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-canvas py-20 lg:py-28">
             <div className="container">
                 <div className="max-w-2xl">
                     <p className="eyebrow">How we work</p>
@@ -19,7 +21,7 @@ export default function CaseStudies() {
                 <ol className="mt-12 grid gap-px overflow-hidden rounded-lg border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-4">
                     {approach.map(([title, description], index) => (
                         <li key={title} className="bg-white p-6 lg:p-7">
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary-50 text-sm font-semibold text-primary-700">
+                            <span className={`flex h-10 w-10 items-center justify-center rounded-lg text-base font-semibold ${badge[index]}`}>
                                 {title.charAt(0)}
                             </span>
                             <h3 className="mt-5 text-lg text-neutral-900">
@@ -35,7 +37,7 @@ export default function CaseStudies() {
                     <h3 className="shrink-0 text-base font-medium text-neutral-900">Sectors we serve</h3>
                     <ul className="flex flex-wrap gap-2">
                         {sectors.map((sector) => (
-                            <li key={sector} className="rounded-full border border-neutral-200 px-3.5 py-1.5 text-sm text-neutral-700">
+                            <li key={sector} className="rounded-full border border-neutral-200 bg-white px-3.5 py-1.5 text-sm text-neutral-700 transition-colors hover:border-lime-500 hover:bg-lime-50">
                                 {sector}
                             </li>
                         ))}

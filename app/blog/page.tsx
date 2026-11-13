@@ -59,7 +59,7 @@ export default function BlogPage() {
                 Practical guidance for Nigerian businesses from the team at Babatunde Yunus &amp; Co.
             </PageHeader>
 
-            <section className="bg-white py-12 lg:py-16">
+            <section className="bg-canvas py-12 lg:py-16">
                 <div className="container">
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <div className="flex flex-wrap gap-2">

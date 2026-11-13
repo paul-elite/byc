@@ -7,6 +7,8 @@ import PageHeader from '@/components/PageHeader';
 import UpcomingDeadlines from '@/components/tools/UpcomingDeadlines';
 import { tools } from '@/lib/tools';
 
+const iconTone = ['bg-primary-100 text-primary-700 group-hover:bg-primary-600', 'bg-leaf-100 text-leaf-700 group-hover:bg-leaf-500', 'bg-lime-100 text-lime-700 group-hover:bg-lime-500'];
+
 export const metadata: Metadata = {
     title: 'Free tax tools',
     description: 'Free tools for Nigerian businesses and employees: PAYE calculator, small company checker and tax deadline calendar for 2026.',
@@ -23,14 +25,14 @@ export default function ToolsPage() {
                 your browser.
             </PageHeader>
 
-            <section className="bg-white py-16 lg:py-20">
+            <section className="bg-canvas py-16 lg:py-20">
                 <div className="container grid gap-5 md:grid-cols-3">
-                    {tools.map((tool) => {
+                    {tools.map((tool, i) => {
                         const Icon = icons[tool.slug as keyof typeof icons];
                         return (
-                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group flex flex-col rounded-xl border border-neutral-200 p-6 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]">
+                            <Link key={tool.slug} href={`/tools/${tool.slug}`} className="group flex flex-col rounded-xl border border-neutral-200 p-6 transition-all hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-white">
                                 <div className="flex items-center justify-between">
-                                    <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary-50 text-primary-700 transition-colors group-hover:bg-primary-700 group-hover:text-white">
+                                    <span className={`flex h-11 w-11 items-center justify-center rounded-lg transition-colors group-hover:text-white ${iconTone[i]}`}>
                                         <Icon className="h-5 w-5" />
                                     </span>
                                     <ArrowUpRight className="h-5 w-5 text-neutral-300 transition-colors group-hover:text-primary-700" />
@@ -45,7 +47,7 @@ export default function ToolsPage() {
                 </div>
             </section>
 
-            <section className="border-t border-neutral-200 bg-neutral-50 py-16 lg:py-20">
+            <section className="border-t border-neutral-200 bg-mist py-16 lg:py-20">
                 <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
                     <div>
                         <h2 className="text-3xl text-neutral-900">What’s due next</h2>

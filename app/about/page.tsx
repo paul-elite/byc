@@ -37,19 +37,19 @@ export default function AboutPage() {
                 consultancy to companies, public-sector bodies and non-profits.
             </PageHeader>
 
-            <section className="border-b border-neutral-200 bg-white">
+            <section className="border-b border-neutral-200 bg-canvas">
                 <dl className="container grid grid-cols-2 gap-x-6 gap-y-8 py-12 lg:grid-cols-4">
-                    {facts.map(([value, label]) => (
-                        <div key={label}>
+                    {facts.map(([value, label], i) => (
+                        <div key={label} className={`border-t-[3px] pt-4 ${['border-primary-500', 'border-leaf-500', 'border-lime-500', 'border-primary-900'][i]}`}>
                             <dt className="sr-only">{label}</dt>
-                            <dd className="text-4xl font-semibold tracking-tight text-primary-700">{value}</dd>
+                            <dd className="text-4xl font-semibold tracking-tight text-neutral-900">{value}</dd>
                             <dd className="mt-1 text-sm text-neutral-600">{label}</dd>
                         </div>
                     ))}
                 </dl>
             </section>
 
-            <section className="bg-white py-20 lg:py-28">
+            <section className="bg-canvas py-20 lg:py-28">
                 <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
                         <h2 className="text-3xl text-neutral-900 md:text-4xl">The firm</h2>
@@ -69,15 +69,15 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="border-t border-neutral-200 bg-white pb-20 lg:pb-28">
+            <section className="border-t border-neutral-200 bg-canvas pb-20 lg:pb-28">
                 <div className="container grid gap-10 pt-20 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pt-28">
                     <div>
                         <h2 className="text-3xl text-neutral-900 md:text-4xl">Leadership</h2>
                         <p className="mt-4 text-lg text-neutral-600">The firm is led by its managing partner, supported by two partners and a team of twelve professional accountants.</p>
                     </div>
-                    <div className="rounded-xl border border-neutral-200 p-8">
+                    <div className="rounded-xl border border-neutral-200 p-8 bg-white">
                         <div className="flex items-center gap-5">
-                            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary-700 text-xl font-semibold text-white">IY</span>
+                            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-lime-500 text-xl font-semibold text-primary-950">IY</span>
                             <div>
                                 <p className="text-xl font-medium text-neutral-900">Dr. Ismail Babatunde Yunus</p>
                                 <p className="text-neutral-600">Managing Partner</p>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+            <section className="border-t border-neutral-200 bg-mist py-20 lg:py-28">
                 <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
                     <div>
                         <h2 className="text-3xl text-neutral-900 md:text-4xl">Who we work with</h2>
@@ -125,7 +125,7 @@ export default function AboutPage() {
 
             <CaseStudies />
 
-            <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+            <section className="border-t border-neutral-200 bg-mist py-20 lg:py-28">
                 <div className="container">
                     <div className="grid gap-10 md:grid-cols-2">
                         <div>
@@ -149,7 +149,7 @@ export default function AboutPage() {
                         <ul className="mt-6 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
                             {values.map((value) => (
                                 <li key={value} className="flex items-center gap-3 text-neutral-800">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-primary-600" />
+                                    <span className="h-2 w-2 rounded-sm bg-lime-500" />
                                     {value}
                                 </li>
                             ))}
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-20 lg:py-28">
+            <section className="bg-canvas py-20 lg:py-28">
                 <div className="container">
                     <h2 className="text-3xl text-neutral-900 md:text-4xl">Professional memberships</h2>
                     <p className="mt-4 max-w-2xl text-lg text-neutral-600">

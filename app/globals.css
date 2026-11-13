@@ -4,17 +4,34 @@
    White pages, neutral greys for structure, one emerald primary for action.
    Neutral greys come from Tailwind's built-in `neutral` scale. */
 @theme {
-  --color-primary-50: #f1f7f3;
-  --color-primary-100: #ddebe2;
-  --color-primary-200: #bbd7c5;
-  --color-primary-300: #8dbb9f;
-  --color-primary-400: #5a9675;
-  --color-primary-500: #337249;
-  --color-primary-600: #1d5c3d;
-  --color-primary-700: #134a32;
-  --color-primary-800: #0e3b28;
-  --color-primary-900: #0a2e20;
-  --color-primary-950: #051a12;
+  /* Brand greens, taken from the BYC logo */
+  --color-primary-50: #edf9f1;
+  --color-primary-100: #d3f1df;
+  --color-primary-200: #a9e3c1;
+  --color-primary-300: #74d09b;
+  --color-primary-400: #43be76;
+  --color-primary-500: #1bad58; /* logo green */
+  --color-primary-600: #16944b;
+  --color-primary-700: #127a3e;
+  --color-primary-800: #0f6233;
+  --color-primary-900: #0c4d29;
+  --color-primary-950: #072e18;
+
+  --color-leaf-50: #f0f9f0;
+  --color-leaf-100: #ddf1de;
+  --color-leaf-500: #4fb854; /* logo leaf */
+  --color-leaf-700: #357d38;
+
+  --color-lime-50: #f8fbee;
+  --color-lime-100: #eef6d6;
+  --color-lime-200: #dcebae;
+  --color-lime-400: #bcd86f;
+  --color-lime-500: #a8cc48; /* logo lime */
+  --color-lime-700: #6b8a24;
+
+  /* Neutral page backgrounds */
+  --color-canvas: #f6f6f1;
+  --color-mist: #ecede5;
 
   --font-inter: 'Inter', system-ui, sans-serif;
 }
@@ -27,7 +44,7 @@ body {
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
+  background-color: var(--color-canvas);
   color: #171717;
 }
 
@@ -68,9 +85,20 @@ p {
 
 /* Small grey label above a heading */
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-primary-600);
+  color: var(--color-primary-700);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.25rem;
+  height: 0.375rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary-500) 0 33%, var(--color-leaf-500) 33% 66%, var(--color-lime-500) 66% 100%);
 }
 
 /* Buttons */
@@ -103,6 +131,12 @@ p {
 }
 .btn-primary:hover { background: var(--color-primary-800); }
 
+.btn-lime {
+  background: var(--color-lime-500);
+  color: var(--color-primary-950);
+}
+.btn-lime:hover { background: var(--color-lime-400); }
+
 .btn-white {
   background: #ffffff;
   color: var(--color-primary-800);
@@ -111,14 +145,15 @@ p {
 
 .btn-ghost,
 .btn-outline {
-  background: #ffffff;
+  background: transparent;
   color: #171717;
   border-color: #d4d4d4;
 }
 .btn-ghost:hover,
 .btn-outline:hover {
-  border-color: #a3a3a3;
-  background: #fafafa;
+  border-color: var(--color-primary-600);
+  color: var(--color-primary-800);
+  background: #ffffff;
 }
 
 /* Portfolio A4 document */

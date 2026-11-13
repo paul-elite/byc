@@ -7,7 +7,7 @@ const memberships = ['ICAN', 'CITN', 'FRCN', 'NIM', 'IMC'];
 
 export default function About() {
     return (
-        <section id="about" className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+        <section id="about" className="border-t border-neutral-200 bg-mist py-20 lg:py-28">
             <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 <div className="relative aspect-[5/4] overflow-hidden rounded-lg bg-neutral-200">
                     <Image

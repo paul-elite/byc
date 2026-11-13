@@ -29,7 +29,7 @@ export default function ContactPage() {
             <Navigation />
             <Contact asPage />
 
-            <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-24">
+            <section className="border-t border-neutral-200 bg-mist py-20 lg:py-24">
                 <div className="container">
                     <h2 className="text-3xl text-neutral-900">What happens next</h2>
                     <ol className="mt-10 grid gap-8 md:grid-cols-4 md:gap-6">
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <section className="bg-white py-20 lg:py-24">
+            <section className="bg-canvas py-20 lg:py-24">
                 <div className="container grid gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
                         <h2 className="text-3xl text-neutral-900">Visit us</h2>
