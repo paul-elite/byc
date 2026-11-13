@@ -63,7 +63,7 @@ export default function AboutPage() {
                             leadership has to make.
                         </p>
                     </div>
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-loader">
                         <Image src={photos.review.src} alt={photos.review.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                     </div>
                 </div>

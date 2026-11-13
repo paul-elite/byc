@@ -37,7 +37,7 @@ export default function Hero() {
 
                 <div className="relative">
                 
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-mist shadow-[0_20px_60px_-20px_rgba(7,46,24,0.35)]">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-loader shadow-[0_20px_60px_-20px_rgba(7,46,24,0.35)]">
                     <Image
                         src={photos.meeting.src}
                         alt={photos.meeting.alt}

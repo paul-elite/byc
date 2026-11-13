@@ -36,15 +36,15 @@ export default function BlogSection() {
                     {loading
                         ? [0, 1, 2].map((i) => (
                             <div key={i} className="animate-pulse">
-                                <div className="aspect-[3/2] rounded-lg bg-neutral-100" />
-                                <div className="mt-5 h-4 w-24 rounded bg-neutral-100" />
-                                <div className="mt-3 h-6 w-full rounded bg-neutral-100" />
+                                <div className="aspect-[3/2] rounded-lg bg-loader" />
+                                <div className="mt-5 h-4 w-24 rounded bg-loader" />
+                                <div className="mt-3 h-6 w-full rounded bg-loader" />
                             </div>
                         ))
                         : blogs.map((blog) => (
                             <article key={blog.id} className="group">
                                 <Link href={`/blog/${blog.slug}`} className="block">
-                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-neutral-100">
+                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                         {blog.cover_image && (
                                             <Image
                                                 src={blog.cover_image}

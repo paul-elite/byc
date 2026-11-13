@@ -90,7 +90,7 @@ export default function BlogPostPage() {
                 </div>
                 {blog.cover_image && (
                     <div className="mx-auto mt-10 max-w-5xl px-5">
-                        <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-neutral-100">
+                        <div className="relative aspect-[2/1] overflow-hidden rounded-lg bg-loader">
                             <Image src={blog.cover_image} alt="" fill sizes="(min-width: 1024px) 64rem, 100vw" className="object-cover" priority />
                         </div>
                     </div>
@@ -127,7 +127,7 @@ export default function BlogPostPage() {
                         <div className="mt-8 grid gap-10 md:grid-cols-2">
                             {relatedBlogs.map((relBlog) => (
                                 <Link key={relBlog.id} href={`/blog/${relBlog.slug}`} className="group block">
-                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-neutral-100">
+                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                         {relBlog.cover_image && (
                                             <Image src={relBlog.cover_image} alt="" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                                         )}

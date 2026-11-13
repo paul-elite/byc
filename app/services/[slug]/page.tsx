@@ -45,7 +45,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                             <a href="#faq" className="btn btn-outline btn-lg">Common questions</a>
                         </div>
                     </div>
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-loader">
                         <Image src={service.photo.src} alt={service.photo.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" priority />
                     </div>
                 </div>

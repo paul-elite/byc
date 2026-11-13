@@ -71,6 +71,9 @@
   --color-canvas: #ffffff;
   --color-mist: #f8f4e8;
 
+  /* Loading placeholders: plain grey */
+  --color-loader: #e8e7e3;
+
   --font-inter: 'Inter', system-ui, sans-serif;
 }
 

@@ -70,7 +70,7 @@ export default function ServicesPage() {
 
             <section className="border-t border-neutral-200 bg-mist py-16 lg:py-20">
                 <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-loader">
                         <Image src={photos.colleagues.src} alt={photos.colleagues.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
                     </div>
                     <div>

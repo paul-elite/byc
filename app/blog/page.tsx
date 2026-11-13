@@ -96,9 +96,9 @@ export default function BlogPage() {
                         <div className="mt-12 grid gap-10 md:grid-cols-3">
                             {[0, 1, 2].map((i) => (
                                 <div key={i} className="animate-pulse">
-                                    <div className="aspect-[3/2] rounded-lg bg-neutral-100" />
-                                    <div className="mt-5 h-4 w-24 rounded bg-neutral-100" />
-                                    <div className="mt-3 h-6 w-full rounded bg-neutral-100" />
+                                    <div className="aspect-[3/2] rounded-lg bg-loader" />
+                                    <div className="mt-5 h-4 w-24 rounded bg-loader" />
+                                    <div className="mt-3 h-6 w-full rounded bg-loader" />
                                 </div>
                             ))}
                         </div>
@@ -106,7 +106,7 @@ export default function BlogPage() {
                         <>
                             {showFeatured && (
                                 <Link href={`/blog/${featuredBlog.slug}`} className="group mt-12 grid items-center gap-8 border-b border-neutral-200 pb-12 lg:grid-cols-2 lg:gap-12">
-                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-neutral-100">
+                                    <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                         {featuredBlog.cover_image && (
                                             <Image src={featuredBlog.cover_image} alt="" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                                         )}
@@ -130,7 +130,7 @@ export default function BlogPage() {
                                     {gridBlogs.map((blog) => (
                                         <article key={blog.id} className="group">
                                             <Link href={`/blog/${blog.slug}`} className="block">
-                                                <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-neutral-100">
+                                                <div className="relative aspect-[3/2] overflow-hidden rounded-lg bg-loader">
                                                     {blog.cover_image && (
                                                         <Image src={blog.cover_image} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                                                     )}

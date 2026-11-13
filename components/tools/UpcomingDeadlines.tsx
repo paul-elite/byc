@@ -20,7 +20,7 @@ export default function UpcomingDeadlines({ count = 4, showDetail = true }: { co
         return (
             <ul className="space-y-3" aria-busy="true">
                 {Array.from({ length: count }).map((_, i) => (
-                    <li key={i} className="h-[72px] animate-pulse rounded-lg bg-neutral-100" />
+                    <li key={i} className="h-[72px] animate-pulse rounded-lg bg-loader" />
                 ))}
             </ul>
         );
