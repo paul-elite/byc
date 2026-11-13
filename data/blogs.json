@@ -10,7 +10,12 @@
       "author_role": "Managing Partner",
       "published_at": "2026-02-18T09:00:00Z",
       "cover_image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop",
-      "tags": ["Advisory", "Financial Reporting", "Growth", "Investment Readiness"],
+      "tags": [
+        "Advisory",
+        "Financial Reporting",
+        "Growth",
+        "Investment Readiness"
+      ],
       "status": "published",
       "reading_time": 5
     },
@@ -24,7 +29,12 @@
       "author_role": "Tax Advisory Lead",
       "published_at": "2026-02-10T10:30:00Z",
       "cover_image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
-      "tags": ["Tax", "SME", "Compliance", "Planning"],
+      "tags": [
+        "Tax",
+        "SME",
+        "Compliance",
+        "Planning"
+      ],
       "status": "published",
       "reading_time": 6
     },
@@ -38,9 +48,86 @@
       "author_role": "Audit & Assurance Partner",
       "published_at": "2026-02-03T14:00:00Z",
       "cover_image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop",
-      "tags": ["Audit", "Internal Controls", "Governance", "Assurance"],
+      "tags": [
+        "Audit",
+        "Internal Controls",
+        "Governance",
+        "Assurance"
+      ],
       "status": "published",
       "reading_time": 6
+    },
+    {
+      "id": "4",
+      "slug": "nigeria-tax-reform-2026-what-changed-for-businesses",
+      "title": "Nigeria's 2026 tax reform: what changed for businesses",
+      "excerpt": "Four new laws took effect on 1 January 2026. Here is what changed for companies — rates, exemptions, levies, the new tax authority and filing rules — and what to do about it.",
+      "author": "BYC Tax Team",
+      "author_role": "Babatunde Yunus & Co.",
+      "published_at": "2026-11-02T09:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1739287088753-73a9b8b771bc?q=80&w=2000&auto=format&fit=crop",
+      "tags": [
+        "Tax",
+        "Tax Reform",
+        "Compliance"
+      ],
+      "status": "published",
+      "reading_time": 8,
+      "content": "## Four laws, one new system\n\nOn 26 June 2025 the President signed four tax laws: the **Nigeria Tax Act 2025** (NTA), the **Nigeria Tax Administration Act 2025** (NTAA), the **Nigeria Revenue Service (Establishment) Act 2025** and the **Joint Revenue Board (Establishment) Act 2025**. Most of their provisions took effect on 1 January 2026.\n\nThe Nigeria Tax Act replaces most of the old tax statutes — including the Companies Income Tax Act, the Personal Income Tax Act and the VAT Act — with a single law. The Tax Administration Act sets one set of rules for registration, filing, assessment and penalties across federal, state and local tax authorities.\n\nFor most businesses, the changes fall into six areas.\n\n## 1. FIRS is now the Nigeria Revenue Service\n\nThe Nigeria Revenue Service (NRS) replaced the Federal Inland Revenue Service on 1 January 2026. References to FIRS in older laws and documents are treated as references to the NRS. The Joint Revenue Board replaced the Joint Tax Board.\n\nIn practice, you file federal taxes — company income tax, VAT, the development levy and withholding tax on payments to companies — with the NRS. PAYE for most employees still goes to the State Internal Revenue Service where each employee lives.\n\n## 2. Small companies pay no company income tax\n\nA company is a **small company** if its annual turnover is ₦100 million or less, its total fixed assets are not more than ₦250 million, and it does **not** provide professional services. Small companies pay:\n\n- 0% company income tax\n- no capital gains tax\n- no development levy\n\nThe professional services exclusion is the detail most people miss. Law firms, consultancies, accounting practices and similar businesses do not qualify, however small they are.\n\nSmall companies still have to file an annual return. Use our [small company checker](/tools/small-company-check) for a first view of where you stand.\n\n## 3. A single 4% development levy\n\nSeveral separate levies — including tertiary education tax and the IT, NASENI and Police Trust Fund levies — have been replaced by one **development levy of 4% of assessable profits**. It applies to every company except small companies and non-resident companies.\n\nIf you budgeted for the old levies separately, rework your tax provision. For many companies the total is similar, but the base and timing differ.\n\n## 4. Company income tax and capital gains\n\n| Item | Before 2026 | From 2026 |\n|---|---|---|\n| Small company definition | Turnover up to ₦25m | Turnover up to ₦100m and fixed assets up to ₦250m, excluding professional services |\n| CIT rate (other companies) | 20% medium, 30% large | 30% |\n| Capital gains tax (companies) | 10% | Aligned with the CIT rate |\n| Separate levies | Several | One 4% development levy |\n\nThere is no longer a separate medium-company rate. A company that was medium-sized under the old rules is either small (0%) or pays the full rate.\n\nVery large companies — those with turnover of ₦50 billion or more, or that belong to a multinational group with global turnover of at least €750 million — must pay at least a **15% minimum effective tax rate**.\n\n## 5. Employees pay tax on new bands\n\nPersonal income tax now starts with ₦800,000 a year taxed at 0%, followed by bands of 15%, 18%, 21%, 23% and 25%. The consolidated relief allowance has gone. In its place is a **rent relief** of 20% of annual rent paid, capped at ₦500,000.\n\nEmployers have to update payroll to apply the new bands and deductions. We explain the calculation step by step in [PAYE under the Nigeria Tax Act 2025](/blog/paye-under-the-nigeria-tax-act-2025), and you can test figures in our [PAYE calculator](/tools/paye-calculator).\n\nEmployees must now also file their own annual return of income from all sources, separately from the return the employer files.\n\n## 6. Stricter administration and higher penalties\n\nThe Tax Administration Act raises penalties for late registration, late filing and late payment, and adds interest on unpaid tax. Every taxable person must register and obtain a tax ID. VAT returns remain due by the 21st of the following month, and a nil return is required for months with no sales — unless you are a small business.\n\n> The reforms reward businesses that keep good records. The exemptions depend on figures you can prove, and the penalties fall hardest on those who can't.\n\n## What to do now\n\n1. **Classify your company.** Check turnover, fixed assets and whether your activities count as professional services.\n2. **Update your tax provision.** Replace old levies with the 4% development levy and recompute deferred tax at the new rates.\n3. **Fix payroll.** Apply the new bands, remove CRA, and collect rent evidence from staff who want rent relief.\n4. **Review VAT and WHT processes.** Make sure returns, including nil returns, go to the NRS on time.\n5. **Tidy your records.** Turnover and asset figures need to be supported by proper accounts.\n6. **Diarise the new dates.** Our [tax calendar](/tools/tax-calendar) lists the monthly and annual deadlines.\n\nIf you would like us to review how the reforms affect your business, [get in touch](/contact).\n\n## Sources\n\n- [PwC Worldwide Tax Summaries — Nigeria, taxes on corporate income](https://taxsummaries.pwc.com/nigeria/corporate/taxes-on-corporate-income)\n- [Mondaq — Series on the Tax Reform Acts 2025](https://www.mondaq.com/nigeria/tax-authorities/1671386/series-on-the-tax-reform-acts-2025-what-is-new-and-what-you-should-know)\n- [Mondaq — How the current tax administration reshapes compliance](https://www.mondaq.com/nigeria/tax-authorities/1665224/tax-reform-2025-how-the-current-tax-administration-reshapes-compliance-enforcement-and-business-strategy)\n- [Mondaq — The Nigeria Tax Reform Act 2025 and how it affects businesses](https://www.mondaq.com/nigeria/tax-authorities/1705160/the-nigeria-tax-reform-act-2025-and-how-it-affects-businesses)\n- [Banwo & Ighodalo — Tax Digest, December 2025](https://www.banwo-ighodalo.com/media-files/2025/12/Tax-Digest.pdf)"
+    },
+    {
+      "id": "5",
+      "slug": "paye-under-the-nigeria-tax-act-2025",
+      "title": "PAYE under the Nigeria Tax Act 2025: a worked guide for employers",
+      "excerpt": "The new tax bands, the end of the consolidated relief allowance, rent relief and the deductions that remain — with a full worked example of a monthly payroll calculation.",
+      "author": "BYC Tax Team",
+      "author_role": "Babatunde Yunus & Co.",
+      "published_at": "2026-10-20T09:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2000&auto=format&fit=crop",
+      "tags": [
+        "Tax",
+        "Payroll",
+        "PAYE"
+      ],
+      "status": "published",
+      "reading_time": 7,
+      "content": "## What changed on 1 January 2026\n\nThe Nigeria Tax Act 2025 replaced the Personal Income Tax Act. For payroll, three changes matter most:\n\n- **New tax bands**, starting with ₦800,000 a year at 0% and rising to 25% above ₦50 million.\n- **No consolidated relief allowance.** The old CRA — the higher of ₦200,000 or 1% of gross income, plus 20% of gross income — no longer exists.\n- **Rent relief.** Employees can deduct 20% of the rent they pay each year, up to ₦500,000.\n\n## Step 1: Start with total income\n\nTotal employment income includes basic salary, all allowances (housing, transport, utility, meal and so on), bonuses and taxable benefits in kind. Work on an annual figure, then divide by 12 for the monthly deduction.\n\n## Step 2: Subtract eligible deductions\n\nSection 30 of the Act allows these deductions from total income:\n\n| Deduction | Typical amount |\n|---|---|\n| Pension (employee contribution) | 8% of basic, housing and transport |\n| National Housing Fund | 2.5% of basic salary, if contributing |\n| National Health Insurance | Employee contribution, if any |\n| Life insurance or deferred annuity premiums | Premiums actually paid |\n| Interest on a loan for an owner-occupied home | Interest actually paid |\n| Rent relief | 20% of annual rent, capped at ₦500,000 |\n\nEach deduction needs evidence: pension statements, NHF records, insurance receipts, mortgage statements, tenancy agreements and rent receipts. Collect these before you apply the deductions in payroll.\n\n## Step 3: Apply the bands\n\n| Chargeable income | Rate |\n|---|---|\n| First ₦800,000 | 0% |\n| Next ₦2,200,000 | 15% |\n| Next ₦9,000,000 | 18% |\n| Next ₦13,000,000 | 21% |\n| Next ₦25,000,000 | 23% |\n| Above ₦50,000,000 | 25% |\n\n## Worked example\n\nAmaka earns ₦500,000 a month — ₦6,000,000 a year. Her basic, housing and transport pay make up all of it. She pays ₦1,200,000 a year in rent, contributes to a pension, and does not contribute to NHF.\n\n1. **Total income:** ₦6,000,000\n2. **Pension (8%):** ₦480,000\n3. **Rent relief (20% of ₦1,200,000):** ₦240,000\n4. **Chargeable income:** ₦6,000,000 − ₦480,000 − ₦240,000 = ₦5,280,000\n\nNow the bands:\n\n- First ₦800,000 at 0% = ₦0\n- Next ₦2,200,000 at 15% = ₦330,000\n- Remaining ₦2,280,000 at 18% = ₦410,400\n\n**Annual tax: ₦740,400. Monthly PAYE: ₦61,700.** Her effective tax rate on gross pay is about 12.3%.\n\nYou can check this — and try other figures — in our [PAYE calculator](/tools/paye-calculator).\n\n## Who is exempt\n\nEmployees whose chargeable income is ₦800,000 a year or less pay no tax, and earners on the national minimum wage are exempt. You still record them on payroll and include them in the annual return.\n\n## Remitting and filing\n\n- **Monthly:** remit PAYE to the State Internal Revenue Service of each employee's state of residence. States generally expect payment by the 10th of the following month.\n- **Annually:** file the employer's return of all employees' pay and tax by 31 January of the following year.\n\nThe Tax Administration Act also requires **employees** to file their own annual return of income from all sources, even when PAYE has been deducted. Let staff know, especially those with rental, business or investment income.\n\n## Common payroll mistakes to avoid\n\n- Leaving CRA in the payroll system after January 2026.\n- Granting rent relief without tenancy evidence.\n- Calculating pension on gross pay when the contract defines pensionable pay as basic, housing and transport only.\n- Paying PAYE to the state where the office is instead of the state where the employee lives.\n- Treating one-off bonuses as if they were spread evenly across the year without checking how the state expects them to be taxed.\n\n> If your payroll software was updated by a vendor, test it. Run three or four employees through the calculation by hand and compare.\n\n## Sources\n\n- [PwC Worldwide Tax Summaries — Nigeria, individual taxes](https://taxsummaries.pwc.com/nigeria/individual)\n- [PwC Worldwide Tax Summaries — Nigeria, tax administration](https://taxsummaries.pwc.com/Nigeria/Individual/Tax-administration)\n- [Mondaq — Personal income tax deductions under the Nigeria Tax Act 2025](https://www.mondaq.com/nigeria/tax-authorities/1751764/comprehensive-guide-personal-income-tax-deductions-under-the-nigeria-tax-act-2025)\n- [Mondaq — Understanding the taxation of income of employees under the tax reform acts](https://www.mondaq.com/nigeria/tax-authorities/1702500/understanding-the-taxation-of-income-of-employees-under-the-tax-reform-acts)"
+    },
+    {
+      "id": "6",
+      "slug": "small-company-exemption-who-qualifies",
+      "title": "The small company exemption: who qualifies and what you still have to file",
+      "excerpt": "Zero company income tax sounds simple. The three tests, the professional services exclusion, and the filing obligations that remain explain why many businesses get it wrong.",
+      "author": "BYC Tax Team",
+      "author_role": "Babatunde Yunus & Co.",
+      "published_at": "2026-10-06T09:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1739303987830-ca19742b19bc?q=80&w=2000&auto=format&fit=crop",
+      "tags": [
+        "Tax",
+        "SME",
+        "Tax Reform"
+      ],
+      "status": "published",
+      "reading_time": 6,
+      "content": "## The headline\n\nFrom 1 January 2026, a **small company** in Nigeria pays 0% company income tax, no capital gains tax and no development levy. Before the reform, only companies with turnover up to ₦25 million paid 0%. The threshold is now four times higher, so many more businesses qualify — but not all of the ones that think they do.\n\n## The three tests\n\nA company must meet **all three** at the same time:\n\n1. **Turnover** — annual gross turnover of ₦100 million or less.\n2. **Fixed assets** — total fixed assets not more than ₦250 million.\n3. **Activity** — the company does not provide professional services.\n\n## The professional services exclusion\n\nThis is where most misunderstandings start. A small law firm, audit practice, management consultancy, engineering consultancy or architecture practice does **not** qualify, even if its turnover is ₦20 million. It pays company income tax at the full rate and the 4% development levy.\n\nIf your business mixes trading and advisory work, look at what actually generates the income. Where it is mainly fees for expert or professional services, assume you are excluded and take advice.\n\n## Turnover and assets need evidence\n\nThe exemption depends on numbers. If the NRS questions your status, you need accounts that show turnover and a fixed asset register that supports the asset figure. Businesses that run largely on cash, or mix personal and business spending, will find this hardest.\n\n## What you still have to do\n\nThe exemption removes tax, not obligations. A small company must still:\n\n- **File an annual company income tax return**, six months after its year-end.\n- **Deduct and remit PAYE** for employees.\n- **Deduct withholding tax** on payments where it applies.\n- **Keep proper books and records.**\n- **Register for tax** and keep registration details up to date.\n\nSmall businesses are also exempt from filing monthly VAT returns under the Tax Administration Act.\n\n## Watch for these traps\n\n- **Growing past ₦100 million.** Plan ahead: once you cross the threshold, the full rate and the levy apply, and monthly VAT filing starts.\n- **Asset purchases.** A large equipment or property purchase can take you over ₦250 million even if turnover stays low.\n- **Splitting the business.** Creating several companies to keep each one under the limits can be challenged as tax avoidance.\n- **Capital gains.** The CGT exemption applies to small companies only; the same disposal in a larger company is taxed.\n\n## A quick example\n\n| | Trading company | Consultancy |\n|---|---|---|\n| Turnover | ₦90m | ₦45m |\n| Fixed assets | ₦20m | ₦8m |\n| Professional services? | No | Yes |\n| Assessable profit | ₦15m | ₦15m |\n| Company income tax | ₦0 | ₦4.5m (30%) |\n| Development levy | ₦0 | ₦0.6m (4%) |\n\nTwo businesses with the same profit, one paying nothing and the other ₦5.1 million — purely because of what they sell.\n\nTry your own figures in the [small company checker](/tools/small-company-check), or [ask us](/contact) to confirm your status.\n\n## Sources\n\n- [PwC Worldwide Tax Summaries — Nigeria, taxes on corporate income](https://taxsummaries.pwc.com/nigeria/corporate/taxes-on-corporate-income)\n- [Banwo & Ighodalo — Tax Digest, December 2025](https://www.banwo-ighodalo.com/media-files/2025/12/Tax-Digest.pdf)\n- [Mondaq — How does the new Tax Act affect SMEs?](https://www.mondaq.com/nigeria/tax-authorities/1674276/tax-tuesday-how-does-the-new-tax-act-affect-smes)\n- [Mondaq — The Nigeria Tax Reform Act 2025 and how it affects businesses](https://www.mondaq.com/nigeria/tax-authorities/1705160/the-nigeria-tax-reform-act-2025-and-how-it-affects-businesses)"
+    },
+    {
+      "id": "7",
+      "slug": "nigerian-tax-deadlines-2026",
+      "title": "Every tax deadline a Nigerian business needs to know in 2026",
+      "excerpt": "The monthly and annual dates for PAYE, VAT, withholding tax and company income tax under the new tax laws — and a simple routine to never miss one.",
+      "author": "BYC Tax Team",
+      "author_role": "Babatunde Yunus & Co.",
+      "published_at": "2026-09-22T09:00:00Z",
+      "cover_image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
+      "tags": [
+        "Tax",
+        "Compliance",
+        "Deadlines"
+      ],
+      "status": "published",
+      "reading_time": 5,
+      "content": "## Why deadlines matter more in 2026\n\nThe Nigeria Tax Administration Act 2025 raised penalties for late filing and late payment and added interest on unpaid tax. Taxes you collect from other people — PAYE from employees and withholding tax from suppliers — attract the heaviest consequences if you don't pass them on.\n\n## Every month\n\n| Date | Obligation | Paid to |\n|---|---|---|\n| 10th | PAYE deducted from the previous month's salaries | State IRS of each employee's residence |\n| 21st | VAT return and payment for the previous month | NRS |\n| 21st | Withholding tax deducted in the previous month | NRS (companies) or State IRS (individuals) |\n\nA few points that catch people out:\n\n- **Nil VAT returns.** If you are registered and made no sales, you still file by the 21st. Small businesses are exempt from VAT returns.\n- **PAYE timing.** State IRSs generally expect PAYE by the 10th. The Tax Administration Act's penalty provision refers to the 21st, but we advise clients to keep paying by the 10th.\n- **WHT credit notes.** Make sure the tax you withhold is remitted under your suppliers' tax IDs so they can claim credit.\n\n## Every year\n\n| Date | Obligation |\n|---|---|\n| 31 January | Employer's annual PAYE return for the previous year |\n| 30 June | Company income tax return for a 31 December year-end |\n| 6 months after year-end | Company income tax return for other year-ends |\n\n**New companies** file their first return within 18 months of incorporation or 6 months after their first accounting period ends, whichever comes first.\n\n**Employees** must also file their own annual return of income from all sources under the new law. Check your State IRS for its date.\n\n## Company law deadlines\n\nSeparately from tax, companies file **annual returns with the Corporate Affairs Commission** every year. Missing them leads to penalties and can make your company appear inactive to banks and counterparties.\n\n## A routine that works\n\n1. **By the 5th:** close payroll and prepare the PAYE schedule.\n2. **By the 10th:** pay PAYE and file the evidence.\n3. **By the 15th:** reconcile sales and purchases for VAT and list all withholding tax deducted.\n4. **By the 21st:** file VAT and WHT returns and pay.\n5. **Every quarter:** check your tax accounts with the NRS and the state for any unexplained balances.\n\nUse our [tax deadline calendar](/tools/tax-calendar) to see what is due this month, or [ask us](/contact) to run the routine for you.\n\n## Sources\n\n- [PwC Worldwide Tax Summaries — Nigeria, tax administration](https://taxsummaries.pwc.com/Nigeria/Individual/Tax-administration)\n- [Banwo & Ighodalo — Tax Digest, December 2025](https://www.banwo-ighodalo.com/media-files/2025/12/Tax-Digest.pdf)\n- [Mondaq — The tax reforms and your statutory filing obligations](https://www.mondaq.com/nigeria/tax-authorities/1691640/know-your-taxes-the-tax-reforms-and-your-statutory-filing-obligations-a-simplified-guide)"
     }
   ]
 }

@@ -1,15 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { services } from '@/lib/services';
+import { tools } from '@/lib/tools';
 
 const links = [
     ['About', '/about'],
     ['Services', '/services'],
     ['Firm profile', '/portfolio'],
+    ['Tax tools', '/tools'],
     ['Insights', '/blog'],
     ['Contact', '/contact'],
 ];
 
-const services = ['Accounting', 'Audit & assurance', 'Tax advisory', 'Corporate secretarial', 'Internal control', 'Finance training'];
 
 export default function Footer({ showCta = true }: { showCta?: boolean }) {
     const year = new Date().getFullYear();
@@ -52,8 +54,20 @@ export default function Footer({ showCta = true }: { showCta?: boolean }) {
 
                     <div>
                         <h2 className="text-sm font-medium text-neutral-900">Services</h2>
-                        <ul className="mt-4 space-y-2.5 text-sm text-neutral-600">
-                            {services.map((service) => <li key={service}>{service}</li>)}
+                        <ul className="mt-4 space-y-2.5 text-sm">
+                            {services.map((service) => (
+                                <li key={service.slug}>
+                                    <Link href={`/services/${service.slug}`} className="text-neutral-600 hover:text-primary-700">{service.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <h2 className="mt-8 text-sm font-medium text-neutral-900">Tax tools</h2>
+                        <ul className="mt-4 space-y-2.5 text-sm">
+                            {tools.map((t) => (
+                                <li key={t.slug}>
+                                    <Link href={`/tools/${t.slug}`} className="text-neutral-600 hover:text-primary-700">{t.name}</Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 

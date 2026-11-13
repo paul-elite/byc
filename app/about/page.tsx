@@ -5,6 +5,8 @@ import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
 import { photos } from '@/lib/images';
 import { defaultPortfolioContent } from '@/lib/portfolioData';
+import CaseStudies from '@/components/CaseStudies';
+import Faq from '@/components/Faq';
 
 export const metadata: Metadata = {
     title: 'About',
@@ -67,6 +69,62 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            <section className="border-t border-neutral-200 bg-white pb-20 lg:pb-28">
+                <div className="container grid gap-10 pt-20 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pt-28">
+                    <div>
+                        <h2 className="text-3xl text-neutral-900 md:text-4xl">Leadership</h2>
+                        <p className="mt-4 text-lg text-neutral-600">The firm is led by its managing partner, supported by two partners and a team of twelve professional accountants.</p>
+                    </div>
+                    <div className="rounded-xl border border-neutral-200 p-8">
+                        <div className="flex items-center gap-5">
+                            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-primary-700 text-xl font-semibold text-white">IY</span>
+                            <div>
+                                <p className="text-xl font-medium text-neutral-900">Dr. Ismail Babatunde Yunus</p>
+                                <p className="text-neutral-600">Managing Partner</p>
+                            </div>
+                        </div>
+                        <dl className="mt-8 grid gap-6 border-t border-neutral-200 pt-6 sm:grid-cols-2">
+                            <div>
+                                <dt className="text-sm text-neutral-500">Qualifications</dt>
+                                <dd className="mt-1 font-medium text-neutral-900">ACA, FCTI, ACE, FCMC, FCMA</dd>
+                            </div>
+                            <div>
+                                <dt className="text-sm text-neutral-500">FRC registration</dt>
+                                <dd className="mt-1 break-all font-medium text-neutral-900">FRC/2019/CITN/00000019170</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </section>
+
+            <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
+                <div className="container grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+                    <div>
+                        <h2 className="text-3xl text-neutral-900 md:text-4xl">Who we work with</h2>
+                    </div>
+                    <div>
+                        <p className="text-lg text-neutral-700">
+                            Our clients range from government organisations and NGOs to private companies of every
+                            size — micro, small, medium, large and multinational.
+                        </p>
+                        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                            {[
+                                ['Private companies', 'Accounts, audit, tax and company secretarial work as they grow.'],
+                                ['Public sector', 'Audit, financial management and capacity building for agencies and institutions.'],
+                                ['NGOs and projects', 'Donor reporting, project audits and internal controls over restricted funds.'],
+                            ].map(([t, d]) => (
+                                <div key={t} className="rounded-xl border border-neutral-200 bg-white p-5">
+                                    <p className="font-medium text-neutral-900">{t}</p>
+                                    <p className="mt-2 text-sm text-neutral-600">{d}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <CaseStudies />
+
             <section className="border-t border-neutral-200 bg-neutral-50 py-20 lg:py-28">
                 <div className="container">
                     <div className="grid gap-10 md:grid-cols-2">
@@ -116,6 +174,7 @@ export default function AboutPage() {
                     </dl>
                 </div>
             </section>
+            <Faq />
             <Footer />
         </main>
     );

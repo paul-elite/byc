@@ -8,154 +8,8 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getBlogBySlug, getRelatedBlogs, formatDate, Blog } from '@/lib/blogs';
-
-// Simple markdown to HTML converter for blog content
-function renderContent(content: string) {
-    const lines = content.split('\n');
-    const elements: React.ReactElement[] = [];
-    let inList = false;
-    let listItems: string[] = [];
-    let inTable = false;
-    let tableRows: string[][] = [];
-
-    const processInlineMarkdown = (text: string) => {
-        // Bold
-        text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-        // Links
-        text = text.replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" class="text-primary-600 hover:underline">$1</a>');
-        return text;
-    };
-
-    const flushList = () => {
-        if (listItems.length > 0) {
-            elements.push(
-                <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 mb-6 text-neutral-700">
-                    {listItems.map((item, i) => (
-                        <li key={i} dangerouslySetInnerHTML={{ __html: processInlineMarkdown(item) }} />
-                    ))}
-                </ul>
-            );
-            listItems = [];
-            inList = false;
-        }
-    };
-
-    const flushTable = () => {
-        if (tableRows.length > 0) {
-            const headers = tableRows[0];
-            const body = tableRows.slice(2); // Skip header separator
-            elements.push(
-                <div key={`table-${elements.length}`} className="overflow-x-auto mb-6">
-                    <table className="min-w-full border border-neutral-200 rounded-lg overflow-hidden">
-                        <thead className="bg-neutral-50">
-                            <tr>
-                                {headers.map((h, i) => (
-                                    <th key={i} className="px-4 py-3 text-left text-sm font-semibold text-neutral-900 border-b border-neutral-200">
-                                        {h.trim()}
-                                    </th>
-                                ))}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {body.map((row, i) => (
-                                <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-neutral-50'}>
-                                    {row.map((cell, j) => (
-                                        <td key={j} className="px-4 py-3 text-sm text-neutral-700 border-b border-neutral-100">
-                                            {cell.trim()}
-                                        </td>
-                                    ))}
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            );
-            tableRows = [];
-            inTable = false;
-        }
-    };
-
-    lines.forEach((line, index) => {
-        // Table detection
-        if (line.startsWith('|')) {
-            flushList();
-            inTable = true;
-            const cells = line.split('|').filter(c => c.trim() !== '');
-            if (!line.includes('---')) {
-                tableRows.push(cells);
-            } else {
-                tableRows.push(['---']); // Separator marker
-            }
-            return;
-        } else if (inTable) {
-            flushTable();
-        }
-
-        // Headers
-        if (line.startsWith('## ')) {
-            flushList();
-            elements.push(
-                <h2 key={index} className="text-2xl font-semibold text-neutral-900 mt-10 mb-4">
-                    {line.replace('## ', '')}
-                </h2>
-            );
-        } else if (line.startsWith('### ')) {
-            flushList();
-            elements.push(
-                <h3 key={index} className="text-xl font-semibold text-neutral-900 mt-8 mb-3">
-                    {line.replace('### ', '')}
-                </h3>
-            );
-        }
-        // Numbered list
-        else if (/^\d+\.\s/.test(line)) {
-            flushList();
-            const match = line.match(/^\d+\.\s\*\*(.+?)\*\*(.*)$/);
-            if (match) {
-                elements.push(
-                    <div key={index} className="mb-4">
-                        <span className="font-bold text-neutral-900">{match[1]}</span>
-                        <span className="text-neutral-700">{match[2]}</span>
-                    </div>
-                );
-            } else {
-                elements.push(
-                    <p key={index} className="text-neutral-700 mb-2" dangerouslySetInnerHTML={{ __html: processInlineMarkdown(line) }} />
-                );
-            }
-        }
-        // Unordered list
-        else if (line.startsWith('- ')) {
-            inList = true;
-            listItems.push(line.replace(/^- /, ''));
-        }
-        // Blockquote
-        else if (line.startsWith('> ')) {
-            flushList();
-            elements.push(
-                <blockquote key={index} className="border-l-2 border-primary-600 pl-5 py-1 my-6">
-                    <p className="text-neutral-800 italic font-medium" dangerouslySetInnerHTML={{ __html: processInlineMarkdown(line.replace('> ', '')) }} />
-                </blockquote>
-            );
-        }
-        // Empty line
-        else if (line.trim() === '') {
-            flushList();
-        }
-        // Regular paragraph
-        else {
-            flushList();
-            elements.push(
-                <p key={index} className="text-neutral-700 leading-relaxed mb-4" dangerouslySetInnerHTML={{ __html: processInlineMarkdown(line) }} />
-            );
-        }
-    });
-
-    flushList();
-    flushTable();
-
-    return elements;
-}
+import { renderMarkdown, extractHeadings } from '@/lib/markdown';
+import ArticleChrome from '@/components/ArticleChrome';
 
 export default function BlogPostPage() {
     const params = useParams();
@@ -221,7 +75,7 @@ export default function BlogPostPage() {
             <Navigation />
 
             <section className="bg-white pt-16 lg:pt-[72px]">
-                <div className="mx-auto max-w-3xl px-5 pt-14 lg:pt-20">
+                <div className="mx-auto max-w-5xl px-5 pt-14 lg:pt-20 [&>*]:max-w-3xl">
                     <Link href="/blog" className="text-sm text-neutral-500 hover:text-primary-700">&larr; All articles</Link>
                     {blog.tags.length > 0 && (
                         <p className="mt-6 text-sm text-primary-700">{blog.tags.join(' · ')}</p>
@@ -243,9 +97,9 @@ export default function BlogPostPage() {
             </section>
 
             <section className="bg-white py-14">
-                <div className="mx-auto max-w-3xl px-5">
+                <ArticleChrome headings={extractHeadings(blog.content)}>
                     <article className="text-[17px]">
-                        {renderContent(blog.content)}
+                        {renderMarkdown(blog.content)}
                     </article>
 
                     <div className="mt-12 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-neutral-200 pt-6 text-sm">
@@ -256,7 +110,13 @@ export default function BlogPostPage() {
                             </a>
                         ))}
                     </div>
-                </div>
+
+                    <div className="mt-10 rounded-lg border border-neutral-200 bg-neutral-50 p-6">
+                        <p className="font-medium text-neutral-900">Questions about how this affects you?</p>
+                        <p className="mt-1 text-[15px] text-neutral-600">This article is general guidance, not advice for your situation. Talk to us before acting on it.</p>
+                        <Link href="/contact" className="btn btn-primary btn-sm mt-4">Contact us</Link>
+                    </div>
+                </ArticleChrome>
             </section>
 
             {relatedBlogs.length > 0 && (

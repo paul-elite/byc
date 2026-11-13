@@ -8,8 +8,9 @@ import { usePathname } from 'next/navigation';
 const navLinks = [
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
-    { href: '/portfolio', label: 'Firm profile' },
+    { href: '/tools', label: 'Tax tools' },
     { href: '/blog', label: 'Insights' },
+    { href: '/portfolio', label: 'Firm profile' },
 ];
 
 export default function Navigation() {
@@ -25,7 +26,7 @@ export default function Navigation() {
                     <Image src="/logo.svg" alt="Babatunde Yunus & Co." width={164} height={35} priority />
                 </Link>
 
-                <div className="hidden items-center gap-8 md:flex">
+                <div className="hidden items-center gap-7 lg:flex">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
@@ -42,7 +43,7 @@ export default function Navigation() {
 
                 <button
                     onClick={() => setIsOpen(!isOpen)}
-                    className="-mr-2 rounded-md p-2 text-neutral-700 hover:bg-neutral-100 md:hidden"
+                    className="-mr-2 rounded-md p-2 text-neutral-700 hover:bg-neutral-100 lg:hidden"
                     aria-label={isOpen ? 'Close menu' : 'Open menu'}
                     aria-expanded={isOpen}
                 >
@@ -53,7 +54,7 @@ export default function Navigation() {
             </nav>
 
             {isOpen && (
-                <div className="border-t border-neutral-200 bg-white md:hidden">
+                <div className="border-t border-neutral-200 bg-white lg:hidden">
                     <div className="container flex flex-col py-3">
                         {navLinks.map((link) => (
                             <Link

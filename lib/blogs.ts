@@ -104,7 +104,9 @@ export async function getAllBlogs(): Promise<Blog[]> {
     }
 }
 
-// Fetch only published blogs (public view)
+// Fetch only published blogs (public view).
+// Articles kept in data/blogs.json are always included, merged with any
+// published in the admin (Supabase), so neither source can hide the other.
 export async function getPublishedBlogs(): Promise<Blog[]> {
     try {
         const supabase = getSupabase();
@@ -116,13 +118,13 @@ export async function getPublishedBlogs(): Promise<Blog[]> {
 
         if (error) {
             console.error('Error fetching published blogs:', error);
-            return localBlogs.filter((blog) => blog.status === 'published');
+            return mergePublishedBlogs([]);
         }
 
-        return (data || []).map(normalizeBlog);
+        return mergePublishedBlogs((data || []).map(normalizeBlog));
     } catch (error) {
         console.error('Error fetching published blogs:', error);
-        return localBlogs.filter((blog) => blog.status === 'published');
+        return mergePublishedBlogs([]);
     }
 }
 
@@ -141,7 +143,7 @@ export async function getBlogBySlug(slug: string): Promise<Blog | null> {
             return localBlogs.find((blog) => blog.slug === slug) ?? null;
         }
 
-        return normalizeBlog(data);
+        return data ? normalizeBlog(data) : localBlogs.find((blog) => blog.slug === slug) ?? null;
     } catch (error) {
         console.error('Error fetching blog by slug:', error);
         return localBlogs.find((blog) => blog.slug === slug) ?? null;
@@ -167,7 +169,7 @@ export async function getBlogById(id: string): Promise<Blog | null> {
 
 // Format date for display
 export function formatDate(dateString: string): string {
-    return new Date(dateString).toLocaleDateString('en-US', {
+    return new Date(dateString).toLocaleDateString('en-GB', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -182,32 +184,16 @@ export function generateSlug(title: string): string {
         .replace(/(^-|-$)/g, '');
 }
 
-// Get related blogs by tags
+// Get related blogs by tag overlap
 export async function getRelatedBlogs(currentSlug: string, limit: number = 2): Promise<Blog[]> {
-    const currentBlog = await getBlogBySlug(currentSlug);
-    if (!currentBlog) return [];
+    const all = await getPublishedBlogs();
+    const current = all.find((b) => b.slug === currentSlug);
+    if (!current) return [];
 
-    const supabase = getSupabase();
-    const { data, error } = await supabase
-        .from(TABLE_NAME)
-        .select('*')
-        .eq('status', 'published')
-        .neq('slug', currentSlug)
-        .limit(limit);
-
-    if (error) {
-        console.error('Error fetching related blogs:', error);
-        return [];
-    }
-
-    // Sort by tag overlap
-    const scored = (data || []).map(blog => ({
-        blog,
-        score: blog.tags.filter((tag: string) => currentBlog.tags.includes(tag)).length,
-    }));
-
-    return scored
+    return all
+        .filter((b) => b.slug !== currentSlug)
+        .map((blog) => ({ blog, score: blog.tags.filter((tag) => current.tags.includes(tag)).length }))
         .sort((a, b) => b.score - a.score)
         .slice(0, limit)
-        .map(s => s.blog);
+        .map((s) => s.blog);
 }

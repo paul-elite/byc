@@ -1,14 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-
-export const coreServices = [
-    ['Accounting', 'Bookkeeping, payroll, reconciliations, management accounts and annual financial statements.'],
-    ['Audit & assurance', 'Statutory audits, internal audits, due diligence and special-purpose reviews.'],
-    ['Tax advisory', 'Company income tax, VAT, WHT and PAYE — planning, returns, FIRS audits and disputes.'],
-    ['Corporate secretarial', 'CAC registrations and annual returns, AGMs, board minutes and statutory registers.'],
-    ['Internal control', 'Process reviews, control design, fraud-risk assessments and forensic investigations.'],
-    ['Finance training', 'Practical courses for finance teams on tax, IFRS reporting, controls and accounting software.'],
-];
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { services } from '@/lib/services';
 
 export default function Services() {
     return (
@@ -28,12 +20,15 @@ export default function Services() {
                     </Link>
                 </div>
 
-                <div className="mt-12 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
-                    {coreServices.map(([title, description]) => (
-                        <div key={title} className="border-t border-neutral-200 py-7">
-                            <h3 className="text-lg text-neutral-900">{title}</h3>
-                            <p className="mt-2 text-[15px] text-neutral-600">{description}</p>
-                        </div>
+                <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-neutral-200 bg-neutral-200 sm:grid-cols-2 lg:grid-cols-3">
+                    {services.map((service) => (
+                        <Link key={service.slug} href={`/services/${service.slug}`} className="group relative bg-white p-7 transition-colors hover:bg-neutral-50">
+                            <div className="flex items-start justify-between gap-4">
+                                <h3 className="text-lg text-neutral-900 transition-colors group-hover:text-primary-700">{service.name}</h3>
+                                <ArrowUpRight className="h-5 w-5 shrink-0 text-neutral-300 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-700" />
+                            </div>
+                            <p className="mt-2 text-[15px] text-neutral-600">{service.summary}</p>
+                        </Link>
                     ))}
                 </div>
             </div>
